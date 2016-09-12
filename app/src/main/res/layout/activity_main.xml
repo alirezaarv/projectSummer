@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.q20.projectsummer.MainActivity">
+    tools:context=".ui.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,13 +26,34 @@
         android:paddingTop="@dimen/btn_main_padding_top_down">
 
         <ImageButton
-            android:id="@+id/btn_newGame"
+            android:id="@+id/btn_newGameOnline"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@drawable/btn_shape"
             android:backgroundTint="@color/colorA13"
-            android:onClick="onNewGame" />
+            android:onClick="onNewGameOnline" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+
+        android:paddingBottom="@dimen/btn_main_padding_top_down"
+        android:paddingLeft="@dimen/btn_main_padding_right_left"
+        android:paddingRight="@dimen/btn_main_padding_right_left"
+        android:paddingTop="@dimen/btn_main_padding_top_down">
+
+        <ImageButton
+            android:id="@+id/btn_newGameLocal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_shape"
+            android:backgroundTint="@color/colorA13"
+            android:onClick="onNewGameLocal" />
 
     </LinearLayout>
 

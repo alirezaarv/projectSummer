@@ -1,9 +1,13 @@
-package com.q20.projectsummer;
+package com.q20.projectsummer.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import com.q20.projectsummer.R;
+import com.q20.projectsummer.SQLite.DatabaseAccess;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +27,14 @@ public class MainActivity extends AppCompatActivity {
         ////////////////////////
     }
 
-    //when user click on new game btn
-    public void onNewGame(View view) {
+    //when user click on new game online btn
+    public void onNewGameOnline(View view) {
+    }
+
+    //when user click on new game local btn
+    public void onNewGameLocal(View view) {
+        Intent intent = new Intent(this, PackSelectorActivity.class);
+        startActivity(intent);
     }
 
     //when user click on trophy menu btn
@@ -38,4 +48,5 @@ public class MainActivity extends AppCompatActivity {
     //when user click on about us btn
     public void onAboutUs(View view) {
     }
+
 }

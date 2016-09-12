@@ -1,4 +1,4 @@
-package com.q20.projectsummer;
+package com.q20.projectsummer.SQLite;
 
 import android.content.Context;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
