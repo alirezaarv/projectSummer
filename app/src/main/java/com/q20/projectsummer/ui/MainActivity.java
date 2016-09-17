@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public void onNewGame(View view) {
         FragmentManager fm = getFragmentManager();
         NewGameDialog newGameDialog = new NewGameDialog();
+        newGameDialog.setContext(this);
         newGameDialog.show(fm, "salam");
     }
 
