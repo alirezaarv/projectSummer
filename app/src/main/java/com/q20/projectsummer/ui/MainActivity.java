@@ -1,14 +1,11 @@
 package com.q20.projectsummer.ui;
 
 import android.app.FragmentManager;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.SQLite.DatabaseAccess;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,14 +15,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        /////////////////////////
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.openDb();
-        Log.v("name", databaseAccess.getPlayerName());
-        Log.v("coins", databaseAccess.getPlayerCoins() + "");
-        Log.v("score", databaseAccess.getPlayerScore() + "");
-        databaseAccess.closeDb();
-        ////////////////////////
     }
 
     //when user click on new game local btn
