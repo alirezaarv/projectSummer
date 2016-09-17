@@ -1,5 +1,6 @@
 package com.q20.projectsummer.ui;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,14 +28,11 @@ public class MainActivity extends AppCompatActivity {
         ////////////////////////
     }
 
-    //when user click on new game online btn
-    public void onNewGameOnline(View view) {
-    }
-
     //when user click on new game local btn
-    public void onNewGameLocal(View view) {
-        Intent intent = new Intent(this, PackSelectorActivity.class);
-        startActivity(intent);
+    public void onNewGame(View view) {
+        FragmentManager fm = getFragmentManager();
+        NewGameDialog newGameDialog = new NewGameDialog();
+        newGameDialog.show(fm, "salam");
     }
 
     //when user click on trophy menu btn
