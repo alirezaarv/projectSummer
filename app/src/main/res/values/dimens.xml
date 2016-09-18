@@ -10,4 +10,6 @@
 
     <dimen name="dialog_new_game_h">300dp</dimen>
     <dimen name="dialog_new_game_w">150dp</dimen>
+
+    <dimen name="text_size_title">20sp</dimen>
 </resources>

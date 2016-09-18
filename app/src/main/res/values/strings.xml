@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ProjectSummer</string>
+    <string name="programmers_title">برنامه نویس ها:</string>
+    <string name="programmer_hosein">حسین قهرمان زاده</string>
+    <string name="programmer_alireza">علیرضا اروندی</string>
+    <string name="programmer_mohammad">محمد مهدی مزرعه لی</string>
+    <string name="designers_title">طراح ها:</string>
+    <string name="designers_mammad">محمد حسین جمالی</string>
+    <string name="designers_atena">آتنا لرنی</string>
+    <string name="special_thanks_title">با تشکر ویژه از:</string>
+    <string name="special_thanks_1">فرشاد غلامی</string>
+    <string name="special_thanks_2">یلدا جلیلوند</string>
+    <string name="thanks_title">و با تشکر از:</string>
+    <string name="thanks">حمیدرضا صحرایی \n علی مشایخ \n محمد کمانکش \n سامان خامسیان</string>
 </resources>

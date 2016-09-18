@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.PackSelectorActivity"></activity>
+        <activity android:name=".ui.PackSelectorActivity" />
+        <activity android:name=".ui.AboutUsActivity"></activity>
     </application>
 
 </manifest>
