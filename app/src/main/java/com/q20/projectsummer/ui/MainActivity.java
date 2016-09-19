@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+
 import com.q20.projectsummer.R;
+import com.q20.projectsummer.utilities.Settings;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         newGameDialog.show(fm, "salam");
     }
 
-    //when user click on trophy menu btn
-    public void onTrophyMenu(View view) {
+    //when user click on information btn
+    public void onInformation(View view) {
     }
 
     //when user click on ranking page btn
@@ -44,5 +47,20 @@ public class MainActivity extends AppCompatActivity {
         buyCoinDialog.setContext(this);
         //TODO check next line
         buyCoinDialog.show(fm, "salam");
+    }
+
+    public void onMute(View view){
+        ImageButton btn = (ImageButton) findViewById(R.id.btn_mute);
+        if (Settings.isMuted){
+            Settings.isMuted = false;
+            btn.setImageResource(R.drawable.mute);
+        }else {
+            Settings.isMuted = true;
+            btn.setImageResource(R.drawable.speaker);
+        }
+    }
+
+    public void onShare(View view){
+
     }
 }

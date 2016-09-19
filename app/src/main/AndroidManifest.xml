@@ -8,15 +8,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.PackSelectorActivity" />
-        <activity android:name=".ui.AboutUsActivity"></activity>
+        <activity android:name=".ui.PackSelectorActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.AboutUsActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

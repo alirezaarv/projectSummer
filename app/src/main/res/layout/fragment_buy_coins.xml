@@ -2,159 +2,340 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/colorA1"
+    android:orientation="vertical"
+    android:padding="@dimen/buy_coin_padding">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:background="@drawable/btn_shape"
+        android:backgroundTint="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/buy_coin_padding"
+        android:paddingRight="@dimen/buy_coin_padding">
+
         <LinearLayout
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/buy_coin_margin"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minWidth="80dp"
+                    android:text="200 سکه"
+                    android:textColor="@color/colorA17" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:text="1000 تومان"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorA1" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/basket_size"
+            android:layout_height="@dimen/basket_size"
+            android:layout_margin="@dimen/buy_coin_margin"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/basket_coin" />
+
+    </LinearLayout>    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/buy_coin_margin"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/colorPrimary"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/buy_coin_padding"
+    android:paddingRight="@dimen/buy_coin_padding">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
             <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:minWidth="80dp"
                 android:text="200 سکه"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:textColor="@color/colorA17" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:minWidth="80dp"
                 android:text="1000 تومان"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorA1" />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/basket_size"
+        android:layout_height="@dimen/basket_size"
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/basket_coin" />
+
+</LinearLayout>    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/buy_coin_margin"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/colorPrimary"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/buy_coin_padding"
+    android:paddingRight="@dimen/buy_coin_padding">
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="80dp"
+                android:text="200 سکه"
+                android:textColor="@color/colorA17" />
+
         </LinearLayout>
 
-        <ImageView
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="80dp"
+                android:text="1000 تومان"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorA1" />
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/basket_size"
+        android:layout_height="@dimen/basket_size"
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/basket_coin" />
+
+</LinearLayout>    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/buy_coin_margin"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/colorPrimary"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/buy_coin_padding"
+    android:paddingRight="@dimen/buy_coin_padding">
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="80dp"
+                android:text="200 سکه"
+                android:textColor="@color/colorA17" />
+
         </LinearLayout>
 
-        <ImageView
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="80dp"
+                android:text="1000 تومان"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorA1" />
+        </LinearLayout>
+
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/basket_size"
+        android:layout_height="@dimen/basket_size"
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/basket_coin" />
+
+</LinearLayout>    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/buy_coin_margin"
+    android:background="@drawable/btn_shape"
+    android:backgroundTint="@color/colorPrimary"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/buy_coin_padding"
+    android:paddingRight="@dimen/buy_coin_padding">
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="80dp"
+                android:text="200 سکه"
+                android:textColor="@color/colorA17" />
+
         </LinearLayout>
 
-        <ImageView
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="80dp"
+                android:text="1000 تومان"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorA1" />
+        </LinearLayout>
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <ImageView
+        android:layout_width="@dimen/basket_size"
+        android:layout_height="@dimen/basket_size"
+        android:layout_margin="@dimen/buy_coin_margin"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/basket_coin" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+</LinearLayout>
 </LinearLayout>

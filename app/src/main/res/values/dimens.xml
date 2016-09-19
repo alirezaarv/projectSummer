@@ -12,4 +12,11 @@
     <dimen name="dialog_new_game_w">150dp</dimen>
 
     <dimen name="text_size_title">20sp</dimen>
+
+    <dimen name="chart_size">300dp</dimen>
+    <dimen name="chart_btn_size">250dp</dimen>
+
+    <dimen name="buy_coin_margin">10dp</dimen>
+    <dimen name="basket_size">60dp</dimen>
+    <dimen name="buy_coin_padding">20dp</dimen>
 </resources>

@@ -14,7 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -48,29 +48,33 @@
 
 
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"></LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"></LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center">
 
             <ImageButton
-                android:onClick="onCoins"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="onCoins"
+                android:scaleType="centerInside"
+                android:src="@drawable/coin" />
 
-        </LinearLayout>
+        </FrameLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"></LinearLayout>
+        android:layout_weight="2"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,13 +87,17 @@
         android:paddingTop="@dimen/btn_main_padding_top_down">
 
         <ImageButton
+
             android:id="@+id/btn_newGame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:adjustViewBounds="true"
             android:background="@drawable/btn_shape"
-            android:backgroundTint="@color/colorA13"
-            android:onClick="onNewGame" />
+            android:backgroundTint="@color/colorA1"
+            android:onClick="onNewGame"
+            android:scaleType="centerInside"
+            android:src="@drawable/main_play" />
 
     </LinearLayout>
 
@@ -114,7 +122,9 @@
             android:layout_weight="1"
             android:background="@drawable/btn_shape"
             android:backgroundTint="@color/colorA13"
-            android:onClick="onAboutUs" />
+            android:onClick="onInformation"
+            android:scaleType="fitCenter"
+            android:src="@drawable/question" />
 
         <Space
             android:layout_width="@dimen/btn_space"
@@ -127,8 +137,10 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@drawable/btn_shape"
-            android:backgroundTint="@color/colorA13"
-            android:onClick="onRankingMenu" />
+            android:backgroundTint="@color/colorA15"
+            android:onClick="onRankingMenu"
+            android:scaleType="fitCenter"
+            android:src="@drawable/main_chart" />
 
         <Space
             android:layout_width="@dimen/btn_space"
@@ -136,6 +148,7 @@
 
 
         <ImageButton
+
             android:id="@+id/btn_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -143,14 +156,49 @@
             android:layout_weight="1"
             android:background="@drawable/btn_shape"
             android:backgroundTint="@color/colorA13"
-            android:onClick="onTrophyMenu" />
+            android:onClick="onAboutUs"
+            android:scaleType="fitCenter"
+            android:src="@drawable/information" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3" />
+        android:layout_weight="2.2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_mute"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@android:color/transparent"
+            android:onClick="onMute"
+            android:scaleType="centerInside"
+            android:src="@drawable/speaker" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/transparent"
+            android:onClick="onShare"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/share" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
