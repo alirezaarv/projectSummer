@@ -12,4 +12,14 @@
     <string name="special_thanks_2">یلدا جلیلوند</string>
     <string name="thanks_title">و با تشکر از:</string>
     <string name="thanks">حمیدرضا صحرایی \n علی مشایخ \n محمد کمانکش \n سامان خامسیان</string>
+    <string name="log_in_button">ورود</string>
+    <string name="sign_in_button">ثبت نام</string>
+    <string name="password">رمز عبور</string>
+    <string name="user_name">نام کاربری</string>
+    <string name="repeated_password">تکرار رمز عبور</string>
+    <string name="email">ایمیل</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

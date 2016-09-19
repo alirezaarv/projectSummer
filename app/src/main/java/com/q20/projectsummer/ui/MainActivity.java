@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.q20.projectsummer.R;
+import com.q20.projectsummer.ui.Adapters.RegisterActivity;
 import com.q20.projectsummer.utilities.Settings;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     //when user click on information btn
     public void onInformation(View view) {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     //when user click on ranking page btn
