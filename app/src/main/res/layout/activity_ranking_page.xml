@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/colorA7"
+    android:background="@color/colorPrimary"
     tools:context="com.q20.projectsummer.ui.RankingPageActivity">
 
     <LinearLayout
