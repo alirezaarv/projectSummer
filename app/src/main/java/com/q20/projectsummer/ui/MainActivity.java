@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.ui.Adapters.RegisterActivity;
+import com.q20.projectsummer.ui.RegisterActivity;
 import com.q20.projectsummer.utilities.Settings;
 
 public class MainActivity extends AppCompatActivity {
