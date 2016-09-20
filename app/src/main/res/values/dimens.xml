@@ -21,7 +21,7 @@
     <dimen name="basket_size">60dp</dimen>
     <dimen name="buy_coin_padding">20dp</dimen>
 
-    <dimen name="register_fragment_container_size">300dp</dimen>
+    <dimen name="register_fragment_container_size">450dp</dimen>
     <dimen name="register_button_width_size">150dp</dimen>
     <dimen name="register_button_height_size">40dp</dimen>
     <dimen name="register_profile_image_size">80dp</dimen>
