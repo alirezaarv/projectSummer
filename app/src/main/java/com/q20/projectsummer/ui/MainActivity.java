@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
     //when user click on ranking page btn
     public void onRankingMenu(View view) {
+        Intent intent = new Intent(this, RankingPageActivity.class);
+        startActivity(intent);
     }
 
     //when user click on about us btn

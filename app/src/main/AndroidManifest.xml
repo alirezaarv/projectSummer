@@ -23,7 +23,8 @@
         <activity
             android:name=".ui.AboutUsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.RegisterActivity"></activity>
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.RankingPageActivity"></activity>
     </application>
 
 </manifest>

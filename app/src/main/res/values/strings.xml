@@ -18,6 +18,9 @@
     <string name="user_name">نام کاربری</string>
     <string name="repeated_password">تکرار رمز عبور</string>
     <string name="email">ایمیل</string>
+    <string name="aroundme">اطراف من</string>
+    <string name="weekbest">برترین های هفته</string>
+    <string name="monthbest">برترین های ماه</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

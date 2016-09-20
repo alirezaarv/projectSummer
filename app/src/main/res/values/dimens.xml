@@ -28,4 +28,7 @@
     <dimen name="register_text_views_height">40dp</dimen>
     <dimen name="register_text_views_fonts_height">40sp</dimen>
 
+    <dimen name="ranking_page_buttons_height_size">40dp</dimen>
+    <dimen name="ranking_page_buttons_margins_size">2dp</dimen>
+
 </resources>
