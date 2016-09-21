@@ -31,4 +31,10 @@
     <dimen name="ranking_page_buttons_height_size">40dp</dimen>
     <dimen name="ranking_page_buttons_margins_size">2dp</dimen>
 
+    <dimen name="profile_image_page_image_size">100dp</dimen>
+    <dimen name="profile_image_page_images_size">50dp</dimen>
+    <dimen name="profile_image_images_right_margins_size">30dp</dimen>
+    <dimen name="profile_image_images_top_margins_size">10dp</dimen>
+    <dimen name="profile_image_layouts_padding_size">5dp</dimen>
+
 </resources>

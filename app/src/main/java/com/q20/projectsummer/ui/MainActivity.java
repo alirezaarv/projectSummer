@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onShare(View view){
-
+        Intent intent = new Intent(this, ProfileImageActivity.class);
+        startActivity(intent);
     }
 }
