@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorA7"
+    android:orientation="vertical"
+    tools:context="com.q20.projectsummer.ui.FindRivalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:padding="8dp"
+            android:background="@drawable/profile_image_rounded_layout_shape">
+
+            <ImageView
+                android:id="@+id/find_rival_main_profile_image"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/char_f_15"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="120dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical">
+
+            <ImageView
+                android:id="@+id/find_rival_coin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/coin"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/find_rival_rival_find_name_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:elevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="@dimen/btn_radius"
+            app:cardBackgroundColor="@color/colorA13">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/find_name_cardview_in_cardview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1.0"
+                    android:background="@color/colorA17"
+                    app:cardCornerRadius="10dp">
+
+                    <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                        android:id="@+id/find_rival_find_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/find_name"
+                        android:textSize="@dimen/total_recycler_text_size"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_margin="5dp"/>
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/register_image_veiw_shape"
+                    android:layout_margin="3dp"
+                    android:gravity="center">
+
+                    <com.q20.projectsummer.ui.RoundedImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/magnifire"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/find_rival_rival_find_chance_rival"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="5dp"
+            android:elevation="@dimen/cardview_default_elevation"
+            app:cardCornerRadius="@dimen/btn_radius"
+            app:cardBackgroundColor="@color/colorA13">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/find_rival_find_chance_rival_cardview"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1.0"
+                    android:background="@color/colorA17"
+                    app:cardCornerRadius="10dp">
+
+                    <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                        android:id="@+id/find_chance_rival_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/find_chance"
+                        android:textSize="@dimen/total_recycler_text_size"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_margin="5dp"/>
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/register_image_veiw_shape"
+                    android:layout_margin="3dp"
+                    android:gravity="center">
+
+                    <com.q20.projectsummer.ui.RoundedImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/dice"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+    <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/friends"
+        android:textSize="@dimen/total_recycler_text_size"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:background="@color/colorA15"/>
+
+    <FrameLayout
+        android:id="@+id/find_rival_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"/>
+</LinearLayout>

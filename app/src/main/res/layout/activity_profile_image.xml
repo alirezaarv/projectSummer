@@ -27,10 +27,11 @@
             android:layout_gravity="center"/>
     </RelativeLayout>
 
-    <TextView
+    <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/profile_image_text"
+        android:textSize="@dimen/total_recycler_text_size"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginTop="10dp"
@@ -55,4 +56,13 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"/>
+
+<!--    <com.anton46.stepsview.StepsView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/steps_view"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"></com.anton46.stepsview.StepsView>
+-->
 </LinearLayout>

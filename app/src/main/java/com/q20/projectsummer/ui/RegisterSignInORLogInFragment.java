@@ -6,16 +6,17 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.q20.projectsummer.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LogInFragment extends Fragment {
+public class RegisterSignInORLogInFragment extends Fragment {
 
 
-    public LogInFragment() {
+    public RegisterSignInORLogInFragment() {
         // Required empty public constructor
     }
 
@@ -23,8 +24,10 @@ public class LogInFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_register_sign_in_orlog_in, container, false);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_log_in, container, false);
+        return view;
     }
 
 }

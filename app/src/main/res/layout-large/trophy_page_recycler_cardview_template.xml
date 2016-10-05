@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trophy_page_recycler_main_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="135dp"
+    android:layout_margin="5dp"
+    android:elevation="@dimen/cardview_default_elevation"
+    app:cardCornerRadius="@dimen/btn_radius"
+    app:cardBackgroundColor="@color/colorA13">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/trophy_page_recycler_inner_cardview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1.0"
+            android:background="@color/colorA17"
+            app:cardCornerRadius="10dp">
+
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+                android:id="@+id/trophy_page_recycler_inner_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text=""
+                android:textSize="@dimen/total_recycler_text_size_layout_large"
+                android:layout_margin="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/register_image_veiw_shape"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="10dp"
+            android:layout_margin="6dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/trophy_page_recycler_inner_imageview"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerInside"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -22,6 +22,15 @@
     <string name="weekbest">برترین های هفته</string>
     <string name="monthbest">برترین های ماه</string>
     <string name="profile_image_text">عکس خود را از میان عکس های زیر انتخاب کنید</string>
+    <string name="choose_profile_image">عکس کاربری خود را انتخاب کنید</string>
+    <string name="next">بعدی</string>
+    <string name="choose_user_name">نام کاربری خود را انتخاب کنید</string>
+    <string name="choose_password">رمز عبور خود را وارد کنید</string>
+    <string name="end_register">ثبت نام نهایی</string>
+    <string name="friends">دوستان</string>
+    <string name="find_name">جست و جوی نام کاربری</string>
+    <string name="find_chance">شانسی پیدا کن</string>
+    <string name="trophy_text">کلکسیون افتخارات</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

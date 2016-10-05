@@ -28,7 +28,8 @@ public class NewGameDialog extends DialogFragment {
         ((ImageButton) rootView.findViewById(R.id.newGameOnline)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(context, FindRivalActivity.class);
+                startActivity(intent);
             }
         });
 

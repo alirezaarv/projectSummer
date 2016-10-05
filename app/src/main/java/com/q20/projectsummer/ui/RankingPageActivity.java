@@ -28,9 +28,7 @@ public class RankingPageActivity extends AppCompatActivity {
     public void onWeekButtonClicked(View view){
         changeFragment(new RankingPageWeeklyFragment());
     }
-    public void onAroundButtonClicked(View view){
-        changeFragment(new RankingPageAroundmeFragment());
-    }
+    public void onAroundButtonClicked(View view){changeFragment(new RankingPageAroundmeFragment());}
     public void onMonthButtonClicked(View view){
         changeFragment(new RankingPageMonthFragment());
     }

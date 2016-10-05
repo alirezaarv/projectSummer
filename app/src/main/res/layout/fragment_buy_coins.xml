@@ -34,9 +34,10 @@
                     android:layout_width="20dp"
                     android:layout_height="match_parent" />
 
-                <TextView
+                <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:layout_weight="1"
                     android:minWidth="80dp"
                     android:text="200 سکه"
@@ -53,9 +54,11 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxLines="1"
                     android:minWidth="80dp"
                     android:text="1000 تومان"
                     android:textAlignment="textEnd"
@@ -73,7 +76,8 @@
             android:scaleType="centerInside"
             android:src="@drawable/basket_coin" />
 
-    </LinearLayout>    <LinearLayout
+    </LinearLayout>
+    <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/buy_coin_margin"
@@ -100,9 +104,10 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent" />
 
-            <TextView
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:layout_weight="1"
                 android:minWidth="80dp"
                 android:text="200 سکه"
@@ -119,9 +124,11 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
                 android:minWidth="80dp"
                 android:text="1000 تومان"
                 android:textAlignment="textEnd"
@@ -139,7 +146,8 @@
         android:scaleType="centerInside"
         android:src="@drawable/basket_coin" />
 
-</LinearLayout>    <LinearLayout
+</LinearLayout>
+    <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/buy_coin_margin"
@@ -166,9 +174,10 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent" />
 
-            <TextView
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:layout_weight="1"
                 android:minWidth="80dp"
                 android:text="200 سکه"
@@ -185,9 +194,11 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
                 android:minWidth="80dp"
                 android:text="1000 تومان"
                 android:textAlignment="textEnd"
@@ -205,7 +216,8 @@
         android:scaleType="centerInside"
         android:src="@drawable/basket_coin" />
 
-</LinearLayout>    <LinearLayout
+</LinearLayout>
+    <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/buy_coin_margin"
@@ -232,9 +244,10 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent" />
 
-            <TextView
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:layout_weight="1"
                 android:minWidth="80dp"
                 android:text="200 سکه"
@@ -251,9 +264,11 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
                 android:minWidth="80dp"
                 android:text="1000 تومان"
                 android:textAlignment="textEnd"
@@ -271,7 +286,8 @@
         android:scaleType="centerInside"
         android:src="@drawable/basket_coin" />
 
-</LinearLayout>    <LinearLayout
+</LinearLayout>
+    <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/buy_coin_margin"
@@ -298,9 +314,10 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent" />
 
-            <TextView
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
                 android:layout_weight="1"
                 android:minWidth="80dp"
                 android:text="200 سکه"
@@ -317,9 +334,11 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.q20.projectsummer.ui.AutoResizeTextViewWithIrsansFont
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
                 android:minWidth="80dp"
                 android:text="1000 تومان"
                 android:textAlignment="textEnd"

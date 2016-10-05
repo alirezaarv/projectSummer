@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.text.Layout.Alignment;
 import android.text.StaticLayout;
@@ -13,7 +14,7 @@ import android.util.SparseIntArray;
 import android.util.TypedValue;
 import android.widget.TextView;
 
-public class AutoResizeTextView extends TextView {
+public class AutoResizeTextViewWithAfsanehFont extends TextView {
     private interface SizeTester {
         /**
          *
@@ -52,17 +53,17 @@ public class AutoResizeTextView extends TextView {
     private boolean mEnableSizeCache = true;
     private boolean mInitializedDimens;
 
-    public AutoResizeTextView(Context context) {
+    public AutoResizeTextViewWithAfsanehFont(Context context) {
         super(context);
         initialize();
     }
 
-    public AutoResizeTextView(Context context, AttributeSet attrs) {
+    public AutoResizeTextViewWithAfsanehFont(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
     }
 
-    public AutoResizeTextView(Context context, AttributeSet attrs, int defStyle) {
+    public AutoResizeTextViewWithAfsanehFont(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initialize();
     }
@@ -76,6 +77,11 @@ public class AutoResizeTextView extends TextView {
             // no value was assigned during construction
             mMaxLines = NO_LINE_LIMIT;
         }
+        if (!isInEditMode()) {
+            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "afsaneh.ttf");
+            setTypeface(tf);
+        }
+
     }
 
     @Override
