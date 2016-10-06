@@ -69,6 +69,10 @@ public class AutoResizeTextViewWithAfsanehFont extends TextView {
     }
 
     private void initialize() {
+        if (!isInEditMode()) {
+            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "afsaneh.ttf");
+            setTypeface(tf);
+        }
         mPaint = new TextPaint(getPaint());
         mMaxTextSize = getTextSize();
         mAvailableSpaceRect = new RectF();
@@ -76,10 +80,6 @@ public class AutoResizeTextViewWithAfsanehFont extends TextView {
         if (mMaxLines == 0) {
             // no value was assigned during construction
             mMaxLines = NO_LINE_LIMIT;
-        }
-        if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "afsaneh.ttf");
-            setTypeface(tf);
         }
 
     }

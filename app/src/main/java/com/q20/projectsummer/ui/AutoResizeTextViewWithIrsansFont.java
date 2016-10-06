@@ -68,6 +68,10 @@ public class AutoResizeTextViewWithIrsansFont extends TextView {
     }
 
     private void initialize() {
+        if (!isInEditMode()) {
+            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "irsans.ttf");
+            setTypeface(tf);
+        }
         mPaint = new TextPaint(getPaint());
         mMaxTextSize = getTextSize();
         mAvailableSpaceRect = new RectF();
@@ -76,11 +80,6 @@ public class AutoResizeTextViewWithIrsansFont extends TextView {
             // no value was assigned during construction
             mMaxLines = NO_LINE_LIMIT;
         }
-        if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "irsans.ttf");
-            setTypeface(tf);
-        }
-
     }
 
     @Override
