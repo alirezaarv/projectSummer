@@ -36,7 +36,7 @@ public class NewGameDialog extends DialogFragment {
         ((ImageButton) rootView.findViewById(R.id.newGameOffline)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, PackSelectorActivity.class);
+                Intent intent = new Intent(context, GameActivity.class);
                 startActivity(intent);
             }
         });

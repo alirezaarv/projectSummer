@@ -55,4 +55,5 @@
     <dimen name="register_texts_font_size">35sp</dimen>
     <dimen name="register_texts_font_size_layout_large">60sp</dimen>
 
+    <dimen name="keyboard_btn_size">44dp</dimen>
 </resources>
