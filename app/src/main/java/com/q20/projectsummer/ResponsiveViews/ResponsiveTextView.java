@@ -48,7 +48,7 @@ public class ResponsiveTextView extends TextView{
 
     public void updateDimensions(){
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(pixelDimensions.getWidth(), pixelDimensions.getHeight());
-        params.leftMargin = 100;//pixelDimensions.getX();
+        params.leftMargin = pixelDimensions.getX();
         params.topMargin = pixelDimensions.getY();
 
         setLayoutParams(params);

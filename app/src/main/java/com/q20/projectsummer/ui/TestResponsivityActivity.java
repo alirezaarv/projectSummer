@@ -16,7 +16,14 @@ public class TestResponsivityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_responsivity);
-        }
+
+
+        ScreenDetails.getScreenDimensions(this);
+        ResponsiveTextView textView = (ResponsiveTextView) findViewById(R.id.text_test);
+        textView.calculateDimensions(this);
+        textView.updateDimensions();
+
+    }
 
     @Override
     protected void onStart() {
@@ -25,11 +32,8 @@ public class TestResponsivityActivity extends AppCompatActivity {
 
     @Override
     public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        ScreenDetails.getScreenDimensions(this);
-        ResponsiveTextView textView = (ResponsiveTextView) findViewById(R.id.text_test);
-        textView.calculateDimensions(this);
-        textView.updateDimensions();
         super.onPostCreate(savedInstanceState, persistentState);
+
     }
 
     public void onBtn(View view){
