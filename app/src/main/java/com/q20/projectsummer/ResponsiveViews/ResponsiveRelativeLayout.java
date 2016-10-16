@@ -6,32 +6,29 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 /**
- * Created by alireza on 10/15/16.
+ * Created by alireza on 10/16/16.
  */
-public class ResponsiveTextView extends TextView{
+public class ResponsiveRelativeLayout extends RelativeLayout {
 
     private PixelDimensions pixelDimensions;
 
 
-
-    public ResponsiveTextView(Context context) {
+    public ResponsiveRelativeLayout(Context context) {
         super(context);
     }
 
-
-    public ResponsiveTextView(Context context, AttributeSet attrs) {
+    public ResponsiveRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ResponsiveTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ResponsiveRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ResponsiveTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ResponsiveRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
