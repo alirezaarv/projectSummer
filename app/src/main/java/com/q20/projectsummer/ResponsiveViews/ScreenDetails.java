@@ -1,12 +1,8 @@
 package com.q20.projectsummer.ResponsiveViews;
 
 import android.content.Context;
-import android.text.Layout;
 import android.util.DisplayMetrics;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 /**
  * Created by alireza on 10/15/16.
@@ -28,8 +24,8 @@ public class ScreenDetails {
     }
 
     public static int px2Dp(Context context,int px) {
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        int dp = Math.round(px / (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+        DisplayMetrics displayMetrics = context.getResources().getSystem().getDisplayMetrics();//context.getResources().getDisplayMetrics();
+        int dp = Math.round((float) px / displayMetrics.density);
         return dp;
     }
 }
