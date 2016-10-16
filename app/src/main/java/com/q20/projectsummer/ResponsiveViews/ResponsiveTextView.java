@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.q20.projectsummer.R;
+
 /**
  * Created by alireza on 10/15/16.
  */
@@ -18,6 +20,7 @@ public class ResponsiveTextView extends TextView{
 
     public ResponsiveTextView(Context context) {
         super(context);
+
     }
 
 
@@ -36,28 +39,24 @@ public class ResponsiveTextView extends TextView{
 
     public void calculateDimensions(Context context){
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) getLayoutParams();
-        int dpX = ScreenDetails.px2Dp(context,params.leftMargin);
-        int dpY = ScreenDetails.px2Dp(context,params.topMargin);
 
+        float dpWidth = ScreenDetails.px2Dp(context,params.width);
+        float dpHeight = ScreenDetails.px2Dp(context,params.height);
 
-        int dpWidth = ScreenDetails.px2Dp(context,params.width);
-        int dpHeight = ScreenDetails.px2Dp(context,params.height);
+        float dpX = ScreenDetails.px2Dp(context,params.leftMargin) + dpWidth / 2;
+        float dpY = ScreenDetails.px2Dp(context,params.topMargin) + dpHeight / 2;
 
         pixelDimensions = new PixelDimensions(dpX,dpY,dpWidth,dpHeight);
     }
 
     public void updateDimensions(){
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(pixelDimensions.getWidth(), pixelDimensions.getHeight());
-        params.leftMargin = pixelDimensions.getX();
-        params.topMargin = pixelDimensions.getY();
+        params.leftMargin = pixelDimensions.getX() - pixelDimensions.getWidth() / 2;
+        params.topMargin = pixelDimensions.getY() - pixelDimensions.getHeight() / 2;
 
         setLayoutParams(params);
 
-    /*    setX(pixelDimensions.getX());
-        setY(pixelDimensions.getY());
-        setWidth(pixelDimensions.getWidth());
-        setHeight(pixelDimensions.getHeight());
-    */
     }
+
 
 }

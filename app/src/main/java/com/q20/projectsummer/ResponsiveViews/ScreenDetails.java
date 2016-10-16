@@ -1,7 +1,10 @@
 package com.q20.projectsummer.ResponsiveViews;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.WindowManager;
 
 /**
@@ -16,11 +19,12 @@ public class ScreenDetails {
 
     public static void getScreenDimensions(Context context){
 
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        WindowManager wm = (WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE); // the results will be higher than using the activity context object or the getWindowManager() shortcut
-        wm.getDefaultDisplay().getMetrics(displayMetrics);
-        pixelWidth = displayMetrics.widthPixels;
-        pixelHeight = displayMetrics.heightPixels;
+        Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getRealSize(size);
+        pixelWidth = size.x;
+        pixelHeight = size.y;
+
     }
 
     public static int px2Dp(Context context,int px) {

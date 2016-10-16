@@ -12,7 +12,7 @@ public class PixelDimensions {
     public PixelDimensions() {
     }
 
-    public PixelDimensions(int dpX, int dpY, int dpWidth, int dpHeight) {
+    public PixelDimensions(float dpX, float dpY, float dpWidth, float dpHeight) {
         setFromDp(dpX, dpY, dpWidth, dpHeight);
     }
 
@@ -48,11 +48,12 @@ public class PixelDimensions {
         return width;
     }
 
-    public void setFromDp(int dpX, int dpY, int dpWidth, int dpHeight) {
-        this.x = (int) ((float) dpX / (float) ScreenDetails.DP_WIDTH * (float) ScreenDetails.pixelWidth);
-        this.y = (int) ((float) dpY / (float) ScreenDetails.DP_HEIGHT * (float) ScreenDetails.pixelHeight);
-        this.width = (int) ((float) dpWidth / (float) ScreenDetails.DP_WIDTH * (float) ScreenDetails.pixelWidth);
-        this.height = (int) ((float) dpHeight / (float) ScreenDetails.DP_HEIGHT * (float) ScreenDetails.pixelHeight);
+    public void setFromDp(float dpX, float dpY, float dpWidth, float dpHeight) {
+        float minRation = Math.min((float) ScreenDetails.pixelWidth / (float) ScreenDetails.DP_WIDTH, (float) ScreenDetails.pixelHeight/(float) ScreenDetails.DP_HEIGHT);
+        this.x = (int) ( dpX / (float) ScreenDetails.DP_WIDTH * (float) ScreenDetails.pixelWidth);
+        this.y = (int) ( dpY / (float) ScreenDetails.DP_HEIGHT * (float) ScreenDetails.pixelHeight);
+        this.width = (int) ( dpWidth * minRation);
+        this.height = (int) ( dpHeight * minRation);
     }
 
 
