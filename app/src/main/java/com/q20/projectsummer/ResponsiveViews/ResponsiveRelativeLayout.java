@@ -5,12 +5,12 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
-/**
- * Created by alireza on 10/16/16.
- */
-public class ResponsiveRelativeLayout extends RelativeLayout {
+public class ResponsiveRelativeLayout extends RelativeLayout implements ResponsiveView {
 
     private PixelDimensions pixelDimensions;
 
@@ -38,34 +38,23 @@ public class ResponsiveRelativeLayout extends RelativeLayout {
 
     public void calculateDimensions(){
         Context context = getContext();
-        RelativeLayout parent = (RelativeLayout)getParent();
-        int tempW = 0,tempH = 0;
-        RelativeLayout.LayoutParams parentParams = null;
-        //parent.setBackgroundColor(0xFF00FF00);
-        try {
-            parentParams = (RelativeLayout.LayoutParams) parent.getLayoutParams();
-            tempW = parentParams.width;
-            tempH = parentParams.height;
-        }catch (Exception e){
-        }
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) getLayoutParams();
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) getLayoutParams();
 
         float dpWidth = ScreenDetails.px2Dp(context,params.width);
         float dpHeight = ScreenDetails.px2Dp(context,params.height);
 
-        float dpX = ScreenDetails.px2Dp(context,params.leftMargin) + dpWidth / 2;
-        float dpY = ScreenDetails.px2Dp(context,params.topMargin) + dpHeight / 2;
+        float dpX = ScreenDetails.px2Dp(context,params.leftMargin);
+        float dpY = ScreenDetails.px2Dp(context,params.topMargin);
 
         pixelDimensions = new PixelDimensions(dpX,dpY,dpWidth,dpHeight,(View)getParent());
     }
 
     public void updateDimensions(){
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(pixelDimensions.getWidth(), pixelDimensions.getHeight());
-        params.leftMargin = pixelDimensions.getX() - pixelDimensions.getWidth() / 2;
-        params.topMargin = pixelDimensions.getY() - pixelDimensions.getHeight() / 2;
+        params.leftMargin = pixelDimensions.getX();
+        params.topMargin = pixelDimensions.getY();
 
         setLayoutParams(params);
-
     }
 
     @Override

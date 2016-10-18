@@ -1,5 +1,4 @@
-package com.q20.projectsummer.ui;
-
+package com.q20.projectsummer.ResponsiveViews;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,9 +11,14 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.util.TypedValue;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class AutoResizeTextViewWithAfsanehFont extends TextView {
+import com.q20.projectsummer.ResponsiveViews.PixelDimensions;
+import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
+
+public class AutoResizeTextViewWithIrsansFont extends TextView {
     private interface SizeTester {
         /**
          *
@@ -53,24 +57,24 @@ public class AutoResizeTextViewWithAfsanehFont extends TextView {
     private boolean mEnableSizeCache = true;
     private boolean mInitializedDimens;
 
-    public AutoResizeTextViewWithAfsanehFont(Context context) {
+    public AutoResizeTextViewWithIrsansFont(Context context) {
         super(context);
         initialize();
     }
 
-    public AutoResizeTextViewWithAfsanehFont(Context context, AttributeSet attrs) {
+    public AutoResizeTextViewWithIrsansFont(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
     }
 
-    public AutoResizeTextViewWithAfsanehFont(Context context, AttributeSet attrs, int defStyle) {
+    public AutoResizeTextViewWithIrsansFont(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initialize();
     }
 
     private void initialize() {
         if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "afsaneh.ttf");
+            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "irsans.ttf");
             setTypeface(tf);
         }
         mPaint = new TextPaint(getPaint());
@@ -81,7 +85,6 @@ public class AutoResizeTextViewWithAfsanehFont extends TextView {
             // no value was assigned during construction
             mMaxLines = NO_LINE_LIMIT;
         }
-
     }
 
     @Override
@@ -286,6 +289,58 @@ public class AutoResizeTextViewWithAfsanehFont extends TextView {
         super.onSizeChanged(width, height, oldwidth, oldheight);
         if (width != oldwidth || height != oldheight) {
             adjustTextSize(getText().toString());
+        }
+    }
+
+
+    // code of making responsive due to our page
+    // it's for layout not inside text
+    // ****************************************** --------- *************************************
+
+    private PixelDimensions pixelDimensions;
+
+    public PixelDimensions getPixelDimensions() {
+        return pixelDimensions;
+    }
+
+    public void calculateDimensions() {
+        Context context = getContext();
+        RelativeLayout parent = (RelativeLayout) getParent();
+        int tempW = 0, tempH = 0;
+        RelativeLayout.LayoutParams parentParams = null;
+        //parent.setBackgroundColor(0xFF00FF00);
+        try {
+            parentParams = (RelativeLayout.LayoutParams) parent.getLayoutParams();
+            tempW = parentParams.width;
+            tempH = parentParams.height;
+        } catch (Exception e) {
+        }
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) getLayoutParams();
+
+        float dpWidth = ScreenDetails.px2Dp(context, params.width);
+        float dpHeight = ScreenDetails.px2Dp(context, params.height);
+
+        float dpX = ScreenDetails.px2Dp(context, params.leftMargin) + dpWidth / 2;
+        float dpY = ScreenDetails.px2Dp(context, params.topMargin) + dpHeight / 2;
+
+        pixelDimensions = new PixelDimensions(dpX, dpY, dpWidth, dpHeight, (View) getParent());
+    }
+
+    public void updateDimensions() {
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(pixelDimensions.getWidth(), pixelDimensions.getHeight());
+        params.leftMargin = pixelDimensions.getX() - pixelDimensions.getWidth() / 2;
+        params.topMargin = pixelDimensions.getY() - pixelDimensions.getHeight() / 2;
+
+        setLayoutParams(params);
+
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (!isInEditMode()) {
+            calculateDimensions();
+            updateDimensions();
         }
     }
 }

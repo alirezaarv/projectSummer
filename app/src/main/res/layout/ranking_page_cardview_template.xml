@@ -28,7 +28,7 @@
             android:background="@color/colorA17"
             app:cardCornerRadius="10dp">
 
-            <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/ranking_page_inner_cardview_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -27,7 +27,7 @@
             android:layout_gravity="center"/>
     </RelativeLayout>
 
-    <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/profile_image_text"

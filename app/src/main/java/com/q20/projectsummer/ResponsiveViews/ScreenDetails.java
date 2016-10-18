@@ -27,9 +27,8 @@ public class ScreenDetails {
 
     }
 
-    public static int px2Dp(Context context,int px) {
+    public static float px2Dp(Context context,int px) {
         DisplayMetrics displayMetrics = context.getResources().getSystem().getDisplayMetrics();//context.getResources().getDisplayMetrics();
-        int dp = Math.round((float) px / displayMetrics.density);
-        return dp;
+        return (float) px / displayMetrics.density;
     }
 }

@@ -44,7 +44,7 @@
                     android:orientation="vertical"
                     android:gravity="right">
 
-                    <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+                    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:maxLines="1"
@@ -59,7 +59,7 @@
                         android:orientation="horizontal"
                         android:gravity="right">
 
-                        <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+                        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:maxLines="1"
@@ -68,7 +68,7 @@
                             android:textSize="15sp"
                             android:textDirection="rtl"/>
 
-                        <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+                        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:maxLines="1"
@@ -100,7 +100,7 @@
                     android:layout_marginLeft="@dimen/main_menu_padding_right_left"
                     android:layout_marginRight="@dimen/main_menu_padding_right_left"/>
 
-                <com.q20.projectsummer.ui.AutoResizeTextViewWithAfsanehFont
+                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
