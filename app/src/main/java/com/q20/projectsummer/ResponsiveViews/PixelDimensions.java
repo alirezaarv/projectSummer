@@ -78,6 +78,7 @@ public class PixelDimensions {
             screenPXH = responsiveView.getPixelDimensions().height;
             xRatio = responsiveView.getPixelDimensions().xRatio;
             yRatio = responsiveView.getPixelDimensions().yRatio;
+            minRatio = Math.min(screenPXW/screenDPW, screenPXH/screenDPH);
 
         } catch (Exception e) {
             screenDPW = ScreenDetails.DP_WIDTH;
