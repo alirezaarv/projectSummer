@@ -7,6 +7,10 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.MainActivity">
 
-
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveTextView
+        android:layout_width="155dp"
+        android:layout_height="25dp"
+        android:textSize="@dimen/text_size_large"
+        />
 
 </RelativeLayout>
