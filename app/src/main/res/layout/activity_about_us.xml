@@ -4,26 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="411dp"
-        android:layout_height="731dp"
-        android:layout_alignParentEnd="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.q20.projectsummer.ui.AboutUsActivity">
 
         <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
-            android:layout_width="411dp"
-            android:layout_height="731dp">
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
 
             <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_programmer_title"
-                android:layout_width="411dp"
+                android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:maxLines="1"
                 android:text="@string/programmers_title"
@@ -34,9 +28,9 @@
 
             <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_programmer_hosein"
-                android:layout_width="411dp"
+                android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:maxLines="1"
                 android:text="@string/programmer_hosein"
                 android:textAlignment="center"
@@ -44,89 +38,102 @@
                 android:textSize="@dimen/text_size_information" />
 
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
-                android:layout_width="411dp"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:id="@+id/text_view_programmer_mohammad"
+                android:layout_width="205dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="45dp"
+                android:maxLines="1"
+                android:text="@string/programmer_mohammad"
+                android:textAlignment="center"
+                android:textColor="@color/colorA17"
+                android:textSize="@dimen/text_size_information" />
 
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                    android:id="@+id/text_view_programmer_mohammad"
-                    android:layout_width="200dp"
-                    android:layout_height="20dp"
-                    android:layout_weight="1"
-                    android:maxLines="1"
-                    android:text="@string/programmer_mohammad"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorA17"
-                    android:textSize="@dimen/text_size_information" />
-
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                    android:id="@+id/text_view_programmer_alireza"
-                    android:layout_width="200dp"
-                    android:layout_height="20dp"
-                    android:layout_weight="1"
-                    android:maxLines="1"
-                    android:text="@string/programmer_alireza"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorA17"
-                    android:textSize="@dimen/text_size_information" />
-            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
-
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:id="@+id/text_view_programmer_alireza"
+                android:layout_width="205dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="205dp"
+                android:layout_marginTop="45dp"
+                android:maxLines="1"
+                android:text="@string/programmer_alireza"
+                android:textAlignment="center"
+                android:textColor="@color/colorA17"
+                android:textSize="@dimen/text_size_information" />
 
             <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_designer_title"
-                android:layout_width="411dp"
+                android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="65dp"
                 android:maxLines="1"
                 android:text="@string/designers_title"
                 android:textAlignment="center"
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_title" />
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
-                android:layout_width="411dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp">
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:id="@+id/text_view_design_atena"
+                android:layout_width="205dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="90dp"
+                android:maxLines="1"
+                android:text="@string/designers_atena"
+                android:textAlignment="center"
+                android:textColor="@color/colorA17"
+                android:textSize="@dimen/text_size_information" />
 
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                    android:id="@+id/text_view_design_atena"
-                    android:layout_width="200dp"
-                    android:layout_height="20dp"
-                    android:layout_weight="1"
-                    android:maxLines="1"
-                    android:text="@string/designers_atena"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorA17"
-                    android:textSize="@dimen/text_size_information" />
 
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                    android:id="@+id/text_view_designer_mammad"
-                    android:layout_width="200dp"
-                    android:layout_height="20dp"
-                    android:layout_weight="1"
-                    android:maxLines="1"
-                    android:text="@string/designers_mammad"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorA17"
-                    android:textSize="@dimen/text_size_information" />
-            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:id="@+id/text_view_designer_mammad"
+                android:layout_width="205dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="205dp"
+                android:layout_marginTop="90dp"
+                android:maxLines="1"
+                android:text="@string/designers_mammad"
+                android:textAlignment="center"
+                android:textColor="@color/colorA17"
+                android:textSize="@dimen/text_size_information" />
+
 
             <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_special_thanks_title"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="25dp"
+                android:layout_marginTop="110dp"
                 android:maxLines="1"
                 android:text="@string/special_thanks_title"
                 android:textAlignment="center"
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_title" />
 
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:layout_width="205dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="135dp"
+                android:maxLines="1"
+                android:text="@string/special_thanks_2"
+                android:textAlignment="center"
+                android:textColor="@color/colorA17"
+                android:textSize="@dimen/text_size_information" />
+
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:layout_width="205dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="205dp"
+                android:layout_marginTop="135dp"
+                android:maxLines="1"
+                android:text="@string/special_thanks_1"
+                android:textAlignment="center"
+                android:textColor="@color/colorA17"
+                android:textSize="@dimen/text_size_information" />
+
             <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_thanks_title"
-                android:layout_width="411dp"
+                android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="155dp"
                 android:maxLines="1"
                 android:text="@string/thanks_title"
                 android:textAlignment="center"
@@ -135,8 +142,10 @@
 
             <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_thanks"
-                android:layout_width="411dp"
+                android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="180dp"
                 android:maxLines="1"
                 android:text="@string/thanks"
                 android:textAlignment="center"
@@ -144,32 +153,6 @@
                 android:textSize="@dimen/text_size_information" />
 
         </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveScrollView>
-
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
-        android:layout_width="411dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-            android:layout_width="200dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:maxLines="1"
-            android:text="@string/special_thanks_1"
-            android:textAlignment="center"
-            android:textColor="@color/colorA17"
-            android:textSize="@dimen/text_size_information" />
-
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-            android:layout_width="200dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:maxLines="1"
-            android:text="@string/special_thanks_2"
-            android:textAlignment="center"
-            android:textColor="@color/colorA17"
-            android:textSize="@dimen/text_size_information" />
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
 </RelativeLayout>

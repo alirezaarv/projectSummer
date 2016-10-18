@@ -24,7 +24,6 @@ public class ScreenDetails {
         display.getRealSize(size);
         pixelWidth = size.x;
         pixelHeight = size.y;
-
     }
 
     public static float px2Dp(Context context,int px) {

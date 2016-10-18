@@ -17,6 +17,9 @@ public class PixelDimensions {
     private float dpW;
     private float dpH;
 
+    private float xRatio;
+    private float yRatio;
+
     public PixelDimensions() {
     }
 
@@ -64,31 +67,46 @@ public class PixelDimensions {
 
         ResponsiveView responsiveView = null;
         float screenDPW = 0, screenDPH = 0, screenPXW = 0, screenPXH = 0;
+
+        float minRatio = Math.min((float) ScreenDetails.pixelWidth / (float) ScreenDetails.DP_WIDTH, (float) ScreenDetails.pixelHeight/(float) ScreenDetails.DP_HEIGHT);
+
         try {
             responsiveView = (ResponsiveView) parent;
             screenDPW = responsiveView.getPixelDimensions().dpW;
             screenDPH = responsiveView.getPixelDimensions().dpH;
             screenPXW = responsiveView.getPixelDimensions().width;
             screenPXH = responsiveView.getPixelDimensions().height;
+            xRatio = responsiveView.getPixelDimensions().xRatio;
+            yRatio = responsiveView.getPixelDimensions().yRatio;
+
         } catch (Exception e) {
             screenDPW = ScreenDetails.DP_WIDTH;
             screenDPH = ScreenDetails.DP_HEIGHT;
             screenPXW = ScreenDetails.pixelWidth;
             screenPXH = ScreenDetails.pixelHeight;
+            xRatio = screenPXW / screenDPW;
+            yRatio = screenPXH / screenDPH;
         }
 
 
-        float minRatio = Math.min((float) ScreenDetails.pixelWidth / (float) ScreenDetails.DP_WIDTH, (float) ScreenDetails.pixelHeight/(float) ScreenDetails.DP_HEIGHT);
-        float xRatioRatio =  screenPXW / screenDPW / minRatio;
-        float yRatioRatio =  screenPXH / screenDPH / minRatio;
 
-        dpW = (dpW < 0) ? (screenDPW - dpX) * xRatioRatio: dpW;//this is magic, do not touch
-        dpH = (dpH < 0) ? (screenDPH - dpY) * yRatioRatio: dpH;
+        if (dpW < 0) {
+            dpW = screenDPW - dpX;
+            this.width = Math.round(dpW * xRatio);
+        } else
+            this.width = Math.round( dpW * minRatio);
 
-        this.x = (int) ((dpX + dpW / 2 / xRatioRatio)/ screenDPW * screenPXW);
-        this.y = (int) ((dpY + dpH / 2 / yRatioRatio) / screenDPH * screenPXH);
-        this.width = (int) ( dpW * minRatio);
-        this.height = (int) ( dpH * minRatio);
+        if (dpH < 0) {
+            dpH = screenDPH - dpY;
+            this.height = Math.round( dpH * yRatio);
+        } else
+            this.height = Math.round( dpH * minRatio);
+
+
+        dpH = (dpH < 0) ? (screenDPH - dpY) : dpH;
+
+        this.x = Math.round((dpX + dpW / 2 ) * xRatio);
+        this.y = Math.round((dpY + dpH / 2 ) * yRatio);
         this.x -= this.width/2;
         this.y -= this.height/2;
     }
