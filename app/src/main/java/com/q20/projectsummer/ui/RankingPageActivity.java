@@ -6,9 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
-public class RankingPageActivity extends AppCompatActivity {
+public class RankingPageActivity extends CustomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,11 +5,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorA7"
-    android:orientation="vertical"
     tools:context="com.q20.projectsummer.ui.RegisterPageActivity">
 
 
-    <FrameLayout
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveFrameLayout
         android:id="@+id/register_page_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

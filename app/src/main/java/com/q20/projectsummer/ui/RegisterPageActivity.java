@@ -10,9 +10,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
-public class RegisterPageActivity extends AppCompatActivity {
+public class RegisterPageActivity extends CustomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

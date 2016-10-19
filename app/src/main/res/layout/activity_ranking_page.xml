@@ -3,55 +3,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/colorPrimary"
     tools:context="com.q20.projectsummer.ui.RankingPageActivity">
 
-    <LinearLayout
-        android:id="@+id/ranking_page_upper_buttons_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <com.q20.projectsummer.ui.ButtonsWithIrsansFont
-            android:layout_width="0dp"
-            android:layout_height="@dimen/ranking_page_buttons_height_size"
-            android:layout_weight="1.0"
-            android:id="@+id/ranking_page_weekly_button"
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:id="@+id/ranking_page_weekly_button"
+        android:layout_width="121dp"
+        android:layout_height="@dimen/ranking_page_buttons_height_size"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/red_buttons_relative_layout_shape"
+        android:gravity="center"
+        android:onClick="onWeekButtonClicked">
+
+        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            android:layout_width="121dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:maxLines="1"
             android:text="@string/weekbest"
-            android:textSize="10sp"
-            android:onClick="onWeekButtonClicked"
-            android:layout_margin="@dimen/ranking_page_buttons_margins_size"
-            android:background="@drawable/ranking_page_buttons_shape"/>
-        <com.q20.projectsummer.ui.ButtonsWithIrsansFont
-            android:layout_width="0dp"
-            android:layout_height="@dimen/ranking_page_buttons_height_size"
-            android:layout_weight="1.0"
-            android:id="@+id/ranking_page_month_button"
+            android:textSize="@dimen/text_size_medium" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:id="@+id/ranking_page_month_button"
+        android:layout_width="121dp"
+        android:layout_height="@dimen/ranking_page_buttons_height_size"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ranking_page_buttons_shape"
+        android:gravity="center"
+        android:onClick="onMonthButtonClicked">
+
+        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            android:layout_width="121dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:maxLines="1"
             android:text="@string/monthbest"
-            android:textSize="15sp"
-            android:onClick="onMonthButtonClicked"
-            android:layout_margin="@dimen/ranking_page_buttons_margins_size"
-            android:background="@drawable/ranking_page_buttons_shape"/>
-        <com.q20.projectsummer.ui.ButtonsWithIrsansFont
-            android:layout_width="0dp"
-            android:layout_height="@dimen/ranking_page_buttons_height_size"
-            android:layout_weight="1.0"
-            android:id="@+id/ranking_page_around_me_button"
+            android:textSize="@dimen/text_size_medium" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:id="@+id/ranking_page_around_me_button"
+        android:layout_width="121dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="274dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ranking_page_buttons_shape"
+        android:gravity="center"
+        android:onClick="onAroundButtonClicked">
+
+        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            android:layout_width="121dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:maxLines="1"
             android:text="@string/aroundme"
-            android:textSize="@dimen/buttons_text_size"
-            android:onClick="onAroundButtonClicked"
-            android:layout_margin="@dimen/ranking_page_buttons_margins_size"
-            android:background="@drawable/ranking_page_buttons_shape"/>
+            android:textSize="30sp" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    </LinearLayout>
 
-    <FrameLayout
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveFrameLayout
         android:id="@+id/ranking_page_fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/ranking_page_upper_buttons_layout"/>
+        android:layout_width="379dp"
+        android:layout_height="643dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="72dp" />
 </RelativeLayout>
