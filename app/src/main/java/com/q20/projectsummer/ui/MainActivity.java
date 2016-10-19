@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import com.q20.projectsummer.R;
+import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 import com.q20.projectsummer.utilities.Settings;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -26,9 +27,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ScreenDetails.getScreenDimensions(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         main_fab = (ImageButton) findViewById(R.id.main_fab);
         share_fab = (ImageButton) findViewById(R.id.share_fab);
         mute_fab = (ImageButton) findViewById(R.id.mute_fab);
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         RoundedImageView mainPlayButton = (RoundedImageView) findViewById(R.id.main_play_button);
         RoundedImageView questionButton = (RoundedImageView) findViewById(R.id.view);
         RoundedImageView rankingButton = (RoundedImageView) findViewById(R.id.view3);
-        RoundedImageView informationButton = (RoundedImageView) findViewById(R.id.view2);
+        RoundedImageView informationButton = (RoundedImageView) findViewById(R.id.view2);*/
     }
 
     //when user click on new game local btn

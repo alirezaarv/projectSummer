@@ -62,5 +62,5 @@
     <dimen name="text_size_large">36sp</dimen>
     <dimen name="text_size_medium">24sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
-
+    <dimen name="main_padding">8dp</dimen>
 </resources>

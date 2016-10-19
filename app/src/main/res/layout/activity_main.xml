@@ -1,16 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:padding="@dimen/main_padding"
     tools:context=".ui.MainActivity">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveTextView
-        android:layout_width="155dp"
-        android:layout_height="25dp"
-        android:textSize="@dimen/text_size_large"
-        />
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="147dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="1"
+        android:text="نام کاربر"
+        android:textAlignment="center"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/text_size_large" />
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="73.5dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="81.5dp"
+        android:layout_marginTop="52dp"
+        android:maxLines="1"
+        android:text="امتیاز"
+        android:textAlignment="center"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/text_size_medium" />
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="73.5dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="52dp"
+        android:maxLines="1"
+        android:text="۱۲۱۲۱۲"
+        android:textAlignment="center"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/text_size_medium" />
+
+
+
 
 </RelativeLayout>
