@@ -2,6 +2,7 @@ package com.q20.projectsummer.ResponsiveViews;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
@@ -29,6 +30,14 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ResponsiveTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+
+    public void changeFont(String fontName){
+        if (!isInEditMode()) {
+            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), fontName);
+            setTypeface(tf);
+        }
     }
 
     public PixelDimensions getPixelDimensions() {

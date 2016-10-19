@@ -63,7 +63,7 @@ public class ResponsiveAutoResizeTextView extends ResponsiveTextView {
 
     private float mSpacingAdd = 0.0f;
 
-    private float mMinTextSize = 20;
+    private float mMinTextSize = 10;
 
     private int mWidthLimit;
 
