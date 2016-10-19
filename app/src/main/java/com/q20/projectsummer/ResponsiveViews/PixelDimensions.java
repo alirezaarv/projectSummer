@@ -98,7 +98,7 @@ public class PixelDimensions {
             wRatio = Math.min (parentWRatio, parentHRatio);
 
         if (dpH < 0) {
-            dpH = screenDPW - dpY;
+            dpH = screenDPH - dpY;
             hRatio = parentHRatio;
         }
         else
