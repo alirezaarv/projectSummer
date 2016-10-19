@@ -1,68 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     android:background="@color/colorA7"
     tools:context="com.q20.projectsummer.ui.ProfileImageActivity">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="105dp"
+        android:layout_height="105dp"
         android:layout_gravity="center"
-        android:padding="@dimen/profile_image_layouts_padding_size"
+        android:layout_marginLeft="153dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/profile_image_images_layout_shape">
-        <ImageView
+
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
             android:id="@+id/profile_image_page_main_image_image_view"
             android:layout_width="@dimen/profile_image_page_image_size"
             android:layout_height="@dimen/profile_image_page_image_size"
+            android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:src="@drawable/char_m_40"
-            android:layout_gravity="center"/>
-    </RelativeLayout>
+            android:src="@drawable/char_m_40" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_image_text"
-        android:textSize="@dimen/total_recycler_text_size"
+        android:layout_width="379dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="129dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/colorA17"/>
+        android:text="@string/profile_image_text"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/total_recycler_text_size" />
 
     <android.support.v4.view.ViewPager
-        android:layout_width="wrap_content"
         android:id="@+id/profile_page_view_pager"
-        android:layout_height="0dp"
-        android:background="@color/colorA7"
-        android:padding="10dp"
-        android:layout_weight="1.0"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_width="379dp"
+        android:layout_height="460dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="170dp"
+        android:background="@color/colorA7" />
 
     <com.pixelcan.inkpageindicator.InkPageIndicator
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/profile_image_indicator"
-        app:pageIndicatorColor="@color/colorA20"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_width="411dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="630dp"
+        app:pageIndicatorColor="@color/colorA20" />
 
-<!--    <com.anton46.stepsview.StepsView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/steps_view"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="20dp"></com.anton46.stepsview.StepsView>
--->
-</LinearLayout>
+    <!--    <com.anton46.stepsview.StepsView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/steps_view"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"></com.anton46.stepsview.StepsView>
+    -->
+</RelativeLayout>

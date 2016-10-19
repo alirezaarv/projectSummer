@@ -4,10 +4,11 @@ import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
 
-public class FindRivalActivity extends AppCompatActivity {
+public class FindRivalActivity extends CustomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
