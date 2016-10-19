@@ -42,6 +42,30 @@
         android:textSize="@dimen/text_size_medium" />
 
 
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveProgressBar
+        app:donut_background_color="@color/transparent"
+        app:donut_finished_color="@color/colorA14"
+        app:donut_unfinished_color="@color/colorPrimaryDark"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="55.5dp"
+        android:layout_marginTop="217dp" />
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="274dp"
+        android:layout_height="274dp"
+        android:layout_marginLeft="68.5dp"
+        android:layout_marginTop="228.5dp"
+        android:background="@drawable/btn_circle"
+        android:backgroundTint="@color/colorA13">
+
+        <com.q20.projectsummer.Custom.ResponsiveRoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/main_play" />
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
 
 
 </RelativeLayout>

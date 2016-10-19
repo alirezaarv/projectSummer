@@ -14,11 +14,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 import com.q20.projectsummer.utilities.Settings;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends CustomActivity implements View.OnClickListener{
 
     private Animation fab_open, fab_close, rotate_forward, rotate_backward, zoom_in, zoom_out
             , bounce;
@@ -27,8 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ScreenDetails.getScreenDimensions(this);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 /*
