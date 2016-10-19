@@ -20,6 +20,9 @@ public class PixelDimensions {
     private float xRatio;
     private float yRatio;
 
+    private float wRatio;
+    private float hRatio;
+
     public PixelDimensions() {
     }
 
@@ -64,6 +67,53 @@ public class PixelDimensions {
     }
 
     public void setFromDp(View parent) {
+        float screenDPW, screenDPH, screenPXW, screenPXH, parentWRatio, parentHRatio;
+
+        try {
+            ResponsiveView responsiveView = (ResponsiveView) parent;
+            screenDPW = responsiveView.getPixelDimensions().dpW;
+            screenDPH = responsiveView.getPixelDimensions().dpH;
+            screenPXW = responsiveView.getPixelDimensions().width;
+            screenPXH = responsiveView.getPixelDimensions().height;
+
+            parentWRatio = responsiveView.getPixelDimensions().wRatio;
+            parentHRatio = responsiveView.getPixelDimensions().hRatio;
+
+
+        } catch (Exception e) {
+            screenDPW = ScreenDetails.DP_WIDTH;
+            screenDPH = ScreenDetails.DP_HEIGHT;
+            screenPXW = ScreenDetails.pixelWidth;
+            screenPXH = ScreenDetails.pixelHeight;
+
+            parentWRatio = screenPXW / screenDPW;
+            parentHRatio = screenPXH / screenDPH;
+        }
+
+        if (dpW < 0) {
+            dpW = screenDPW - dpX;
+            wRatio = parentWRatio;
+        }
+        else
+            wRatio = Math.min (parentWRatio, parentHRatio);
+
+        if (dpH < 0) {
+            dpH = screenDPW - dpY;
+            hRatio = parentHRatio;
+        }
+        else
+            hRatio = Math.min (parentWRatio, parentHRatio);
+
+
+        this.width = Math.round(dpW * wRatio);
+        this.height = Math.round(dpH * hRatio);
+        this.x = Math.round((dpX + dpW / 2 ) * parentWRatio);
+        this.y = Math.round((dpY + dpH / 2 ) * parentHRatio);
+        this.x -= this.width/2;
+        this.y -= this.height/2;
+    }
+
+    public void setFromDpOld(View parent) {
 
         ResponsiveView responsiveView = null;
         float screenDPW = 0, screenDPH = 0, screenPXW = 0, screenPXH = 0;
@@ -79,7 +129,6 @@ public class PixelDimensions {
             xRatio = responsiveView.getPixelDimensions().xRatio;
             yRatio = responsiveView.getPixelDimensions().yRatio;
             minRatio = Math.min(screenPXW/screenDPW, screenPXH/screenDPH);
-
         } catch (Exception e) {
             screenDPW = ScreenDetails.DP_WIDTH;
             screenDPH = ScreenDetails.DP_HEIGHT;
