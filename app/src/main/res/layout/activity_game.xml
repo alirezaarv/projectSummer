@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ui.GameActivity">
+    tools:context=".ui.GameActivity"
+    android:id="@+id/parent_layout">
 
     <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
         android:layout_width="64dp"
@@ -122,5 +123,5 @@
 
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    
+
 </RelativeLayout>

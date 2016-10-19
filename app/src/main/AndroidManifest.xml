@@ -16,23 +16,21 @@
             android:name=".ui.PackSelectorActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.AboutUsActivity"></activity>
-        <activity android:name=".ui.RankingPageActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.RankingPageActivity" />
         <activity android:name=".ui.ProfileImageActivity" >
+
 
         </activity>
         <activity android:name=".ui.RegisterPageActivity">
 
         </activity>
         <activity android:name=".ui.GameActivity" >
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ui.FindRivalActivity" >
-
         </activity>
         <activity android:name=".ui.TrophyPageActivity" />
     </application>
