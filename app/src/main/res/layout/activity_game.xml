@@ -1,745 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ui.GameActivity">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_image_rounded_layout_shape"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/char_f_15" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="right"
-                android:orientation="vertical">
-
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:text="محمد مهدی"
-                    android:textColor="@color/colorA17"
-                    android:textDirection="rtl"
-                    android:textSize="30sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:orientation="horizontal">
-
-                    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:text="۳۲۲۴"
-                        android:textColor="@color/colorA17"
-                        android:textDirection="rtl"
-                        android:textSize="15sp" />
-
-                    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:paddingRight="@dimen/main_menu_padding_right_left"
-                        android:text="امتیاز : "
-                        android:textColor="@color/colorA17"
-                        android:textDirection="rtl"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="right"
-                android:orientation="vertical">
-
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:text="محمد مهدی"
-                    android:textColor="@color/colorA17"
-                    android:textDirection="rtl"
-                    android:textSize="30sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:orientation="horizontal">
-
-                    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:text="۳۲۲۴"
-                        android:textColor="@color/colorA17"
-                        android:textDirection="rtl"
-                        android:textSize="15sp" />
-
-                    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:paddingRight="@dimen/main_menu_padding_right_left"
-                        android:text="امتیاز : "
-                        android:textColor="@color/colorA17"
-                        android:textDirection="rtl"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_image_rounded_layout_shape"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/char_f_15" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/profile_image_rounded_layout_shape"
         android:gravity="center">
+
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/char_m_40" />
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="82dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="1"
+        android:text="نام کاربری"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/text_size_small" />
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="41dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="42dp"
+        android:text="امتیاز"
+        android:textColor="@color/colorA17" />
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="82dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="1"
+        android:text="نام کاربری"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/text_size_small" />
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="339dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/profile_image_rounded_layout_shape"
+        android:gravity="center">
+
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/char_m_40" />
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30.5dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/btn_shape"
+        android:backgroundTint="@color/colorA1"
+        android:maxLines="1"
+        android:text="توضیح کلمه"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_medium" />
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30.5dp"
+        android:layout_marginTop="118dp"
+        android:background="@drawable/btn_shape"
+        android:backgroundTint="@color/colorA13"
+        android:maxLines="1"
+        android:text="سوال قبلی"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_medium" />
+
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30.5dp"
+        android:layout_marginTop="156dp"
+        android:maxLines="1"
+        android:text="صورت سوال"
+        android:textAlignment="center"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/text_size_medium" />
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="135.5dp"
+        android:layout_marginTop="194.5dp"
+        android:background="@drawable/btn_circle"
+        android:backgroundTint="@color/colorA13">
 
         <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:text="توضیح کلمه: در طبیعت یافت میشه."
-            android:textAlignment="center"
-            android:textColor="@color/colorA17"
-            android:textSize="21sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:background="@drawable/btn_shape"
-        android:backgroundTint="@color/colorA4"
-        android:gravity="center">
-
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="سوال قبلی"
-            android:textAlignment="center"
-            android:textColor="@color/colorA17"
-            android:textSize="21sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="صورت سوال؟"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="بپرس"
             android:textAlignment="center"
-            android:textColor="@color/colorA17"
-            android:textSize="21sp" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_large" />
 
-    </LinearLayout>
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
-            android:id="@+id/btn_ask"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@drawable/btn_circle"
-            android:gravity="center">
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="بپرس"
-                android:textColor="@color/colorPrimary"
-                android:textSize="36sp" />
-
-        </LinearLayout>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center">
-
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
-
-
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:minHeight="70dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/letter_u_9"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_8"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_7"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_6"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_5"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_4"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_u_1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/letter_d_9"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_8"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_7"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_6"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_5"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_4"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-            <Button
-                android:id="@+id/letter_d_1"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="4dp"
-                android:background="@drawable/btn_circle"
-                android:backgroundTint="@color/btn_letter"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="21sp" />
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|center"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:paddingRight="8dp"
-            android:paddingLeft="8dp"
-            android:paddingTop="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/keyboard_background"
-            android:backgroundTint="@color/colorA17"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/keyboard_1_8"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/keyboard_1_7"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_1_6"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_1_5"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_1_4"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_1_3"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_1_2"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_1_1"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/keyboard_2_8"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/keyboard_2_7"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_2_6"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_2_5"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_2_4"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_2_3"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_2_2"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_2_1"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/keyboard_3_8"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/keyboard_3_7"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_3_6"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_3_5"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_3_4"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_3_3"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_3_2"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-                <Button
-                    android:id="@+id/keyboard_3_1"
-                    android:layout_width="@dimen/keyboard_btn_size"
-                    android:layout_height="@dimen/keyboard_btn_size"
-                    android:backgroundTint="@color/btn_keyboard"
-                    android:text="ظ"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+    
+</RelativeLayout>

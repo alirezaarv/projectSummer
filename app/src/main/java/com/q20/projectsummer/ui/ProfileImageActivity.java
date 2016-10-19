@@ -6,13 +6,14 @@ import android.support.v4.view.ViewPager;
 
 import com.anton46.stepsview.StepsView;
 import com.pixelcan.inkpageindicator.InkPageIndicator;
+import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 import com.q20.projectsummer.ui.Adapters.ProfileImageFragmentAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileImageActivity extends AppCompatActivity {
+public class ProfileImageActivity extends CustomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

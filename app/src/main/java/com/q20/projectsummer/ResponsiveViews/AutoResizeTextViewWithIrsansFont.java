@@ -6,24 +6,18 @@ import android.util.AttributeSet;
 public class AutoResizeTextViewWithIrsansFont extends ResponsiveAutoResizeTextView {
     public AutoResizeTextViewWithIrsansFont(Context context) {
         super(context);
-        changeFont();
+        changeFont("irsans.ttf");
     }
 
     public AutoResizeTextViewWithIrsansFont(Context context, AttributeSet attrs) {
         super(context, attrs);
-        changeFont();
+        changeFont("irsans.ttf");
     }
 
     public AutoResizeTextViewWithIrsansFont(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        changeFont();
+        changeFont("irsans.ttf");
     }
 
-    public void changeFont(){
-        if (!isInEditMode()) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "irsans.ttf");
-            setTypeface(tf);
-        }
-    }
 
 }
