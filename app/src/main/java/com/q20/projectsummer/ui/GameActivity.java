@@ -16,10 +16,16 @@ import java.util.Random;
 
 public class GameActivity extends CustomActivity implements View.OnClickListener {
 
+    private int maxRow = 3;
+    private int maxColumn = 11;
+
+
   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+
     }
 
     @Override
@@ -27,6 +33,8 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
 
     }
 
+    private void creatKeyboard(){
 
+    }
 
 }

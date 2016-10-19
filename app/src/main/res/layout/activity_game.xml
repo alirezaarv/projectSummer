@@ -103,10 +103,10 @@
         android:textSize="@dimen/text_size_medium" />
 
     <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginLeft="73.5dp"
-        android:layout_marginTop="233.5dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="135.5dp"
+        android:layout_marginTop="194.5dp"
         android:background="@drawable/btn_circle"
         android:backgroundTint="@color/colorA13">
 
@@ -122,4 +122,5 @@
 
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
+    
 </RelativeLayout>
