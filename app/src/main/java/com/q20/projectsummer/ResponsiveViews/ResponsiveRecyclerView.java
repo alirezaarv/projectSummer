@@ -44,11 +44,11 @@ public class ResponsiveRecyclerView extends RecyclerView implements ResponsiveVi
     }
 
     public void updateDimensions(){
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(pixelDimensions.getWidth(), pixelDimensions.getHeight());
-        params.leftMargin = pixelDimensions.getX();
-        params.topMargin = pixelDimensions.getY();
-
-        setLayoutParams(params);
+        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
+        layoutParams.width = pixelDimensions.getWidth();
+        layoutParams.height = pixelDimensions.getHeight();
+        layoutParams.leftMargin = pixelDimensions.getX();
+        layoutParams.topMargin = pixelDimensions.getY();
     }
 
     @Override
