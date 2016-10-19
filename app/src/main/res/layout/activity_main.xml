@@ -173,5 +173,4 @@
             android:src="@drawable/settings" />
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-
 </RelativeLayout>
