@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
+import java.nio.BufferUnderflowException;
 import java.util.Random;
 
 /**
@@ -34,7 +36,7 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
     }
 
     private void creatKeyboard(){
-
+        RelativeLayout relativeLayout[];
     }
 
 }
