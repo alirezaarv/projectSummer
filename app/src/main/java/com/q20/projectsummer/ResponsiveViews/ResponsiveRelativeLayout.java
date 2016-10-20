@@ -22,7 +22,6 @@ public class ResponsiveRelativeLayout extends RelativeLayout implements Responsi
     private float polarTheta=0;
     private boolean usePolar = false;
 
-
     public ResponsiveRelativeLayout(Context context) {
         super(context);
     }

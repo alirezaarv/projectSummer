@@ -1,90 +1,95 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:background="@drawable/register_fragment_shape"
-    android:orientation="vertical"
     tools:context="com.q20.projectsummer.ui.RegisterChooseProfileImageFragment">
 
 
-        <LinearLayout
-            android:layout_width="@dimen/register_main_profile_image_shape"
-            android:layout_height="@dimen/register_main_profile_image_shape"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/register_image_veiw_shape">
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="@dimen/register_main_profile_image_shape"
+        android:layout_height="@dimen/register_main_profile_image_shape"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="157dp"
+        android:background="@drawable/register_image_veiw_shape">
 
-            <ImageView
-                android:id="@+id/profile_image"
-                android:tag="@drawable/char_m_40"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:src="@drawable/char_m_40" />
-        </LinearLayout>
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/char_m_40"
+            android:tag="@drawable/char_m_40" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="@string/choose_profile_image"
-            android:textSize="@dimen/register_texts_font_size"
-            android:textColor="@color/colorA17"
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="309dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/choose_profile_image"
+        android:textColor="@color/colorA17"
+        android:textSize="@dimen/register_texts_font_size" />
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="381dp"
+        android:background="@drawable/profile_image_images_layout_shape"
+        android:gravity="center">
+
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:layout_gravity="center"/>
+            android:onClick="onMaleRegisterProfileImageClicked"
+            android:src="@drawable/char_m_40" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:gravity="center">
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="381dp"
+        android:background="@drawable/profile_image_images_layout_shape"
+        android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_image_images_layout_shape"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:gravity="center">
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onFemaleRegisterProfileImageClicked"
+            android:src="@drawable/char_f_15" />
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/char_m_40"
-                    android:onClick="onMaleRegisterProfileImageClicked"/>
-            </LinearLayout>
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="513dp"
+        android:background="@drawable/ranking_page_buttons_shape"
+        android:onClick="onChooseProfileNextPageClicked" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_image_images_layout_shape"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:gravity="center">
+    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="518dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/next"
+        android:textSize="@dimen/buttons_text_size" />
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/char_f_15"
-                    android:onClick="onFemaleRegisterProfileImageClicked"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <com.q20.projectsummer.ui.ButtonsWithIrsansFont
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            android:textSize="@dimen/buttons_text_size"
-            android:layout_gravity="center"
-            android:background="@drawable/ranking_page_buttons_shape"
-            android:onClick="onChooseProfileNextPageClicked"/>
-
-</LinearLayout>
+</RelativeLayout>
