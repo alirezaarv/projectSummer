@@ -62,4 +62,12 @@
         <attr name="PolarCoordTheta"/>
         <attr name="UsePolar"/>
     </declare-styleable>
+
+    <declare-styleable name="ResponsiveEditText">
+        <attr name="PolarCoordCenterX"/>
+        <attr name="PolarCoordCenterY"/>
+        <attr name="PolarCoordRad"/>
+        <attr name="PolarCoordTheta"/>
+        <attr name="UsePolar"/>
+    </declare-styleable>
 </resources>
