@@ -1,65 +1,70 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:orientation="vertical"
     android:background="@drawable/register_fragment_shape"
     tools:context="com.q20.projectsummer.ui.RegisterChooseUserNameFragment">
 
-        <LinearLayout
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
             android:layout_width="@dimen/register_main_profile_image_shape"
             android:layout_height="@dimen/register_main_profile_image_shape"
-            android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/register_image_veiw_shape">
+            android:background="@drawable/register_image_veiw_shape"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="125dp">
 
-            <ImageView
+            <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
                 android:id="@+id/register_username_profile_image"
                 android:tag="@drawable/char_m_40"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:src="@drawable/char_m_40"/>
-        </LinearLayout>
+                android:src="@drawable/char_m_40"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
         <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:maxLines="1"
             android:text="@string/choose_user_name"
             android:textSize="@dimen/register_texts_font_size"
             android:textColor="@color/colorA17"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="317dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"/>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <EditText
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveEditText
             android:id="@+id/register_username_page_edit_text"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:inputType="text"
             android:hint="@string/user_name"
-            android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/register_edit_text_shape"/>
+            android:background="@drawable/register_edit_text_shape"
+            android:layout_marginTop="373dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
 
-        <Space
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="40dp"
+            android:background="@drawable/ranking_page_buttons_shape"
+            android:onClick="onChooseUsernameClicked"
+            android:layout_marginTop="429dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"/>
 
-        <com.q20.projectsummer.ui.ButtonsWithIrsansFont
+        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="@string/next"
             android:textSize="@dimen/buttons_text_size"
-            android:layout_gravity="center"
-            android:background="@drawable/ranking_page_buttons_shape"
-            android:onClick="onChooseUsernameClicked"/>
+            android:layout_marginTop="434dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginRight="21dp"
+            android:gravity="center"/>
 
-</LinearLayout>
+</RelativeLayout>

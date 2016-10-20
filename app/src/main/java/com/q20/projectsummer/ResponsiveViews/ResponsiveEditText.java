@@ -6,30 +6,27 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+import android.widget.EditText;
 
-public class ResponsiveRelativeLayout extends RelativeLayout implements ResponsiveView {
-
-    private PixelDimensions pixelDimensions;
-
-    public ResponsiveRelativeLayout(Context context) {
+public class ResponsiveEditText extends EditText implements ResponsiveView{
+    public ResponsiveEditText(Context context) {
         super(context);
     }
 
-    public ResponsiveRelativeLayout(Context context, AttributeSet attrs) {
+    public ResponsiveEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ResponsiveRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ResponsiveEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ResponsiveRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ResponsiveEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
+
+    PixelDimensions pixelDimensions;
 
     public PixelDimensions getPixelDimensions() {
         return pixelDimensions;
@@ -59,10 +56,9 @@ public class ResponsiveRelativeLayout extends RelativeLayout implements Responsi
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if(!isInEditMode()) {
+        if (!isInEditMode()) {
             calculateDimensions();
             updateDimensions();
         }
     }
-
 }

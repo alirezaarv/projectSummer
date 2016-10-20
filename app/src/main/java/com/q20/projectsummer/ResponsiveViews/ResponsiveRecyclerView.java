@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-/**
- * Created by mohammadmahdi on 10/17/16.
- */
 public class ResponsiveRecyclerView extends RecyclerView implements ResponsiveView{
     public ResponsiveRecyclerView(Context context) {
         super(context);
