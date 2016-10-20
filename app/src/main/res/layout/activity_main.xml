@@ -124,6 +124,11 @@
         android:layout_height="46dp"
         android:layout_marginLeft="91dp"
         android:layout_marginTop="520dp"
+        app:UsePolar="true"
+        app:PolarCoordCenterX="205.5"
+        app:PolarCoordCenterY="375.5"
+        app:PolarCoordRad="200"
+        app:PolarCoordTheta="240"
         android:background="@drawable/btn_circle"
         android:backgroundTint="@color/colorA15">
 
@@ -138,6 +143,11 @@
         android:layout_height="46dp"
         android:layout_marginLeft="182.5dp"
         android:layout_marginTop="550dp"
+        app:UsePolar="true"
+        app:PolarCoordCenterX="205.5"
+        app:PolarCoordCenterY="375.5"
+        app:PolarCoordRad="200"
+        app:PolarCoordTheta="270"
         android:background="@drawable/btn_circle"
         android:backgroundTint="@color/colorA15">
 
@@ -152,6 +162,11 @@
         android:layout_height="46dp"
         android:layout_marginLeft="274dp"
         android:layout_marginTop="520dp"
+        app:UsePolar="true"
+        app:PolarCoordCenterX="205.5"
+        app:PolarCoordCenterY="375.5"
+        app:PolarCoordRad="200"
+        app:PolarCoordTheta="300"
         android:background="@drawable/btn_circle"
         android:backgroundTint="@color/colorA15">
 

@@ -2,6 +2,7 @@ package com.q20.projectsummer.ResponsiveViews;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -10,9 +11,17 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.q20.projectsummer.R;
+
 public class ResponsiveTextView extends TextView implements ResponsiveView {
 
     private PixelDimensions pixelDimensions;
+    private float polarCenterX=0;
+    private float polarCenterY=0;
+    private float polarRad=0;
+    private float polarTheta=0;
+    private boolean usePolar = false;
+
 
     public ResponsiveTextView(Context context) {
         super(context);
@@ -21,15 +30,18 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
 
     public ResponsiveTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setupPolarCoord(attrs);
     }
 
     public ResponsiveTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setupPolarCoord(attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ResponsiveTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        setupPolarCoord(attrs);
     }
 
 
@@ -44,6 +56,17 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
         return pixelDimensions;
     }
 
+    public void setupPolarCoord(AttributeSet attrs) {
+        TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveTextView, 0, 0);
+        int[] attrsRes= {R.styleable.ResponsiveTextView_PolarCoordCenterX, R.styleable.ResponsiveTextView_PolarCoordCenterY, R.styleable.ResponsiveTextView_PolarCoordRad, R.styleable.ResponsiveTextView_PolarCoordTheta, R.styleable.ResponsiveTextView_UsePolar};
+        polarCenterX = typedArray.getFloat(attrsRes[0], 0);
+        polarCenterY = typedArray.getFloat(attrsRes[1], 0);
+        polarRad = typedArray.getFloat(attrsRes[2], 0);
+        polarTheta = typedArray.getFloat(attrsRes[3], 0);
+        usePolar = typedArray.getBoolean(attrsRes[4], false);
+        typedArray.recycle();
+    }
+
     public void calculateDimensions(){
         Context context = getContext();
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) getLayoutParams();
@@ -54,7 +77,7 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
         float dpX = ScreenDetails.px2Dp(context,params.leftMargin);
         float dpY = ScreenDetails.px2Dp(context,params.topMargin);
 
-        pixelDimensions = new PixelDimensions(dpX,dpY,dpWidth,dpHeight,(View)getParent());
+        pixelDimensions = new PixelDimensions(dpX,dpY,dpWidth,dpHeight,(View)getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
     }
 
     public void updateDimensions(){
