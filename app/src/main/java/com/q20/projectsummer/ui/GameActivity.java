@@ -2,17 +2,12 @@ package com.q20.projectsummer.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
-
-import java.nio.BufferUnderflowException;
-import java.util.Random;
 
 /**
  * Created by Alireza Arvandi on 10/11/2016.
@@ -26,14 +21,22 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
     private float btnMarginSizePx;
     private float btnToMarginRatio = 10f;
     private int maxWidthPx;
-    private int heightPx;
-    private int mainMarginPx = 21;
+    private int maxHeightPx;
+    private int topMarginPx;
+    private int mainMarginPx;
+    private float keyboadToWordLettersH = 1.5f;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        maxWidthPx =Math.round(395.f/411.f * (float) ScreenDetails.pixelWidth);
+        mainMarginPx = Math.round(8.f / 411.f * (float) ScreenDetails.pixelWidth);
+        maxWidthPx = Math.round(395.f / 411.f * (float) ScreenDetails.pixelWidth);
+        //keyboard and word letters
+        maxHeightPx = Math.round(378.5f / 731.f * (float) ScreenDetails.pixelHeight);
+
+        //word letters height
 
 
         createKeyboard();
@@ -45,21 +48,25 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
     }
 
     private void createKeyboard() {
+        float keyboardHPx = ((float) maxHeightPx) * 3.f / 5.f;
+
+        float btnMarginSizeHPx = keyboardHPx / (maxRow * btnToMarginRatio + maxRow);
+        float btnSizeHPx = btnToMarginRatio * btnMarginSizeHPx;
+
+        float btnMarginSizeWPx = maxWidthPx / (maxColumn * btnToMarginRatio + maxColumn - 1);
+        btnMarginSizeWPx = Math.min(btnMarginSizeWPx, btnMarginSizeHPx);
+        float btnSizeWPx = (maxWidthPx - btnMarginSizeWPx * (maxColumn - 1)) / maxColumn;
+
+        int yPos = Math.round(ScreenDetails.pixelHeight - keyboardHPx - mainMarginPx);
+
         RelativeLayout parentLayout = (RelativeLayout) findViewById(R.id.parent_layout);
-
-        btnMarginSizePx = maxWidthPx / (maxColumn * btnToMarginRatio + maxColumn - 1);
-        btnSizePx = btnToMarginRatio * btnMarginSizePx;
-        heightPx = Math.round(maxRow * btnSizePx + (maxRow - 1) * btnMarginSizePx);
-
-        int yPos = ScreenDetails.pixelHeight - heightPx - mainMarginPx;
-
         RelativeLayout relativeLayout[] = new RelativeLayout[32];
         for (int j = 0; j < maxRow; j++) {
             int xPos = mainMarginPx;
             for (int i = 0; i < maxColumn; i++) {
 
                 relativeLayout[i] = new RelativeLayout(this);
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Math.round(btnSizePx),Math.round(btnSizePx));
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Math.round(btnSizeWPx), Math.round(btnSizeHPx));
                 params.topMargin = yPos;
                 params.leftMargin = xPos;
                 relativeLayout[i].setLayoutParams(params);
@@ -67,12 +74,11 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
 
                 parentLayout.addView(relativeLayout[i]);
 
-                xPos += btnSizePx + btnMarginSizePx;
+                xPos += btnSizeWPx + btnMarginSizeWPx;
             }
-            yPos += btnSizePx + btnMarginSizePx;
+            yPos += btnSizeHPx + btnMarginSizeHPx;
         }
-
-
     }
+
 
 }
