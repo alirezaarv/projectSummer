@@ -14,6 +14,8 @@ public class PixelDimensions {
 
     private float dpX;
     private float dpY;
+    private float dpEX;
+    private float dpEY;
     private float dpW;
     private float dpH;
 
@@ -33,16 +35,20 @@ public class PixelDimensions {
     public PixelDimensions() {
     }
 
-    public PixelDimensions(float dpX, float dpY, float dpWidth, float dpHeight, View parent) {
+    public PixelDimensions(float dpX, float dpY, float dpEX, float dpEY, float dpWidth, float dpHeight, View parent) {
         this.dpX = dpX;
         this.dpY = dpY;
+        this.dpEX = dpEX;
+        this.dpEY = dpEY;
         this.dpW = dpWidth;
         this.dpH = dpHeight;
         setFromDp(parent);
     }
-    public PixelDimensions(float dpX, float dpY, float dpWidth, float dpHeight, View parent, float polarCenterX, float polarCenterY, float polarRad, float polarTheta, boolean usePolar) {
+    public PixelDimensions(float dpX, float dpY, float dpEX, float dpEY, float dpWidth, float dpHeight, View parent, float polarCenterX, float polarCenterY, float polarRad, float polarTheta, boolean usePolar) {
         this.dpX = dpX;
         this.dpY = dpY;
+        this.dpEX = dpEX;
+        this.dpEY = dpEY;
         this.dpW = dpWidth;
         this.dpH = dpHeight;
         this.polarCenterX = polarCenterX;
@@ -90,7 +96,7 @@ public class PixelDimensions {
 
         try {
             ResponsiveView responsiveView = (ResponsiveView) parent;
-            screenDPW = responsiveView.getPixelDimensions().dpW;
+            screenDPW = responsiveView.getPixelDimensions().dpW ;
             screenDPH = responsiveView.getPixelDimensions().dpH;
             screenPXW = responsiveView.getPixelDimensions().width;
             screenPXH = responsiveView.getPixelDimensions().height;
@@ -110,14 +116,14 @@ public class PixelDimensions {
         }
 
         if (dpW < 0) {
-            dpW = screenDPW - dpX;
+            dpW = screenDPW - dpX - dpEX;
             wRatio = parentWRatio;
         }
         else
             wRatio = Math.min (parentWRatio, parentHRatio);
 
         if (dpH < 0) {
-            dpH = screenDPH - dpY;
+            dpH = screenDPH - dpY - dpEY;
             hRatio = parentHRatio;
         }
         else

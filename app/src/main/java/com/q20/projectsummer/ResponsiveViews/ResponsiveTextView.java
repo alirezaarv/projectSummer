@@ -67,17 +67,30 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
         typedArray.recycle();
     }
 
-    public void calculateDimensions(){
+    public void calculateDimensions() {
         Context context = getContext();
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) getLayoutParams();
 
-        float dpWidth = ScreenDetails.px2Dp(context,params.width);
-        float dpHeight = ScreenDetails.px2Dp(context,params.height);
+        ViewGroup.LayoutParams params = getLayoutParams();
 
-        float dpX = ScreenDetails.px2Dp(context,params.leftMargin);
-        float dpY = ScreenDetails.px2Dp(context,params.topMargin);
+        float dpX = 0;
+        float dpY = 0;
+        float dpEX = 0;
+        float dpEY = 0;
 
-        pixelDimensions = new PixelDimensions(dpX,dpY,dpWidth,dpHeight,(View)getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
+        try {
+            ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) params;
+
+            dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+            dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
+            dpEX = ScreenDetails.px2Dp(context, marginParams.bottomMargin);
+            dpEY = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+        } catch (Exception e) {
+        }
+
+        float dpWidth = ScreenDetails.px2Dp(context, params.width);
+        float dpHeight = ScreenDetails.px2Dp(context, params.height);
+
+        pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
     }
 
     public void updateDimensions(){
@@ -86,6 +99,8 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
         layoutParams.height = pixelDimensions.getHeight();
         layoutParams.leftMargin = pixelDimensions.getX();
         layoutParams.topMargin = pixelDimensions.getY();
+        layoutParams.rightMargin = 0;
+        layoutParams.bottomMargin = 0;
     }
 
     @Override
