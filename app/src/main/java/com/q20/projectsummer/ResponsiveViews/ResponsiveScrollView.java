@@ -83,13 +83,18 @@ public class ResponsiveScrollView extends ScrollView implements ResponsiveView {
     }
 
     public void updateDimensions(){
-        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = getLayoutParams();
         layoutParams.width = pixelDimensions.getWidth();
         layoutParams.height = pixelDimensions.getHeight();
-        layoutParams.leftMargin = pixelDimensions.getX();
-        layoutParams.topMargin = pixelDimensions.getY();
-        layoutParams.rightMargin = 0;
-        layoutParams.bottomMargin = 0;
+
+        try {
+            ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) layoutParams;
+            marginParams.leftMargin = pixelDimensions.getX();
+            marginParams.topMargin = pixelDimensions.getY();
+            marginParams.rightMargin = 0;
+            marginParams.bottomMargin = 0;
+        } catch (Exception e) {
+        }
     }
 
     @Override
