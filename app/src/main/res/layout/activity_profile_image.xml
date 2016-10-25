@@ -43,7 +43,7 @@
         android:layout_marginTop="170dp"
         android:background="@color/colorA7" />
 
-    <com.pixelcan.inkpageindicator.InkPageIndicator
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveInkPageIndicator
         android:id="@+id/profile_image_indicator"
         android:layout_width="411dp"
         android:layout_height="20dp"
