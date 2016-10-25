@@ -106,7 +106,7 @@
     <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="135.5dp"
+        android:layout_marginLeft="130.5dp"
         android:layout_marginTop="194.5dp"
         android:background="@drawable/btn_circle"
         android:backgroundTint="@color/colorA13">
@@ -120,6 +120,31 @@
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_large" />
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="352.5dp"
+        android:layout_marginLeft="165.5dp">
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/game_coin"/>
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="352.5dp"
+        android:layout_marginLeft="209.5dp">
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/game_coin"/>
 
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 

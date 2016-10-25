@@ -110,7 +110,8 @@
         android:layout_marginLeft="73.5dp"
         android:layout_marginTop="233.5dp"
         android:background="@drawable/btn_circle"
-        android:backgroundTint="@color/colorA13">
+        android:backgroundTint="@color/colorA13"
+        android:onClick="onNewGame">
 
         <com.q20.projectsummer.Custom.ResponsiveRoundedImageView
             android:layout_width="match_parent"

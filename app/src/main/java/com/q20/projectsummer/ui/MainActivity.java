@@ -60,6 +60,7 @@ public class MainActivity extends CustomActivity implements View.OnClickListener
         newGameDialog.setContext(this);
         //TODO check next line
         newGameDialog.show(fm, "salam");
+
     }
 
     //when user click on information btn
