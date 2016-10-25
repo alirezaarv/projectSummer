@@ -4,6 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorA3">
+    android:background="@color/colorA6">
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@color/colorA13">
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorA3">
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
 
 </RelativeLayout>

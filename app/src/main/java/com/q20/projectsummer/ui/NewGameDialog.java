@@ -23,9 +23,6 @@ public class NewGameDialog extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_new_game, container, false);
-        WindowManager.LayoutParams params = getDialog().getWindow().getAttributes();
-        params.height = 500;
-        params.width = 500;
 
         /*((ImageButton) rootView.findViewById(R.id.newGameOnline)).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -25,12 +25,6 @@ public class CustomActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -38,7 +32,14 @@ public class CustomActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+}
+
 
     @Override
     public void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
