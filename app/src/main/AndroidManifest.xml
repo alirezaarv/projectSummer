@@ -10,18 +10,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.TestResponsivityActivity"></activity>
         <activity android:name=".ui.MainActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".ui.NewGameDialog"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"></activity>
         <activity
             android:name=".ui.PackSelectorActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.AboutUsActivity"></activity>
         <activity android:name=".ui.RankingPageActivity" />
         <activity android:name=".ui.ProfileImageActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.RegisterPageActivity">
 

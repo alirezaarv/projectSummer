@@ -55,11 +55,14 @@ public class MainActivity extends CustomActivity implements View.OnClickListener
 
     //when user click on new game local btn
     public void onNewGame(View view) {
-        FragmentManager fm = getFragmentManager();
-        NewGameDialog newGameDialog = new NewGameDialog();
-        newGameDialog.setContext(this);
-        //TODO check next line
-        newGameDialog.show(fm, "salam");
+//        FragmentManager fm = getFragmentManager();
+//        NewGameDialog newGameDialog = new NewGameDialog();
+//        newGameDialog.setContext(this);
+//        //TODO check next line
+//        newGameDialog.show(fm, "salam");
+
+        Intent intent = new Intent(this, NewGameDialog.class);
+        startActivity(intent);
 
     }
 
