@@ -55,7 +55,7 @@ public class NewGameDialog extends Activity {
         setContentView(R.layout.fragment_new_game);
 
 
-        this.getWindow().getDecorView().setBackgroundColor(Color.argb(0, 0, 208, 63));
+        this.getWindow().getDecorView().setBackgroundColor(Color.argb(0, 0, 0, 0));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.height = 1920;
