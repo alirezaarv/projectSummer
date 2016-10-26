@@ -3,6 +3,7 @@ package com.q20.projectsummer.ui;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
@@ -13,8 +14,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-
-import com.q20.projectsummer.Custom.CustomDialogActivity;
 import com.q20.projectsummer.R;
 
 public class NewGameDialog extends Activity {
@@ -55,9 +54,26 @@ public class NewGameDialog extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_new_game);
 
+
+        this.getWindow().getDecorView().setBackgroundColor(Color.argb(0, 0, 208, 63));
+
         WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.height = 1000;
-        params.width = 100;
+        params.height = 1920;
+        params.width = 1080;
         this.getWindow().setAttributes(params);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+
     }
 }

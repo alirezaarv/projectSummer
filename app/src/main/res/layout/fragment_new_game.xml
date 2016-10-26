@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorA6"
+    android:background="#00000000"
     tools:context="com.q20.projectsummer.ui.NewGameDialog">
 
 
