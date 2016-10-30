@@ -5,8 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00000000"
-    tools:context="com.q20.projectsummer.ui.NewGameDialog">
+    tools:context="com.q20.projectsummer.ui.NewGameDialog"
+    android:onClick="onBackground"
+    >
 
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="311dp"
+        android:layout_height="531dp"
+        android:background="@drawable/btn_shape"
+        android:backgroundTint="@color/colorA1"
+        android:onClick="check">
+        
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:background="@drawable/title_dialog"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="center">
+
+            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="انتخاب کن"
+                android:textAlignment="center"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/colorA17"/>
+
+        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="245dp">
+
+        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
 
 </RelativeLayout>

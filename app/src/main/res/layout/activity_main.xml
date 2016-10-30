@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:padding="@dimen/main_padding"
     tools:context=".ui.MainActivity">
 
     <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
@@ -87,7 +86,7 @@
         android:rotation="270"
         app:donut_finished_color="@color/colorA14"
         app:donut_finished_stroke_width="5dp"
-        app:donut_progress="15"
+        app:donut_progress="100"
         app:donut_unfinished_color="@color/colorPrimaryDark"
         app:donut_unfinished_stroke_width="6dp" />
 
@@ -99,7 +98,7 @@
         android:rotation="270"
         app:donut_finished_color="@color/colorA6"
         app:donut_finished_stroke_width="5dp"
-        app:donut_progress="40"
+        app:donut_progress="100"
         app:donut_unfinished_color="@color/colorPrimaryDark"
         app:donut_unfinished_stroke_width="6dp" />
 

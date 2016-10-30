@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -9,7 +9,9 @@
 
     </style>
 
-    <style name="CustomDialogTheme" parent="android:Theme.Holo.Dialog.NoActionBar">
 
+    <style name="cosDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/costume_abc_dialog_material_background</item>
     </style>
+
 </resources>

@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.NewGameDialog"
-            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"></activity>
+            android:theme="@style/cosDialog"></activity>
         <activity
             android:name=".ui.PackSelectorActivity"
             android:screenOrientation="portrait" />
