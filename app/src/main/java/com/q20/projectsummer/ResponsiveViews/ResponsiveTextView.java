@@ -16,10 +16,10 @@ import com.q20.projectsummer.R;
 public class ResponsiveTextView extends TextView implements ResponsiveView {
 
     private PixelDimensions pixelDimensions;
-    private float polarCenterX=0;
-    private float polarCenterY=0;
-    private float polarRad=0;
-    private float polarTheta=0;
+    private float polarCenterX = 0;
+    private float polarCenterY = 0;
+    private float polarRad = 0;
+    private float polarTheta = 0;
     private boolean usePolar = false;
 
 
@@ -45,7 +45,7 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
     }
 
 
-    public void changeFont(String fontName){
+    public void changeFont(String fontName) {
         if (!isInEditMode()) {
             Typeface tf = Typeface.createFromAsset(getContext().getAssets(), fontName);
             setTypeface(tf);
@@ -58,7 +58,7 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
 
     public void setupPolarCoord(AttributeSet attrs) {
         TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveTextView, 0, 0);
-        int[] attrsRes= {R.styleable.ResponsiveTextView_PolarCoordCenterX, R.styleable.ResponsiveTextView_PolarCoordCenterY, R.styleable.ResponsiveTextView_PolarCoordRad, R.styleable.ResponsiveTextView_PolarCoordTheta, R.styleable.ResponsiveTextView_UsePolar};
+        int[] attrsRes = {R.styleable.ResponsiveTextView_PolarCoordCenterX, R.styleable.ResponsiveTextView_PolarCoordCenterY, R.styleable.ResponsiveTextView_PolarCoordRad, R.styleable.ResponsiveTextView_PolarCoordTheta, R.styleable.ResponsiveTextView_UsePolar};
         polarCenterX = typedArray.getFloat(attrsRes[0], 0);
         polarCenterY = typedArray.getFloat(attrsRes[1], 0);
         polarRad = typedArray.getFloat(attrsRes[2], 0);
@@ -82,8 +82,8 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
 
             dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
             dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
-            dpEX = ScreenDetails.px2Dp(context, marginParams.bottomMargin);
-            dpEY = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+            dpEX = ScreenDetails.px2Dp(context, marginParams.rightMargin);
+            dpEY = ScreenDetails.px2Dp(context, marginParams.topMargin);
         } catch (Exception e) {
         }
 
@@ -93,7 +93,7 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
         pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
     }
 
-    public void updateDimensions(){
+    public void updateDimensions() {
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
         layoutParams.width = pixelDimensions.getWidth();
         layoutParams.height = pixelDimensions.getHeight();

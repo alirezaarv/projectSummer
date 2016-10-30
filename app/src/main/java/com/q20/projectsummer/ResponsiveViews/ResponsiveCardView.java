@@ -68,8 +68,8 @@ public class ResponsiveCardView extends CardView implements ResponsiveView{
 
             dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
             dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
-            dpEX = ScreenDetails.px2Dp(context, marginParams.bottomMargin);
-            dpEY = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+            dpEX = ScreenDetails.px2Dp(context, marginParams.rightMargin);
+            dpEY = ScreenDetails.px2Dp(context, marginParams.topMargin);
         } catch (Exception e) {
         }
 

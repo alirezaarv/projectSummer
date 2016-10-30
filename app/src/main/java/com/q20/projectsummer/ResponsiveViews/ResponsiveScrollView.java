@@ -15,10 +15,10 @@ import com.q20.projectsummer.R;
 public class ResponsiveScrollView extends ScrollView implements ResponsiveView {
 
     private PixelDimensions pixelDimensions;
-    private float polarCenterX=0;
-    private float polarCenterY=0;
-    private float polarRad=0;
-    private float polarTheta=0;
+    private float polarCenterX = 0;
+    private float polarCenterY = 0;
+    private float polarRad = 0;
+    private float polarTheta = 0;
     private boolean usePolar = false;
 
 
@@ -47,7 +47,7 @@ public class ResponsiveScrollView extends ScrollView implements ResponsiveView {
 
     public void setupPolarCoord(AttributeSet attrs) {
         TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveScrollView, 0, 0);
-        int[] attrsRes= {R.styleable.ResponsiveScrollView_PolarCoordCenterX, R.styleable.ResponsiveScrollView_PolarCoordCenterY, R.styleable.ResponsiveScrollView_PolarCoordRad, R.styleable.ResponsiveScrollView_PolarCoordTheta, R.styleable.ResponsiveScrollView_UsePolar};
+        int[] attrsRes = {R.styleable.ResponsiveScrollView_PolarCoordCenterX, R.styleable.ResponsiveScrollView_PolarCoordCenterY, R.styleable.ResponsiveScrollView_PolarCoordRad, R.styleable.ResponsiveScrollView_PolarCoordTheta, R.styleable.ResponsiveScrollView_UsePolar};
         polarCenterX = typedArray.getFloat(attrsRes[0], 0);
         polarCenterY = typedArray.getFloat(attrsRes[1], 0);
         polarRad = typedArray.getFloat(attrsRes[2], 0);
@@ -71,8 +71,8 @@ public class ResponsiveScrollView extends ScrollView implements ResponsiveView {
 
             dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
             dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
-            dpEX = ScreenDetails.px2Dp(context, marginParams.bottomMargin);
-            dpEY = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+            dpEX = ScreenDetails.px2Dp(context, marginParams.rightMargin);
+            dpEY = ScreenDetails.px2Dp(context, marginParams.topMargin);
         } catch (Exception e) {
         }
 
@@ -82,7 +82,7 @@ public class ResponsiveScrollView extends ScrollView implements ResponsiveView {
         pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
     }
 
-    public void updateDimensions(){
+    public void updateDimensions() {
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
         layoutParams.width = pixelDimensions.getWidth();
         layoutParams.height = pixelDimensions.getHeight();

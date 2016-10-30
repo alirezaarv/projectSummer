@@ -7,7 +7,7 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.MainActivity">
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="147dp"
         android:layout_height="36dp"
         android:layout_marginLeft="8dp"
@@ -18,7 +18,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_large" />
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="73.5dp"
         android:layout_height="24dp"
         android:layout_marginLeft="81.5dp"
@@ -29,7 +29,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="73.5dp"
         android:layout_height="24dp"
         android:layout_marginLeft="8dp"
@@ -59,7 +59,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="347dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:onClick="onCoins">
 
         <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
             android:layout_width="match_parent"
@@ -68,7 +69,7 @@
 
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="46dp"
         android:layout_height="24dp"
         android:layout_marginLeft="347dp"

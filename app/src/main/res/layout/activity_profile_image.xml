@@ -24,7 +24,7 @@
             android:src="@drawable/char_m_40" />
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
         android:layout_width="379dp"
         android:layout_height="30dp"
         android:layout_gravity="center"

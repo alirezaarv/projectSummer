@@ -1,26 +1,52 @@
 package com.q20.projectsummer.ui;
 
-import android.app.DialogFragment;
-import android.content.Context;
+import android.app.Activity;
+
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
 import com.q20.projectsummer.R;
 
-public class BuyCoinDialog extends DialogFragment {
 
-    private Context context;
+public class BuyCoinDialog extends Activity {
 
-    public void setContext(Context context) {
-        this.context = context;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_buy_coins);
+
+
+        this.getWindow().getDecorView().setBackgroundColor(Color.argb(0, 0, 0, 0));
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.height = WindowManager.LayoutParams.MATCH_PARENT;
+        params.width = WindowManager.LayoutParams.MATCH_PARENT;
+        params.horizontalMargin = 0;
+        params.verticalMargin = 0;
+        this.getWindow().setAttributes(params);
+
     }
 
-    @Nullable
+    public void onBackground(View view){
+        finish();
+    }
+
+    public void doNothing(View view){}
+    
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_buy_coins, container, false);
-        return rootView;
+    protected void onResume() {
+        super.onResume();
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        decorView.setSystemUiVisibility(uiOptions);
+
     }
 }

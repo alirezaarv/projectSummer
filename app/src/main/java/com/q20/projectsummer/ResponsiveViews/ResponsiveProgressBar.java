@@ -10,13 +10,13 @@ import android.widget.RelativeLayout;
 import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.q20.projectsummer.R;
 
-public class ResponsiveProgressBar extends DonutProgress implements ResponsiveView{
+public class ResponsiveProgressBar extends DonutProgress implements ResponsiveView {
 
     private PixelDimensions pixelDimensions;
-    private float polarCenterX=0;
-    private float polarCenterY=0;
-    private float polarRad=0;
-    private float polarTheta=0;
+    private float polarCenterX = 0;
+    private float polarCenterY = 0;
+    private float polarRad = 0;
+    private float polarTheta = 0;
     private boolean usePolar = false;
 
 
@@ -33,6 +33,7 @@ public class ResponsiveProgressBar extends DonutProgress implements ResponsiveVi
         super(context, attrs, defStyleAttr);
         setupPolarCoord(attrs);
     }
+
     public PixelDimensions getPixelDimensions() {
         return pixelDimensions;
     }
@@ -40,7 +41,7 @@ public class ResponsiveProgressBar extends DonutProgress implements ResponsiveVi
 
     public void setupPolarCoord(AttributeSet attrs) {
         TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveProgressBar, 0, 0);
-        int[] attrsRes= {R.styleable.ResponsiveProgressBar_PolarCoordCenterX, R.styleable.ResponsiveProgressBar_PolarCoordCenterY, R.styleable.ResponsiveProgressBar_PolarCoordRad, R.styleable.ResponsiveProgressBar_PolarCoordTheta, R.styleable.ResponsiveProgressBar_UsePolar};
+        int[] attrsRes = {R.styleable.ResponsiveProgressBar_PolarCoordCenterX, R.styleable.ResponsiveProgressBar_PolarCoordCenterY, R.styleable.ResponsiveProgressBar_PolarCoordRad, R.styleable.ResponsiveProgressBar_PolarCoordTheta, R.styleable.ResponsiveProgressBar_UsePolar};
         polarCenterX = typedArray.getFloat(attrsRes[0], 0);
         polarCenterY = typedArray.getFloat(attrsRes[1], 0);
         polarRad = typedArray.getFloat(attrsRes[2], 0);
@@ -64,8 +65,8 @@ public class ResponsiveProgressBar extends DonutProgress implements ResponsiveVi
 
             dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
             dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
-            dpEX = ScreenDetails.px2Dp(context, marginParams.bottomMargin);
-            dpEY = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+            dpEX = ScreenDetails.px2Dp(context, marginParams.rightMargin);
+            dpEY = ScreenDetails.px2Dp(context, marginParams.topMargin);
         } catch (Exception e) {
         }
 
@@ -75,7 +76,7 @@ public class ResponsiveProgressBar extends DonutProgress implements ResponsiveVi
         pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
     }
 
-    public void updateDimensions(){
+    public void updateDimensions() {
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
         layoutParams.width = pixelDimensions.getWidth();
         layoutParams.height = pixelDimensions.getHeight();
@@ -97,4 +98,5 @@ public class ResponsiveProgressBar extends DonutProgress implements ResponsiveVi
             calculateDimensions();
             updateDimensions();
         }
-    }}
+    }
+}

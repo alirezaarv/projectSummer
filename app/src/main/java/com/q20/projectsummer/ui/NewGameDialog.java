@@ -5,10 +5,8 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 
 public class NewGameDialog extends Activity {
 
@@ -33,9 +31,12 @@ public class NewGameDialog extends Activity {
         finish();
     }
 
-    public void check(View view){
+    public void doNothing(View view){}
 
-    }
+    public void onOnline(View view){}
+
+    public void onOffline(View view){}
+
 
     @Override
     protected void onResume() {

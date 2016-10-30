@@ -27,7 +27,7 @@
             android:background="@color/colorA17"
             app:cardCornerRadius="10dp">
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/find_rival_card_template_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

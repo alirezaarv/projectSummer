@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="500dp">
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_programmer_title"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -26,7 +26,7 @@
                 android:textSize="@dimen/text_size_title" />
 
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_programmer_hosein"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -38,7 +38,7 @@
                 android:textSize="@dimen/text_size_information" />
 
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_programmer_mohammad"
                 android:layout_width="205dp"
                 android:layout_height="20dp"
@@ -49,7 +49,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_information" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_programmer_alireza"
                 android:layout_width="205dp"
                 android:layout_height="20dp"
@@ -61,7 +61,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_information" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_designer_title"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -72,7 +72,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_title" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_design_atena"
                 android:layout_width="205dp"
                 android:layout_height="20dp"
@@ -84,7 +84,7 @@
                 android:textSize="@dimen/text_size_information" />
 
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_designer_mammad"
                 android:layout_width="205dp"
                 android:layout_height="20dp"
@@ -97,7 +97,7 @@
                 android:textSize="@dimen/text_size_information" />
 
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_special_thanks_title"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -108,7 +108,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_title" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:layout_width="205dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="135dp"
@@ -118,7 +118,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_information" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:layout_width="205dp"
                 android:layout_height="20dp"
                 android:layout_marginLeft="205dp"
@@ -129,7 +129,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_information" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
                 android:id="@+id/text_view_thanks_title"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
@@ -140,7 +140,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_title" />
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/text_view_thanks"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"

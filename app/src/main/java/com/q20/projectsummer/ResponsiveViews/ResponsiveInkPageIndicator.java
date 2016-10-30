@@ -12,12 +12,12 @@ import com.q20.projectsummer.R;
 /**
  * Created by mohammadmahdi on 10/25/16.
  */
-public class ResponsiveInkPageIndicator extends InkPageIndicator implements ResponsiveView{
+public class ResponsiveInkPageIndicator extends InkPageIndicator implements ResponsiveView {
     private PixelDimensions pixelDimensions;
-    private float polarCenterX=0;
-    private float polarCenterY=0;
-    private float polarRad=0;
-    private float polarTheta=0;
+    private float polarCenterX = 0;
+    private float polarCenterY = 0;
+    private float polarRad = 0;
+    private float polarTheta = 0;
     private boolean usePolar = false;
 
     public ResponsiveInkPageIndicator(Context context) {
@@ -38,7 +38,7 @@ public class ResponsiveInkPageIndicator extends InkPageIndicator implements Resp
 
     public void setupPolarCoord(AttributeSet attrs) {
         TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveRecyclerView, 0, 0);
-        int[] attrsRes= {R.styleable.ResponsiveRecyclerView_PolarCoordCenterX, R.styleable.ResponsiveRecyclerView_PolarCoordCenterY, R.styleable.ResponsiveRecyclerView_PolarCoordRad, R.styleable.ResponsiveRecyclerView_PolarCoordTheta, R.styleable.ResponsiveRecyclerView_UsePolar};
+        int[] attrsRes = {R.styleable.ResponsiveRecyclerView_PolarCoordCenterX, R.styleable.ResponsiveRecyclerView_PolarCoordCenterY, R.styleable.ResponsiveRecyclerView_PolarCoordRad, R.styleable.ResponsiveRecyclerView_PolarCoordTheta, R.styleable.ResponsiveRecyclerView_UsePolar};
         polarCenterX = typedArray.getFloat(attrsRes[0], 0);
         polarCenterY = typedArray.getFloat(attrsRes[1], 0);
         polarRad = typedArray.getFloat(attrsRes[2], 0);
@@ -62,8 +62,8 @@ public class ResponsiveInkPageIndicator extends InkPageIndicator implements Resp
 
             dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
             dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
-            dpEX = ScreenDetails.px2Dp(context, marginParams.bottomMargin);
-            dpEY = ScreenDetails.px2Dp(context, marginParams.leftMargin);
+            dpEX = ScreenDetails.px2Dp(context, marginParams.rightMargin);
+            dpEY = ScreenDetails.px2Dp(context, marginParams.topMargin);
         } catch (Exception e) {
         }
 
@@ -73,7 +73,7 @@ public class ResponsiveInkPageIndicator extends InkPageIndicator implements Resp
         pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarCenterX, polarCenterY, polarRad, polarTheta, usePolar);
     }
 
-    public void updateDimensions(){
+    public void updateDimensions() {
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
         layoutParams.width = pixelDimensions.getWidth();
         layoutParams.height = pixelDimensions.getHeight();

@@ -1,7 +1,9 @@
-package com.q20.projectsummer.ResponsiveViews;
+package com.q20.projectsummer.Custom;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
+
+import com.q20.projectsummer.ResponsiveViews.ResponsiveAutoResizeTextView;
 
 public class AutoResizeTextViewWithIrsansFont extends ResponsiveAutoResizeTextView {
     public AutoResizeTextViewWithIrsansFont(Context context) {

@@ -1,360 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/btn_shape"
-    android:backgroundTint="@color/colorA1"
-    android:orientation="vertical"
-    android:padding="@dimen/buy_coin_padding">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:onClick="onBackground"
+    tools:context="com.q20.projectsummer.ui.BuyCoinDialog">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buy_coin_margin"
+    <com.q20.projectsummer.ResponsiveViews.ResponsiveScrollView
+        android:layout_width="311dp"
+        android:layout_height="531dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/btn_shape"
-        android:backgroundTint="@color/colorPrimary"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/buy_coin_padding"
-        android:paddingRight="@dimen/buy_coin_padding">
+        android:backgroundTint="@color/colorA1"
+        android:onClick="doNothing">
 
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/buy_coin_margin"
-            android:orientation="vertical">
+        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent" />
-
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:layout_weight="1"
-                    android:minWidth="80dp"
-                    android:text="200 سکه"
-                    android:textColor="@color/colorA17" />
-
-            </LinearLayout>
-
-            <Space
+            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="15dp" />
+                android:layout_height="150dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_shape"
+                android:backgroundTint="@color/colorPrimary">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-                <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:maxLines="1"
-                    android:minWidth="80dp"
-                    android:text="1000 تومان"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorA1" />
-            </LinearLayout>
+            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="210dp"
+                android:background="@drawable/btn_shape"
+                android:backgroundTint="@color/colorPrimary">
 
+            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-        </LinearLayout>
+            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="370dp"
+                android:background="@drawable/btn_shape"
+                android:backgroundTint="@color/colorPrimary">
 
-        <ImageView
-            android:layout_width="@dimen/basket_size"
-            android:layout_height="@dimen/basket_size"
-            android:layout_margin="@dimen/buy_coin_margin"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/basket_coin" />
+            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    </LinearLayout>
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/buy_coin_margin"
-    android:background="@drawable/btn_shape"
-    android:backgroundTint="@color/colorPrimary"
-    android:orientation="horizontal"
-    android:paddingLeft="@dimen/buy_coin_padding"
-    android:paddingRight="@dimen/buy_coin_padding">
+        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:orientation="vertical">
+    </com.q20.projectsummer.ResponsiveViews.ResponsiveScrollView>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="match_parent" />
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:layout_weight="1"
-                android:minWidth="80dp"
-                android:text="200 سکه"
-                android:textColor="@color/colorA17" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:minWidth="80dp"
-                android:text="1000 تومان"
-                android:textAlignment="textEnd"
-                android:textColor="@color/colorA1" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="@dimen/basket_size"
-        android:layout_height="@dimen/basket_size"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/basket_coin" />
-
-</LinearLayout>
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/buy_coin_margin"
-    android:background="@drawable/btn_shape"
-    android:backgroundTint="@color/colorPrimary"
-    android:orientation="horizontal"
-    android:paddingLeft="@dimen/buy_coin_padding"
-    android:paddingRight="@dimen/buy_coin_padding">
-
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="match_parent" />
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:layout_weight="1"
-                android:minWidth="80dp"
-                android:text="200 سکه"
-                android:textColor="@color/colorA17" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:minWidth="80dp"
-                android:text="1000 تومان"
-                android:textAlignment="textEnd"
-                android:textColor="@color/colorA1" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="@dimen/basket_size"
-        android:layout_height="@dimen/basket_size"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/basket_coin" />
-
-</LinearLayout>
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/buy_coin_margin"
-    android:background="@drawable/btn_shape"
-    android:backgroundTint="@color/colorPrimary"
-    android:orientation="horizontal"
-    android:paddingLeft="@dimen/buy_coin_padding"
-    android:paddingRight="@dimen/buy_coin_padding">
-
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="match_parent" />
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:layout_weight="1"
-                android:minWidth="80dp"
-                android:text="200 سکه"
-                android:textColor="@color/colorA17" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:minWidth="80dp"
-                android:text="1000 تومان"
-                android:textAlignment="textEnd"
-                android:textColor="@color/colorA1" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="@dimen/basket_size"
-        android:layout_height="@dimen/basket_size"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/basket_coin" />
-
-</LinearLayout>
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/buy_coin_margin"
-    android:background="@drawable/btn_shape"
-    android:backgroundTint="@color/colorPrimary"
-    android:orientation="horizontal"
-    android:paddingLeft="@dimen/buy_coin_padding"
-    android:paddingRight="@dimen/buy_coin_padding">
-
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="20dp"
-                android:layout_height="match_parent" />
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:layout_weight="1"
-                android:minWidth="80dp"
-                android:text="200 سکه"
-                android:textColor="@color/colorA17" />
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:minWidth="80dp"
-                android:text="1000 تومان"
-                android:textAlignment="textEnd"
-                android:textColor="@color/colorA1" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="@dimen/basket_size"
-        android:layout_height="@dimen/basket_size"
-        android:layout_margin="@dimen/buy_coin_margin"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:src="@drawable/basket_coin" />
-
-</LinearLayout>
-</LinearLayout>
+</RelativeLayout>

@@ -52,7 +52,7 @@
             app:cardCornerRadius="10dp"
             android:elevation="0dp">
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/find_rival_find_name_text"
                 android:layout_width="283dp"
                 android:layout_height="30dp"
@@ -107,7 +107,7 @@
             android:background="@color/colorA17"
             app:cardCornerRadius="10dp">
 
-            <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+            <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
                 android:id="@+id/find_chance_rival_text"
                 android:layout_width="283dp"
                 android:layout_height="30dp"
@@ -141,7 +141,7 @@
 
     </com.q20.projectsummer.ResponsiveViews.ResponsiveCardView>
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="271dp"

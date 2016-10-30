@@ -24,7 +24,7 @@
             android:tag="@drawable/char_m_40" />
     </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="16dp"
@@ -81,7 +81,7 @@
         android:background="@drawable/ranking_page_buttons_shape"
         android:onClick="onChooseProfileNextPageClicked" />
 
-    <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginLeft="21dp"

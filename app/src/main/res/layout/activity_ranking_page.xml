@@ -17,7 +17,7 @@
         android:gravity="center"
         android:onClick="onWeekButtonClicked">
 
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
             android:layout_width="121dp"
             android:layout_height="30dp"
             android:gravity="center"
@@ -36,7 +36,7 @@
         android:gravity="center"
         android:onClick="onMonthButtonClicked">
 
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
             android:layout_width="121dp"
             android:layout_height="30dp"
             android:gravity="center"
@@ -55,7 +55,7 @@
         android:gravity="center"
         android:onClick="onAroundButtonClicked">
 
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithAfsanehFont
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
             android:layout_width="121dp"
             android:layout_height="40dp"
             android:gravity="center"

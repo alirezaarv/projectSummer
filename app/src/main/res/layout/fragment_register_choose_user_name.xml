@@ -24,7 +24,7 @@
                 android:layout_marginRight="10dp"/>
         </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
 
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:maxLines="1"
@@ -57,7 +57,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"/>
 
-        <com.q20.projectsummer.ResponsiveViews.AutoResizeTextViewWithIrsansFont
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="@string/next"
