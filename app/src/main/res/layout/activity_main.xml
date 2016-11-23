@@ -40,7 +40,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginLeft="163dp"
@@ -48,26 +48,26 @@
         android:background="@drawable/profile_image_rounded_layout_shape"
         android:gravity="center">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/char_m_40" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="347dp"
         android:layout_marginTop="8dp"
         android:onClick="onCoins">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/coin" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="46dp"
@@ -79,7 +79,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveProgressBar
+    <com.non_android_programmers.responsivegui.ResponsiveProgressBar
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:layout_marginLeft="60.5dp"
@@ -91,7 +91,7 @@
         app:donut_unfinished_color="@color/colorPrimaryDark"
         app:donut_unfinished_stroke_width="6dp" />
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveProgressBar
+    <com.non_android_programmers.responsivegui.ResponsiveProgressBar
         android:layout_width="310dp"
         android:layout_height="310dp"
         android:layout_marginLeft="50.5dp"
@@ -104,7 +104,7 @@
         app:donut_unfinished_stroke_width="6dp" />
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="264dp"
         android:layout_height="264dp"
         android:layout_marginLeft="73.5dp"
@@ -118,16 +118,16 @@
             android:layout_height="match_parent"
             android:src="@drawable/main_play" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginLeft="91dp"
         android:layout_marginTop="520dp"
         app:UsePolar="true"
-        app:PolarCoordCenterX="205.5"
-        app:PolarCoordCenterY="375.5"
+        app:PolarCoordOriginX="205.5"
+        app:PolarCoordOriginY="375.5"
         app:PolarCoordRad="200"
         app:PolarCoordTheta="240"
         android:background="@drawable/btn_circle"
@@ -137,16 +137,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginLeft="182.5dp"
         android:layout_marginTop="550dp"
         app:UsePolar="true"
-        app:PolarCoordCenterX="205.5"
-        app:PolarCoordCenterY="375.5"
+        app:PolarCoordOriginX="205.5"
+        app:PolarCoordOriginY="375.5"
         app:PolarCoordRad="200"
         app:PolarCoordTheta="270"
         android:background="@drawable/btn_circle"
@@ -156,16 +156,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginLeft="274dp"
         android:layout_marginTop="520dp"
         app:UsePolar="true"
-        app:PolarCoordCenterX="205.5"
-        app:PolarCoordCenterY="375.5"
+        app:PolarCoordOriginX="205.5"
+        app:PolarCoordOriginY="375.5"
         app:PolarCoordRad="200"
         app:PolarCoordTheta="300"
         android:background="@drawable/btn_circle"
@@ -175,18 +175,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginLeft="357dp"
         android:layout_marginTop="677dp">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/settings" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </RelativeLayout>

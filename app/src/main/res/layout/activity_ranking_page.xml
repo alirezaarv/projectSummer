@@ -7,7 +7,7 @@
     tools:context="com.q20.projectsummer.ui.RankingPageActivity">
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:id="@+id/ranking_page_weekly_button"
         android:layout_width="121dp"
         android:layout_height="@dimen/ranking_page_buttons_height_size"
@@ -24,9 +24,9 @@
             android:maxLines="1"
             android:text="@string/weekbest"
             android:textSize="@dimen/text_size_medium" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:id="@+id/ranking_page_month_button"
         android:layout_width="121dp"
         android:layout_height="@dimen/ranking_page_buttons_height_size"
@@ -43,9 +43,9 @@
             android:maxLines="1"
             android:text="@string/monthbest"
             android:textSize="@dimen/text_size_medium" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:id="@+id/ranking_page_around_me_button"
         android:layout_width="121dp"
         android:layout_height="45dp"
@@ -62,10 +62,10 @@
             android:maxLines="1"
             android:text="@string/aroundme"
             android:textSize="30sp" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveFrameLayout
+    <com.non_android_programmers.responsivegui.ResponsiveFrameLayout
         android:id="@+id/ranking_page_fragment_container"
         android:layout_width="379dp"
         android:layout_height="643dp"

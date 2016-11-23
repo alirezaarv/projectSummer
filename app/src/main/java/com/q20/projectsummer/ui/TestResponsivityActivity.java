@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.non_android_programmers.responsivegui.ScreenDetails;
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 
 public class TestResponsivityActivity extends AppCompatActivity {
 

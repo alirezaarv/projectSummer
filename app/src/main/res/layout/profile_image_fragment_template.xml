@@ -1,9 +1,9 @@
-<com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.non_android_programmers.responsivegui.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="1"
@@ -11,7 +11,7 @@
         android:layout_marginLeft="15dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image1"
@@ -19,9 +19,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="2"
@@ -29,7 +29,7 @@
         android:layout_marginLeft="152dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image2"
@@ -37,10 +37,10 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="3"
@@ -48,7 +48,7 @@
         android:layout_marginLeft="289dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image3"
@@ -56,9 +56,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="4"
@@ -66,7 +66,7 @@
         android:layout_marginLeft="15dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image4"
@@ -74,9 +74,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="5"
@@ -84,7 +84,7 @@
         android:layout_marginLeft="152dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image5"
@@ -92,9 +92,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="6"
@@ -102,7 +102,7 @@
         android:layout_marginLeft="289dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image6"
@@ -110,9 +110,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="7"
@@ -120,7 +120,7 @@
         android:layout_marginLeft="15dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image7"
@@ -128,9 +128,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="8"
@@ -138,7 +138,7 @@
         android:layout_marginLeft="152dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image8"
@@ -146,9 +146,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="9"
@@ -156,7 +156,7 @@
         android:layout_marginLeft="289dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image9"
@@ -164,9 +164,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="10"
@@ -174,7 +174,7 @@
         android:layout_marginLeft="15dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image10"
@@ -182,9 +182,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="11"
@@ -192,7 +192,7 @@
         android:layout_marginLeft="152dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image11"
@@ -200,9 +200,9 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:tag="12"
@@ -210,7 +210,7 @@
         android:layout_marginLeft="289dp"
         android:background="@drawable/profile_image_images_layout_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="62dp"
             android:layout_height="62dp"
             android:id="@+id/profile_image_page_image12"
@@ -218,6 +218,6 @@
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
             android:scaleType="centerInside"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-</com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+</com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

@@ -1,11 +1,11 @@
-<com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.non_android_programmers.responsivegui.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register_fragment_shape"
     tools:context="com.q20.projectsummer.ui.RegisterChooseUserNameFragment">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="@dimen/register_main_profile_image_shape"
             android:layout_height="@dimen/register_main_profile_image_shape"
             android:gravity="center"
@@ -13,7 +13,7 @@
             android:layout_marginTop="165dp"
             android:layout_marginLeft="125dp">
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            <com.non_android_programmers.responsivegui.ResponsiveImageView
                 android:id="@+id/register_username_profile_image"
                 android:tag="@drawable/char_m_40"
                 android:layout_width="100dp"
@@ -22,7 +22,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"/>
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
         <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:layout_marginRight="16dp"
             android:gravity="center"/>
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveEditText
+        <com.non_android_programmers.responsivegui.ResponsiveEditText
             android:id="@+id/register_username_page_edit_text"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -48,7 +48,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"/>
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/ranking_page_buttons_shape"
@@ -67,4 +67,4 @@
             android:layout_marginRight="21dp"
             android:gravity="center"/>
 
-</com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+</com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

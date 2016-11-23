@@ -1,11 +1,11 @@
-<com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.non_android_programmers.responsivegui.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorA7"
     tools:context="com.q20.projectsummer.ui.RegisterSignInORLogInFragment">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+    <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="155dp"
         android:layout_height="40dp"
         android:layout_marginTop="605dp"
@@ -20,7 +20,7 @@
         android:layout_marginLeft="5dp"
         android:gravity="center"/>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+    <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="155dp"
         android:layout_height="40dp"
         android:layout_marginTop="605dp"
@@ -36,4 +36,4 @@
         android:layout_marginLeft="218dp"
         android:gravity="center"/>
 
-</com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+</com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

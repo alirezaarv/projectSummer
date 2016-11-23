@@ -5,8 +5,8 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.non_android_programmers.responsivegui.ScreenDetails;
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 
 public class CustomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {

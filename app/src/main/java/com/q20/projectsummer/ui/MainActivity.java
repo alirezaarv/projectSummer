@@ -16,7 +16,6 @@ import android.widget.RelativeLayout;
 
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 import com.q20.projectsummer.utilities.Settings;
 
 public class MainActivity extends CustomActivity{

@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
         tools:context="com.q20.projectsummer.ui.AboutUsActivity">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="500dp">
 
@@ -152,7 +152,7 @@
                 android:textColor="@color/colorA17"
                 android:textSize="@dimen/text_size_information" />
 
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </RelativeLayout>

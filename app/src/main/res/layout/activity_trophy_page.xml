@@ -6,7 +6,7 @@
     android:background="@color/colorA7"
     tools:context="com.q20.projectsummer.ui.TrophyPageActivity">
     
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+    <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginLeft="130dp"
@@ -26,7 +26,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRecyclerView
+    <com.non_android_programmers.responsivegui.ResponsiveRecyclerView
         android:layout_width="match_parent"
         android:layout_height="487dp"
         android:layout_marginTop="228dp"

@@ -9,7 +9,7 @@
     android:background="@drawable/rounded_layout_shape">
 
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveCardView
+        <com.non_android_programmers.responsivegui.ResponsiveCardView
             android:id="@+id/find_rival_card_template_cardview"
             android:layout_width="283dp"
             android:layout_height="66dp"
@@ -30,9 +30,9 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
                 android:gravity="center"/>
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveCardView>
+        </com.non_android_programmers.responsivegui.ResponsiveCardView>
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:background="@drawable/register_image_veiw_shape"
@@ -40,7 +40,7 @@
             android:layout_marginTop="3dp"
             android:gravity="center">
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            <com.non_android_programmers.responsivegui.ResponsiveImageView
                 android:id="@+id/find_rival_card_template_image_view"
                 android:layout_width="57dp"
                 android:layout_height="57dp"
@@ -48,6 +48,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="3dp"
                 android:layout_marginBottom="3dp"/>
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </RelativeLayout>

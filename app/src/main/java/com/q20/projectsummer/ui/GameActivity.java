@@ -9,10 +9,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+
+import com.non_android_programmers.responsivegui.ScreenDetails;
 import com.q20.projectsummer.Custom.AutoResizeTextView;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
-import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
 
 public class GameActivity extends CustomActivity implements View.OnClickListener {
 
@@ -43,12 +44,18 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
         //word letters height
 
 
+        //ResponsiveRelativeLayout responsiveRelativeLayout = findViewById()
+
         createKeyboard();
         createLetters();
     }
 
     @Override
     public void onClick(View v) {
+
+    }
+
+    private void createKeyboard(){
 
     }
 
@@ -138,7 +145,7 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private void createKeyboard() {
+    private void _createKeyboard() {
         float keyboardHPx = ((float) maxHeightPx) * keyboardToWordLettersH / (keyboardToWordLettersH + 1);
 
         float btnMarginSizeHPx = keyboardHPx / (maxRow * btnToMarginRatioH + maxRow);

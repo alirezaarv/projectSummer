@@ -8,7 +8,7 @@
     tools:context="com.q20.projectsummer.ui.RegisterPageActivity">
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveFrameLayout
+    <com.non_android_programmers.responsivegui.ResponsiveFrameLayout
         android:id="@+id/register_page_fragment_container"
         android:layout_width="371dp"
         android:layout_height="691dp"

@@ -12,7 +12,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-import com.q20.projectsummer.ResponsiveViews.ResponsiveImageView;
+import com.non_android_programmers.responsivegui.ResponsiveImageView;
+
 
 /**
  * Created by alireza on 10/19/16.

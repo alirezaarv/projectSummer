@@ -9,16 +9,17 @@
     android:onClick="onBackground"
     >
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_marginTop="100dp"
         android:layout_marginLeft="50dp"
         android:layout_width="311dp"
         android:layout_height="531dp"
-        android:background="@drawable/btn_shape"
+        android:background="@drawable/dialog_background"
         android:backgroundTint="@color/colorA1"
         android:onClick="doNothing">
         
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:background="@drawable/title_dialog"
@@ -34,36 +35,36 @@
                 android:textSize="@dimen/text_size_medium"
                 android:textColor="@color/colorA17"/>
 
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="245dp"
             android:layout_marginTop="31dp"
             android:onClick="onOnline">
 
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_marginTop="276dp"
             android:background="@color/colorA15">
 
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="245dp"
             android:layout_marginTop="286dp"
             android:onClick="onOffline">
 
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
 </RelativeLayout>

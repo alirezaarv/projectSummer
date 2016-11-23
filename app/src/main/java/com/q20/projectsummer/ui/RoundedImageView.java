@@ -16,10 +16,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
-import com.q20.projectsummer.ResponsiveViews.PixelDimensions;
-import com.q20.projectsummer.ResponsiveViews.ScreenDetails;
+import com.non_android_programmers.responsivegui.PixelDimensions;
+import com.non_android_programmers.responsivegui.ScreenDetails;
 
 public class RoundedImageView extends ImageView {
 

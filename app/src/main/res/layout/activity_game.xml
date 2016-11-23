@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ui.GameActivity"
-    android:id="@+id/parent_layout">
+    tools:context=".ui.GameActivity">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginLeft="8dp"
@@ -16,12 +16,12 @@
         android:background="@drawable/profile_image_rounded_layout_shape"
         android:gravity="center">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/char_m_40" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="82dp"
@@ -53,7 +53,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_small" />
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginLeft="339dp"
@@ -61,12 +61,12 @@
         android:background="@drawable/profile_image_rounded_layout_shape"
         android:gravity="center">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/char_m_40" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="350dp"
@@ -103,7 +103,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginLeft="130.5dp"
@@ -121,32 +121,50 @@
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_large" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
-    
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginTop="352.5dp"
-        android:layout_marginLeft="165.5dp">
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        android:layout_marginLeft="165.5dp"
+        android:layout_marginTop="352.5dp">
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/game_coin"/>
+            android:src="@drawable/game_coin" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginTop="352.5dp"
-        android:layout_marginLeft="209.5dp">
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        android:layout_marginLeft="209.5dp"
+        android:layout_marginTop="352.5dp">
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/game_coin"/>
+            android:src="@drawable/game_coin" />
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_marginTop="396.5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="395dp"
+        android:layout_height="108.8dp">
+
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_marginTop="513.3dp"
+        android:layout_width="395dp"
+        android:layout_height="209.6dp"
+        android:id="@+id/layout_">
+
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </RelativeLayout>

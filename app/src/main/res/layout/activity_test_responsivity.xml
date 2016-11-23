@@ -6,27 +6,27 @@
     tools:context="com.q20.projectsummer.ui.TestResponsivityActivity">
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:id="@+id/shalgham"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginLeft="50dp"
         android:background="@color/colorA6">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveTextView
+        <com.non_android_programmers.responsivegui.ResponsiveTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:background="@color/btn_letter"/>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="300dp"
         android:background="@color/transparent">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
@@ -34,14 +34,14 @@
             android:background="@color/colorA9"
             android:gravity="center">
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+            <com.non_android_programmers.responsivegui.ResponsiveImageView
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="20dp"
                 android:background="@color/colorA20"/>
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
 

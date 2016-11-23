@@ -1,4 +1,4 @@
-<com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.non_android_programmers.responsivegui.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,14 +6,14 @@
     tools:context="com.q20.projectsummer.ui.RegisterChooseProfileImageFragment">
 
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="@dimen/register_main_profile_image_shape"
         android:layout_height="@dimen/register_main_profile_image_shape"
         android:layout_marginLeft="125dp"
         android:layout_marginTop="157dp"
         android:background="@drawable/register_image_veiw_shape">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -22,7 +22,7 @@
             android:layout_marginTop="5dp"
             android:src="@drawable/char_m_40"
             android:tag="@drawable/char_m_40" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/register_texts_font_size" />
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="55dp"
@@ -44,7 +44,7 @@
         android:background="@drawable/profile_image_images_layout_shape"
         android:gravity="center">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
@@ -52,9 +52,9 @@
             android:layout_marginTop="10dp"
             android:onClick="onMaleRegisterProfileImageClicked"
             android:src="@drawable/char_m_40" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="220dp"
@@ -62,7 +62,7 @@
         android:background="@drawable/profile_image_images_layout_shape"
         android:gravity="center">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
@@ -70,9 +70,9 @@
             android:layout_marginTop="10dp"
             android:onClick="onFemaleRegisterProfileImageClicked"
             android:src="@drawable/char_f_15" />
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveImageView
+    <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="16dp"
@@ -92,4 +92,4 @@
         android:text="@string/next"
         android:textSize="@dimen/buttons_text_size" />
 
-</com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+</com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

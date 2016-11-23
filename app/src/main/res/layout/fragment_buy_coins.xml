@@ -8,54 +8,67 @@
     android:onClick="onBackground"
     tools:context="com.q20.projectsummer.ui.BuyCoinDialog">
 
-    <com.q20.projectsummer.ResponsiveViews.ResponsiveScrollView
+    <com.non_android_programmers.responsivegui.ResponsiveScrollView
         android:layout_width="311dp"
         android:layout_height="531dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="100dp"
-        android:background="@drawable/btn_shape"
+        android:background="@drawable/dialog_background"
         android:backgroundTint="@color/colorA1"
-        android:onClick="doNothing">
+        android:onClick="doNothing"
+        android:scrollbars="none">
 
-        <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="600dp">
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+            <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/btn_shape"
+                android:background="@drawable/dialog_background"
                 android:backgroundTint="@color/colorPrimary">
 
-            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+            </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+
+            <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="210dp"
-                android:background="@drawable/btn_shape"
+                android:layout_marginTop="160dp"
+                android:background="@drawable/dialog_background"
                 android:backgroundTint="@color/colorPrimary">
 
-            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+            </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-            <com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout
+            <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginTop="370dp"
-                android:background="@drawable/btn_shape"
+                android:layout_marginTop="270dp"
+                android:background="@drawable/dialog_background"
                 android:backgroundTint="@color/colorPrimary">
 
-            </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+            </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-        </com.q20.projectsummer.ResponsiveViews.ResponsiveRelativeLayout>
+            <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="380dp"
+                android:background="@drawable/dialog_background"
+                android:backgroundTint="@color/colorPrimary">
 
-    </com.q20.projectsummer.ResponsiveViews.ResponsiveScrollView>
+            </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+    </com.non_android_programmers.responsivegui.ResponsiveScrollView>
 
 </RelativeLayout>
