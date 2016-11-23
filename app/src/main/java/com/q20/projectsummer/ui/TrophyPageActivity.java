@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 import com.q20.projectsummer.ui.Adapters.TrophyPageRecyclerAdapter;
 
-public class TrophyPageActivity extends AppCompatActivity {
+public class TrophyPageActivity extends CustomActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

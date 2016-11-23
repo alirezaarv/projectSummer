@@ -5,7 +5,7 @@
     tools:context=".ui.FindRivalPageFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <com.non_android_programmers.responsivegui.ResponsiveRecyclerView
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveRecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/find_rival_recycler"

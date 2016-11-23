@@ -9,7 +9,7 @@
     android:background="@drawable/rounded_layout_shape">
 
 
-        <com.non_android_programmers.responsivegui.ResponsiveCardView
+        <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
             android:id="@+id/find_rival_card_template_cardview"
             android:layout_width="283dp"
             android:layout_height="66dp"
@@ -30,7 +30,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
                 android:gravity="center"/>
-        </com.non_android_programmers.responsivegui.ResponsiveCardView>
+        </com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
 
         <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="72dp"

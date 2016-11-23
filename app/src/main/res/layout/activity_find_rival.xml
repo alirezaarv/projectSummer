@@ -31,7 +31,7 @@
         android:layout_marginTop="16dp"
         android:src="@drawable/coin" />
 
-    <com.non_android_programmers.responsivegui.ResponsiveCardView
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
         android:id="@+id/find_rival_rival_find_name_cardview"
         android:layout_width="379dp"
         android:layout_height="80dp"
@@ -42,7 +42,7 @@
         app:cardCornerRadius="@dimen/btn_radius">
 
 
-        <com.non_android_programmers.responsivegui.ResponsiveCardView
+        <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
             android:id="@+id/find_name_cardview_in_cardview"
             android:layout_width="283dp"
             android:layout_height="66dp"
@@ -64,7 +64,7 @@
                 android:maxLines="1"
                 android:text="@string/find_name"
                 android:textSize="@dimen/total_recycler_text_size" />
-        </com.non_android_programmers.responsivegui.ResponsiveCardView>
+        </com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
 
         <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="72dp"
@@ -85,9 +85,9 @@
         </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-    </com.non_android_programmers.responsivegui.ResponsiveCardView>
+    </com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
 
-    <com.non_android_programmers.responsivegui.ResponsiveCardView
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
         android:id="@+id/find_rival_rival_find_chance_rival"
         android:layout_width="379dp"
         android:layout_height="80dp"
@@ -98,7 +98,7 @@
         app:cardCornerRadius="@dimen/btn_radius">
 
 
-        <com.non_android_programmers.responsivegui.ResponsiveCardView
+        <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
             android:id="@+id/find_rival_find_chance_rival_cardview"
             android:layout_width="283dp"
             android:layout_height="66dp"
@@ -119,7 +119,7 @@
                 android:maxLines="1"
                 android:text="@string/find_chance"
                 android:textSize="@dimen/total_recycler_text_size" />
-        </com.non_android_programmers.responsivegui.ResponsiveCardView>
+        </com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
 
         <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
             android:layout_width="72dp"
@@ -139,7 +139,7 @@
         </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
-    </com.non_android_programmers.responsivegui.ResponsiveCardView>
+    </com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="match_parent"

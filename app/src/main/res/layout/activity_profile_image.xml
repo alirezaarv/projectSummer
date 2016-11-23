@@ -35,7 +35,7 @@
         android:textColor="@color/colorA17"
         android:textSize="@dimen/total_recycler_text_size" />
 
-    <com.non_android_programmers.responsivegui.ResponsiveViewPager
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveViewPager
         android:id="@+id/profile_page_view_pager"
         android:layout_width="379dp"
         android:layout_height="460dp"
@@ -43,7 +43,7 @@
         android:layout_marginTop="170dp"
         android:background="@color/colorA7" />
 
-    <com.non_android_programmers.responsivegui.ResponsiveInkPageIndicator
+    <com.q20.projectsummer.Custom.ResponsiveLibraryIndicator
         android:id="@+id/profile_image_indicator"
         android:layout_width="411dp"
         android:layout_height="20dp"

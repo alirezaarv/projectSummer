@@ -26,11 +26,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
 
-    <com.non_android_programmers.responsivegui.ResponsiveRecyclerView
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveRecyclerView
         android:layout_width="match_parent"
         android:layout_height="487dp"
         android:layout_marginTop="228dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:scrollbars="vertical"
         android:id="@+id/trophy_page_recycler_container"/>
 </RelativeLayout>

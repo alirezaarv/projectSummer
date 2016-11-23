@@ -7,46 +7,47 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.MainActivity">
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
         android:layout_width="147dp"
         android:layout_height="36dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="163dp"
         android:layout_marginTop="8dp"
         android:maxLines="1"
         android:text="نام کاربری"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_large" />
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="73.5dp"
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
+        android:layout_width="43.5dp"
         android:layout_height="24dp"
-        android:layout_marginLeft="81.5dp"
+        android:layout_marginLeft="266dp"
         android:layout_marginTop="52dp"
         android:maxLines="1"
-        android:text="امتیاز"
-        android:textAlignment="center"
+        android:text="امتیاز:"
+        android:textAlignment="textStart"
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
         android:layout_width="73.5dp"
         android:layout_height="24dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="190dp"
         android:layout_marginTop="52dp"
         android:maxLines="1"
         android:text="۱۲۱۲۱۲"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="85dp"
         android:layout_height="85dp"
-        android:layout_marginLeft="163dp"
+        android:layout_marginLeft="318dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/profile_image_rounded_layout_shape"
-        android:gravity="center">
+        android:gravity="center"
+        android:onClick="onProfileImage">
 
         <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="70dp"
@@ -58,7 +59,7 @@
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="347dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:onClick="onCoins">
 
@@ -69,17 +70,18 @@
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
         android:layout_width="46dp"
         android:layout_height="24dp"
-        android:layout_marginLeft="347dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="58dp"
         android:maxLines="1"
-        android:text="222333344"
+        android:text="۲۳۴۳"
+        android:textAlignment="center"
         android:textColor="@color/colorA17"
         android:textSize="@dimen/text_size_medium" />
 
-    <com.non_android_programmers.responsivegui.ResponsiveProgressBar
+    <com.q20.projectsummer.Custom.CircularResponsiveProgressBar
         android:layout_width="290dp"
         android:layout_height="290dp"
         android:layout_marginLeft="60.5dp"
@@ -91,7 +93,7 @@
         app:donut_unfinished_color="@color/colorPrimaryDark"
         app:donut_unfinished_stroke_width="6dp" />
 
-    <com.non_android_programmers.responsivegui.ResponsiveProgressBar
+    <com.q20.projectsummer.Custom.CircularResponsiveProgressBar
         android:layout_width="310dp"
         android:layout_height="310dp"
         android:layout_marginLeft="50.5dp"
@@ -135,7 +137,10 @@
 
         <com.q20.projectsummer.Custom.ResponsiveRoundedImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:src="@drawable/question"
+            android:layout_centerInParent="true"
+            android:onClick="onAboutUs"/>
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
@@ -154,7 +159,10 @@
 
         <com.q20.projectsummer.Custom.ResponsiveRoundedImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:src="@drawable/main_chart"
+            android:layout_centerInParent="true"
+            android:onClick="onRankingMenu"/>
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
@@ -173,7 +181,10 @@
 
         <com.q20.projectsummer.Custom.ResponsiveRoundedImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:src="@drawable/information"
+            android:layout_centerInParent="true"
+            android:onClick="onInformation"/>
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
@@ -186,7 +197,8 @@
         <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/settings" />
+            android:src="@drawable/settings"
+            android:onClick="onShare"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </RelativeLayout>

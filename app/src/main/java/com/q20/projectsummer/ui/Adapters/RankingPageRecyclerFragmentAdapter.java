@@ -35,7 +35,7 @@ public class RankingPageRecyclerFragmentAdapter extends RecyclerView.Adapter<Ran
         CardView cardView = holder.cardView;
 
         TextView textView = (TextView)cardView.findViewById(R.id.ranking_page_inner_cardview_text);
-        ImageView imageView = (ImageView)cardView.findViewById(R.id.ranking_page_cardview_image_view);
+        ImageView imageView = (ImageView)cardView.findViewById(R.id.ranking_page_inner_cardview_image);
         Drawable drawable = cardView.getResources().getDrawable(ids[position]);
 
         textView.setText(texts[position]);

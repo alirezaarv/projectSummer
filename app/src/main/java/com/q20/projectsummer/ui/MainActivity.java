@@ -75,6 +75,10 @@ public class MainActivity extends CustomActivity{
         startActivity(intent);
     }
 
+    public void onProfileImage(View view){
+        Intent intent = new Intent(this, ProfileImageActivity.class);
+        startActivity(intent);
+    }
 
 
 }

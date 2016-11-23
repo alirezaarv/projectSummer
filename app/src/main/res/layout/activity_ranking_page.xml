@@ -67,8 +67,10 @@
 
     <com.non_android_programmers.responsivegui.ResponsiveFrameLayout
         android:id="@+id/ranking_page_fragment_container"
-        android:layout_width="379dp"
-        android:layout_height="643dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="72dp" />
+        android:layout_marginTop="72dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"/>
 </RelativeLayout>

@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.non_android_programmers.responsivegui.ResponsiveRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,9 +6,10 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <com.non_android_programmers.responsivegui.ResponsiveRecyclerView
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveRecyclerView
         android:id="@+id/ranking_page_aroundme_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
-</RelativeLayout>
+
+</com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

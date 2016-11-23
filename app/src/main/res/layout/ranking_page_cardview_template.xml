@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.non_android_programmers.responsiveguiapi9.ResponsiveCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ranking_page_cardview_template"
-    android:layout_width="379dp"
+    android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:layout_margin="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     android:background="@drawable/rounded_layout_shape">
 
 
-    <com.non_android_programmers.responsivegui.ResponsiveCardView
+    <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
         android:id="@+id/ranking_page_inner_cardview_template"
-        android:layout_width="283dp"
+        android:layout_width="match_parent"
         android:layout_height="66dp"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="5dp"
+        android:layout_marginRight="80dp"
         android:background="@color/colorA17"
         android:elevation="0dp"
         app:cardCornerRadius="10dp">
 
         <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
             android:id="@+id/ranking_page_inner_cardview_text"
-            android:layout_width="283dp"
+            android:layout_width="match_parent"
             android:layout_height="30dp"
             android:maxLines="1"
             android:text=""
@@ -29,8 +33,9 @@
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="3dp"
-            android:gravity="center"/>
-    </com.non_android_programmers.responsivegui.ResponsiveCardView>
+            android:gravity="center"
+            android:layout_gravity="center"/>
+    </com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="72dp"
@@ -41,7 +46,7 @@
         android:gravity="center">
 
         <com.non_android_programmers.responsivegui.ResponsiveImageView
-            android:id="@+id/trophy_page_recycler_inner_imageview"
+            android:id="@+id/ranking_page_inner_cardview_image"
             android:layout_width="57dp"
             android:layout_height="57dp"
             android:layout_marginTop="3dp"
@@ -50,4 +55,4 @@
             android:layout_marginBottom="3dp"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-</RelativeLayout>
+</com.non_android_programmers.responsiveguiapi9.ResponsiveCardView>
