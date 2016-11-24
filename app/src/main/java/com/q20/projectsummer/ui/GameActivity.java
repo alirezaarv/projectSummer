@@ -22,7 +22,7 @@ import com.q20.projectsummer.R;
 public class GameActivity extends CustomActivity implements View.OnClickListener {
 
     private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
-    private String word = "salagk km";
+    private String word = "sala ngk m";
     private RelativeLayout parentLayout;
     private int check = 0;
     private RelativeLayout[] letters;
@@ -118,7 +118,7 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
         float letterSize = Math.min(letterSizeW, letterSizeH);
 
         float yPos = pixelDimensions.getY();
-        float xPos = (backgroundWidthPx + (word.length() + word.length() * marginToLetterW) * (letterSize)) / 2 - letterSize - marginToLetterW * letterSize;//:|
+        float xPos = (backgroundWidthPx + (word.length() + (word.length()+1) * marginToLetterW) * (letterSize)) / 2 - letterSize - marginToLetterW * letterSize ;//:|
 
         RelativeLayout letters[] = new RelativeLayout[word.replace(" ","").length()];//not include space
 
