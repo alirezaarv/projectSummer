@@ -150,20 +150,16 @@
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_marginTop="396.5dp"
-        android:layout_marginLeft="8dp"
-        android:layout_width="395dp"
-        android:layout_height="108.8dp">
-
-    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
-
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_marginTop="513.3dp"
-        android:layout_width="395dp"
-        android:layout_height="209.6dp"
-        android:id="@+id/layout_">
+        android:layout_marginTop="592dp"
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/keyboard_background"
+        android:id="@+id/layout_keyboard"
+        android:backgroundTint="@color/colorA17"
+        >
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
