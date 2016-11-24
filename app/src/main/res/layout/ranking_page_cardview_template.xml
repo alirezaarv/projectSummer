@@ -9,7 +9,8 @@
     android:layout_marginRight="5dp"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
-    android:background="@drawable/rounded_layout_shape">
+    app:cardBackgroundColor="@color/colorA13"
+    app:cardCornerRadius="8dp">
 
 
     <com.non_android_programmers.responsiveguiapi9.ResponsiveCardView
@@ -41,7 +42,7 @@
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:background="@drawable/register_image_veiw_shape"
-        android:layout_marginLeft="297dp"
+        android:layout_marginLeft="293dp"
         android:layout_marginTop="3dp"
         android:gravity="center">
 
@@ -50,7 +51,7 @@
             android:layout_width="57dp"
             android:layout_height="57dp"
             android:layout_marginTop="3dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="3dp"
             android:layout_marginRight="3dp"
             android:layout_marginBottom="3dp"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
