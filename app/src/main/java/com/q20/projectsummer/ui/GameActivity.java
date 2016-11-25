@@ -22,7 +22,7 @@ import com.q20.projectsummer.R;
 public class GameActivity extends CustomActivity implements View.OnClickListener {
 
     private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
-    private String word = "sala ngk m";
+    private String word = "sala";
     private RelativeLayout parentLayout;
     private int check = 0;
     private RelativeLayout[] letters;
