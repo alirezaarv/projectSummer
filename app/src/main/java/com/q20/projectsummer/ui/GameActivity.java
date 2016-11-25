@@ -45,7 +45,7 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
     }
 
     private void createKeyboard() {
-        PixelDimensions pixelDimensions = new PixelDimensions(8, 600, 8, 8, -1, -1, parentLayout);
+        PixelDimensions pixelDimensions = new PixelDimensions(8, 550, 8, 8, -1, -1, parentLayout);
 
         //values
         float marginToKeyW = 0.1f;
@@ -104,9 +104,9 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
     }
 
     private void createLetters() {
-        PixelDimensions pixelDimensions = new PixelDimensions(0, 467, 0, 0, -1, 50, parentLayout);
+        PixelDimensions pixelDimensions = new PixelDimensions(0, 442, 0, 0, -1, 50, parentLayout);
 
-        float marginToLetterW = 0.1f;
+        float marginToLetterW = 0.2f;
 
 
         float backgroundWidthPx = pixelDimensions.getWidth();

@@ -152,9 +152,9 @@
 
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_marginTop="592dp"
+        android:layout_marginTop="542dp"
         android:layout_width="match_parent"
-        android:layout_height="139dp"
+        android:layout_height="189dp"
         android:layout_marginBottom="0dp"
         android:background="@drawable/keyboard_background"
         android:id="@+id/layout_keyboard"
