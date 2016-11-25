@@ -49,7 +49,7 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
 
         //values
         float marginToKeyW = 0.1f;
-        float marginToKeyH = 0.1f;
+        float marginToKeyH = 0.2f;
 
         float backgroundWidthPx = pixelDimensions.getWidth();
         float keyWidthPx = backgroundWidthPx / (8 + 7 * marginToKeyW);
