@@ -18,13 +18,29 @@ import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 import com.q20.projectsummer.utilities.Settings;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import QAPack.V1.Pack;
+
 public class MainActivity extends CustomActivity{
 
+    final static int packIDs[] = {};
+    public static Pack offlinePack[] = new Pack[packIDs.length];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+      /*  for (int i=0; i<packCount ;i++){
+            InputStream inStream = getResources().openRawResource();
+            try {
+                byte[] packData = new byte[inStream.available()];
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }*/
     }
 
     //when user click on new game local btn

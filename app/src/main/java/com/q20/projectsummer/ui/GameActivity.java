@@ -1,31 +1,27 @@
 package com.q20.projectsummer.ui;
 
-import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.non_android_programmers.responsivegui.PixelDimensions;
-import com.non_android_programmers.responsivegui.ResponsiveAutoResizeTextView;
-import com.non_android_programmers.responsivegui.ResponsiveRelativeLayout;
-import com.non_android_programmers.responsivegui.ScreenDetails;
 import com.q20.projectsummer.Custom.AutoResizeTextView;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
-public class GameActivity extends CustomActivity implements View.OnClickListener {
+public class GameActivity extends CustomActivity{
 
     private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
-    private String word = "sala";
+    private String word = "سسس";
     private RelativeLayout parentLayout;
-    private int check = 0;
-    private RelativeLayout[] letters;
+    private static int check = 0;
+    private TextView[] letters;
+    private static String[] chars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +32,10 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
 
         createKeyboard();
         createLetters();
+
+        update();
     }
 
-
-    @Override
-    public void onClick(View v) {
-
-    }
 
     private void createKeyboard() {
         PixelDimensions pixelDimensions = new PixelDimensions(8, 550, 8, 8, -1, -1, parentLayout);
@@ -92,7 +85,14 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
                 keys[keyNumber].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        keyboardPressed(textView.getText().toString());
+                        String letter = textView.getText().toString();
+                        if (check < letters.length) {
+                            chars[check] = letter;
+                            update();
+                            check++;
+                        } else if (check == letters.length) {
+
+                        }
                     }
                 });
 
@@ -118,23 +118,23 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
         float letterSize = Math.min(letterSizeW, letterSizeH);
 
         float yPos = pixelDimensions.getY();
-        float xPos = (backgroundWidthPx + (word.length() + (word.length()+1) * marginToLetterW) * (letterSize)) / 2 - letterSize - marginToLetterW * letterSize ;//:|
+        float xPos = (backgroundWidthPx + (word.length() + (word.length() + 1) * marginToLetterW) * (letterSize)) / 2 - letterSize - marginToLetterW * letterSize;//:|
 
-        RelativeLayout letters[] = new RelativeLayout[word.replace(" ","").length()];//not include space
+        TextView letters[] = new TextView[word.replace(" ", "").length()];//not include space
 
         int letterNum = 0;
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) != ' ') {
-                letters[letterNum] = new RelativeLayout(this);
+                RelativeLayout temp = new RelativeLayout(this);
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Math.round(letterSize), Math.round(letterSize));
                 params.topMargin = Math.round(yPos);
                 params.leftMargin = Math.round(xPos);
 
-                letters[letterNum].setLayoutParams(params);
+                temp.setLayoutParams(params);
 
-                letters[letterNum].setBackgroundResource(R.drawable.btn_circle);
-                letters[letterNum].setGravity(Gravity.CENTER);
-                GradientDrawable btnBackground = (GradientDrawable) letters[letterNum].getBackground();
+                temp.setBackgroundResource(R.drawable.btn_circle);
+                temp.setGravity(Gravity.CENTER);
+                GradientDrawable btnBackground = (GradientDrawable) temp.getBackground();
                 btnBackground.setColor(Color.rgb(149, 165, 166));
 
                 //add text
@@ -145,21 +145,22 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
                 textView.setTextSize(90);
                 textView.setGravity(Gravity.CENTER);
                 textView.setId(0);
-                letters[letterNum].addView(textView);
+                temp.addView(textView);
+                letters[letterNum] = textView;
 
-                final int temp = letterNum + 1;
-                letters[letterNum].setOnClickListener(new View.OnClickListener() {
+                final int tempCheck = letterNum + 1;
+                temp.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
-                        if (check == temp) {
-                            textView.setText(null);
+                        if (check == tempCheck) {
+                            chars[check-1] = null;
                             check--;
+                            update();
                         }
                     }
                 });
 
-                parentLayout.addView(letters[letterNum]);
+                parentLayout.addView(temp);
 
                 letterNum++;
             }
@@ -167,13 +168,19 @@ public class GameActivity extends CustomActivity implements View.OnClickListener
         }
 
         this.letters = letters;
+        if (chars == null)
+            this.chars = new String[word.replace(" ", "").length()];
     }
 
-    private void keyboardPressed(String letter) {
-        if (check < letters.length) {
-            AutoResizeTextView textView = (AutoResizeTextView) letters[check].findViewById(0);
-            textView.setText(letter);
-            check++;
+    private void update() {
+        for (int i = 0; i < letters.length; i++) {
+            if (chars[i] != null) {
+                AutoResizeTextView textView = (AutoResizeTextView) letters[i];
+                textView.setText(chars[i]);
+            }else{
+                AutoResizeTextView textView = (AutoResizeTextView) letters[i];
+                textView.setText("");
+            }
         }
     }
 
