@@ -10,7 +10,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.TestResponsivityActivity"></activity>
         <activity android:name=".ui.MainActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ui.NewGameDialog"
             android:theme="@style/cosDialog"></activity>
@@ -28,10 +31,7 @@
 
         </activity>
         <activity android:name=".ui.GameActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.FindRivalActivity"></activity>
         <activity android:name=".ui.TrophyPageActivity" />

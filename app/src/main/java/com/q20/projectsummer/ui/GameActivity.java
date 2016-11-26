@@ -3,6 +3,7 @@ package com.q20.projectsummer.ui;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +15,23 @@ import com.q20.projectsummer.Custom.AutoResizeTextView;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
-public class GameActivity extends CustomActivity{
+import QAPack.V1.QA;
+import QAPack.V1.Question;
+import QAPack.V1.Word;
+
+public class GameActivity extends CustomActivity {
+
+    public static Word currentWord;
+    public static int wordPack;
 
     private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
-    private String word = "سسس";
+    private String word = currentWord.word;
     private RelativeLayout parentLayout;
     private static int check = 0;
     private TextView[] letters;
     private static String[] chars;
+    private static int currentQuestionId = 0;
+    private TextView currentQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +39,18 @@ public class GameActivity extends CustomActivity{
         setContentView(R.layout.activity_game);
 
         parentLayout = (RelativeLayout) findViewById(R.id.parent_layout);
+        ((TextView) findViewById(R.id.text_view_word_explanation)).setText(currentWord.wordExplanation);
+        currentQuestion = ((TextView) findViewById(R.id.text_view_current_q));
+
+        Question question = MainActivity.offlinePack[wordPack].questions.get(currentQuestionId);
+        currentQuestion.setText(question.question);
 
         createKeyboard();
         createLetters();
 
         update();
+
+        Log.v("word ", word);
     }
 
 
@@ -153,7 +170,7 @@ public class GameActivity extends CustomActivity{
                     @Override
                     public void onClick(View v) {
                         if (check == tempCheck) {
-                            chars[check-1] = null;
+                            chars[check - 1] = null;
                             check--;
                             update();
                         }
@@ -177,12 +194,17 @@ public class GameActivity extends CustomActivity{
             if (chars[i] != null) {
                 AutoResizeTextView textView = (AutoResizeTextView) letters[i];
                 textView.setText(chars[i]);
-            }else{
+            } else {
                 AutoResizeTextView textView = (AutoResizeTextView) letters[i];
                 textView.setText("");
             }
         }
     }
 
+    public void onNextQuestion(View view){
+        currentQuestionId++;
+        Question question = MainActivity.offlinePack[wordPack].questions.get(currentQuestionId);
+        currentQuestion.setText(question.question);
+    }
 
 }

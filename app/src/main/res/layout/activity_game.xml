@@ -69,33 +69,38 @@
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="350dp"
+        android:id="@+id/text_view_word_explanation"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginLeft="30.5dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/btn_shape"
         android:backgroundTint="@color/colorA1"
+        android:gravity="center"
         android:maxLines="1"
-        android:text="توضیح کلمه"
         android:textAlignment="center"
         android:textSize="@dimen/text_size_medium" />
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="350dp"
+        android:id="@+id/text_view_last_q"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginLeft="30.5dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="118dp"
         android:background="@drawable/btn_shape"
         android:backgroundTint="@color/colorA13"
         android:maxLines="1"
-        android:text="سوال قبلی"
         android:textAlignment="center"
         android:textSize="@dimen/text_size_medium" />
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="350dp"
+        android:id="@+id/text_view_current_q"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginLeft="30.5dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="156dp"
         android:maxLines="1"
         android:text="صورت سوال"
@@ -122,6 +127,23 @@
             android:textSize="@dimen/text_size_large" />
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="194dp"
+        android:background="@color/colorA15"
+        android:onClick="onPrevQuestion" />
+
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="194dp"
+        android:background="@color/colorA15"
+        android:onClick="onNextQuestion" />
+
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="36dp"
@@ -152,14 +174,13 @@
 
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_marginTop="551dp"
+        android:id="@+id/layout_keyboard"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:layout_marginBottom="0dp"
+        android:layout_marginTop="551dp"
         android:background="@drawable/keyboard_background"
-        android:id="@+id/layout_keyboard"
-        android:backgroundTint="@color/colorA17"
-        >
+        android:backgroundTint="@color/colorA17">
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 

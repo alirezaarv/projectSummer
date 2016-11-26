@@ -2,6 +2,7 @@ package com.q20.projectsummer.ui;
 
 import android.app.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,10 @@ public class NewGameDialog extends Activity {
 
     public void doNothing(View view){}
 
-    public void onOnline(View view){}
+    public void onOnline(View view){
+        Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+    }
 
     public void onOffline(View view){}
 
