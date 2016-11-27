@@ -134,12 +134,14 @@
         android:layout_marginLeft="250dp"
         android:layout_marginTop="194dp"
         android:background="@color/colorA15"
+        android:id="@+id/btn_prev_q"
         android:onClick="onPrevQuestion" />
 
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:id="@+id/btn_next_q"
         android:layout_marginTop="194dp"
         android:background="@color/colorA15"
         android:onClick="onNextQuestion" />

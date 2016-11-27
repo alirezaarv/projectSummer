@@ -3,7 +3,6 @@ package com.q20.projectsummer.ui;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,8 @@ import com.q20.projectsummer.Custom.AutoResizeTextView;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
-import QAPack.V1.QA;
+import java.util.ArrayList;
+
 import QAPack.V1.Question;
 import QAPack.V1.Word;
 
@@ -27,7 +27,6 @@ public class GameActivity extends CustomActivity {
     private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
     private String word = currentWord.word;
     private RelativeLayout parentLayout;
-    private static int check = 0;
     private TextView[] letters;
     private static String[] chars;
     private static int currentQuestionId = 0;
@@ -42,15 +41,13 @@ public class GameActivity extends CustomActivity {
         ((TextView) findViewById(R.id.text_view_word_explanation)).setText(currentWord.wordExplanation);
         currentQuestion = ((TextView) findViewById(R.id.text_view_current_q));
 
-        Question question = MainActivity.offlinePack[wordPack].questions.get(currentQuestionId);
-        currentQuestion.setText(question.question);
 
         createKeyboard();
         createLetters();
 
-        update();
+        updateLetters();
+        updateCurrentQuestion();
 
-        Log.v("word ", word);
     }
 
 
@@ -103,12 +100,12 @@ public class GameActivity extends CustomActivity {
                     @Override
                     public void onClick(View v) {
                         String letter = textView.getText().toString();
-                        if (check < letters.length) {
-                            chars[check] = letter;
-                            update();
-                            check++;
-                        } else if (check == letters.length) {
-
+                        for (int i = 0; i < chars.length; i++) {
+                            if (chars[i] == null) {
+                                chars[i] = letter;
+                                updateLetters();
+                                break;
+                            }
                         }
                     }
                 });
@@ -165,15 +162,12 @@ public class GameActivity extends CustomActivity {
                 temp.addView(textView);
                 letters[letterNum] = textView;
 
-                final int tempCheck = letterNum + 1;
+                final int tempCheck = letterNum;
                 temp.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (check == tempCheck) {
-                            chars[check - 1] = null;
-                            check--;
-                            update();
-                        }
+                        chars[tempCheck] = null;
+                        updateLetters();
                     }
                 });
 
@@ -186,10 +180,14 @@ public class GameActivity extends CustomActivity {
 
         this.letters = letters;
         if (chars == null)
-            this.chars = new String[word.replace(" ", "").length()];
+            this.chars = new String[word.replace(" ", "").
+
+                    length()
+
+                    ];
     }
 
-    private void update() {
+    private void updateLetters() {
         for (int i = 0; i < letters.length; i++) {
             if (chars[i] != null) {
                 AutoResizeTextView textView = (AutoResizeTextView) letters[i];
@@ -201,10 +199,33 @@ public class GameActivity extends CustomActivity {
         }
     }
 
-    public void onNextQuestion(View view){
-        currentQuestionId++;
-        Question question = MainActivity.offlinePack[wordPack].questions.get(currentQuestionId);
+    private void updateCurrentQuestion() {
+        ArrayList<Question> questions = MainActivity.offlinePack[wordPack].questions;
+        Question question = questions.get(currentQuestionId);
         currentQuestion.setText(question.question);
+
+        findViewById(R.id.btn_prev_q).setEnabled(true);
+        findViewById(R.id.btn_next_q).setEnabled(true);
+
+        if (currentQuestionId == 0) {
+            findViewById(R.id.btn_prev_q).setEnabled(false);
+            //TODO change pic
+        } else if (currentQuestionId == questions.size() - 1) {
+            findViewById(R.id.btn_next_q).setEnabled(false);
+
+        }
     }
+
+    public void onNextQuestion(View view) {
+        currentQuestionId++;
+        updateCurrentQuestion();
+    }
+
+    public void onPrevQuestion(View view) {
+        currentQuestionId--;
+        updateCurrentQuestion();
+    }
+
+
 
 }
