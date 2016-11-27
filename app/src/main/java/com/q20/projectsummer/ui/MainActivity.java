@@ -8,7 +8,6 @@ import com.q20.projectsummer.R;
 import java.io.IOException;
 import java.io.InputStream;
 import QAPack.V1.Pack;
-import QAPack.V1.Word;
 import Utility.PrimitiveSerializer;
 
 public class MainActivity extends CustomActivity {
@@ -21,12 +20,12 @@ public class MainActivity extends CustomActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for (int i = 0; i < packIDs.length ; i++) {
+        for (int i = 0; i < packIDs.length; i++) {
             InputStream inStream = getResources().openRawResource(packIDs[i]);
             try {
                 byte[] packData = new byte[inStream.available()];
                 inStream.read(packData);
-                offlinePack[i]=new Pack();
+                offlinePack[i] = new Pack();
                 offlinePack[i].deserialize(PrimitiveSerializer.bytesToLS(packData));
             } catch (IOException e) {
                 e.printStackTrace();
@@ -37,7 +36,6 @@ public class MainActivity extends CustomActivity {
     //when user click on new game local btn
     public void onNewGame(View view) {
         Intent intent = new Intent(this, NewGameDialog.class);
-        passRandomWordToGameActivity(0);
         startActivity(intent);
     }
 
@@ -86,14 +84,8 @@ public class MainActivity extends CustomActivity {
         startActivity(intent);
     }
 
-    public static Word getRandomWord(int packNumber){
-        int random = (int) (Math.random() * offlinePack[packNumber].words.size());
-        return offlinePack[packNumber].words.get(random);
-    }
 
-    public static void passRandomWordToGameActivity(int packId){
-        GameActivity.wordPack = packId;
-        GameActivity.currentWord = getRandomWord(packId);
-    }
+
+
 
 }

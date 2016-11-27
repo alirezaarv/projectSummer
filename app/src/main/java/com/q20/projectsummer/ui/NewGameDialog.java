@@ -1,13 +1,13 @@
 package com.q20.projectsummer.ui;
 
 import android.app.Activity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import com.q20.projectsummer.R;
+import QAPack.V1.Word;
 
 public class NewGameDialog extends Activity {
 
@@ -28,20 +28,36 @@ public class NewGameDialog extends Activity {
 
     }
 
-    public void onBackground(View view){
+    public void onBackground(View view) {
         finish();
     }
 
-    public void doNothing(View view){}
+    public void doNothing(View view) {
+    }
 
-    public void onOnline(View view){
+    public void onOnline(View view) {
+
+    }
+
+    public void onOffline(View view) {
         Intent intent = new Intent(this, GameActivity.class);
+        initializeGame(true);
         startActivity(intent);
     }
 
-    public void onOffline(View view){}
+    public static void passRandomWordToGameActivity(int packId) {
+        GameActivity.wordPack = packId;
+        GameActivity.currentWord = getRandomWord(packId);
+        GameActivity.chars = new String[GameActivity.currentWord.word.replace(" ", "").length()];
+    }
 
-
+    public static void initializeGame(boolean newGame) {
+        passRandomWordToGameActivity(0);
+    }
+    public static Word getRandomWord(int packNumber) {
+        int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
+        return MainActivity.offlinePack[packNumber].words.get(random);
+    }
     @Override
     protected void onResume() {
         super.onResume();

@@ -3,19 +3,18 @@ package com.q20.projectsummer.ui;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.non_android_programmers.responsivegui.PixelDimensions;
 import com.q20.projectsummer.Custom.AutoResizeTextView;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
-
 import java.util.ArrayList;
-
+import QAPack.V1.QA;
 import QAPack.V1.Question;
 import QAPack.V1.Word;
 
@@ -23,31 +22,41 @@ public class GameActivity extends CustomActivity {
 
     public static Word currentWord;
     public static int wordPack;
+    public static String[] chars;
+
+    private static int currentQuestionId = 0;
+
 
     private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
-    private String word = currentWord.word;
+
     private RelativeLayout parentLayout;
     private TextView[] letters;
-    private static String[] chars;
-    private static int currentQuestionId = 0;
-    private TextView currentQuestion;
+    private TextView currentQuestionTextView;
+    private RelativeLayout btnPrevQuestion;
+    private RelativeLayout btnNextQuestion;
+    private RelativeLayout btnAsk;
+    private TextView textViewBtnAsk;
+
+
+    private boolean[] askedQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        parentLayout = (RelativeLayout) findViewById(R.id.parent_layout);
-        ((TextView) findViewById(R.id.text_view_word_explanation)).setText(currentWord.wordExplanation);
-        currentQuestion = ((TextView) findViewById(R.id.text_view_current_q));
+        //TODO make method
+        askedQuestion = new boolean[MainActivity.offlinePack[wordPack].questions.size()];
 
+        initializeViews();
 
         createKeyboard();
-        createLetters();
+        createLetters(currentWord.word);
 
         updateLetters();
         updateCurrentQuestion();
 
+        Log.v("word ", currentWord.word);
     }
 
 
@@ -59,65 +68,67 @@ public class GameActivity extends CustomActivity {
         float marginToKeyH = 0.2f;
 
         float backgroundWidthPx = pixelDimensions.getWidth();
-        float keyWidthPx = backgroundWidthPx / (8 + 7 * marginToKeyW);
+        float keyWidth = backgroundWidthPx / (8 + 7 * marginToKeyW);
 
         float backgroundHeightPx = pixelDimensions.getHeight();
-        float keyHeightPx = backgroundHeightPx / (4 + 5 * marginToKeyH);
+        float keyHeight = backgroundHeightPx / (4 + 5 * marginToKeyH);
 
         RelativeLayout keys[] = new RelativeLayout[33];
 
         int keyNumber = 0;
-        float xPos = pixelDimensions.getX();
-        float yPos = pixelDimensions.getY() + keyHeightPx * marginToKeyH;
+        float xPos;
+        float yPos = pixelDimensions.getY() + keyHeight * marginToKeyH;
         for (int j = 0; j < 4; j++) {
             xPos = pixelDimensions.getX();
             for (int i = 0; i < 8; i++) {
+
                 keys[keyNumber] = new RelativeLayout(this);
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Math.round(keyWidthPx), Math.round(keyHeightPx));
-                params.topMargin = Math.round(yPos);
-                params.leftMargin = Math.round(xPos);
-
-                keys[keyNumber].setLayoutParams(params);
-                keys[keyNumber].setBackgroundResource(R.drawable.btn_shape);
-                keys[keyNumber].setGravity(Gravity.CENTER);
-                GradientDrawable btnBackground = (GradientDrawable) keys[keyNumber].getBackground();
-                btnBackground.setColor(Color.rgb(149, 165, 166));
-
+                styleKey(keys[keyNumber], xPos, yPos, keyWidth, keyHeight);
                 parentLayout.addView(keys[keyNumber]);
 
                 //add text
                 final AutoResizeTextView textView = new AutoResizeTextView(this);
-                RelativeLayout.LayoutParams btnParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                textView.setLayoutParams(btnParams);
-                textView.setText("" + characters.charAt(keyNumber));
-                textView.setMaxLines(1);
-                textView.setTextSize(90);
-                textView.setGravity(Gravity.CENTER);
+                styleTextView(textView, keyNumber, true);
                 keys[keyNumber].addView(textView);
 
                 //set listener
                 keys[keyNumber].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String letter = textView.getText().toString();
-                        for (int i = 0; i < chars.length; i++) {
-                            if (chars[i] == null) {
-                                chars[i] = letter;
-                                updateLetters();
-                                break;
-                            }
-                        }
+                        keyPressed(textView.getText().toString());
                     }
                 });
 
                 keyNumber++;
-                xPos += keyWidthPx + marginToKeyW * keyWidthPx;
+                xPos += keyWidth + marginToKeyW * keyWidth;
             }
-            yPos += keyHeightPx + marginToKeyH * keyHeightPx;
+            yPos += keyHeight + marginToKeyH * keyHeight;
         }
     }
 
-    private void createLetters() {
+    private void keyPressed(String letter) {
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == null) {
+                chars[i] = letter;
+                updateLetters();
+                if (i == chars.length - 1) {
+                    respondToUserAnswer();
+                }
+                break;
+            }
+        }
+    }
+
+    private void styleKey(RelativeLayout key, float xPos, float yPos, float keyWidth, float keyHeight) {
+        key.setLayoutParams(getViewParams(xPos, yPos, keyWidth, keyHeight));
+        key.setBackgroundResource(R.drawable.btn_shape);
+        key.setGravity(Gravity.CENTER);
+        GradientDrawable btnBackground = (GradientDrawable) key.getBackground();
+        btnBackground.setColor(Color.rgb(149, 165, 166));
+    }
+
+
+    private void createLetters(String word) {
         PixelDimensions pixelDimensions = new PixelDimensions(0, 442, 0, 0, -1, 50, parentLayout);
 
         float marginToLetterW = 0.2f;
@@ -140,25 +151,12 @@ public class GameActivity extends CustomActivity {
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) != ' ') {
                 RelativeLayout temp = new RelativeLayout(this);
-                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Math.round(letterSize), Math.round(letterSize));
-                params.topMargin = Math.round(yPos);
-                params.leftMargin = Math.round(xPos);
-
-                temp.setLayoutParams(params);
-
-                temp.setBackgroundResource(R.drawable.btn_circle);
-                temp.setGravity(Gravity.CENTER);
-                GradientDrawable btnBackground = (GradientDrawable) temp.getBackground();
-                btnBackground.setColor(Color.rgb(149, 165, 166));
+                styleLetter(temp, xPos, yPos, letterSize);
+                parentLayout.addView(temp);
 
                 //add text
                 final AutoResizeTextView textView = new AutoResizeTextView(this);
-                RelativeLayout.LayoutParams btnParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-                textView.setLayoutParams(btnParams);
-                textView.setMaxLines(1);
-                textView.setTextSize(90);
-                textView.setGravity(Gravity.CENTER);
-                textView.setId(0);
+                styleTextView(textView, 0, false);
                 temp.addView(textView);
                 letters[letterNum] = textView;
 
@@ -170,22 +168,48 @@ public class GameActivity extends CustomActivity {
                         updateLetters();
                     }
                 });
-
-                parentLayout.addView(temp);
-
                 letterNum++;
             }
             xPos -= letterSize + letterSize * marginToLetterW;
         }
 
         this.letters = letters;
-        if (chars == null)
-            this.chars = new String[word.replace(" ", "").
-
-                    length()
-
-                    ];
     }
+
+    private void styleLetter(RelativeLayout letter, float xPos, float yPos, float letterSize) {
+        letter.setLayoutParams(getViewParams(xPos, yPos, letterSize, letterSize));
+        letter.setBackgroundResource(R.drawable.btn_circle);
+        letter.setGravity(Gravity.CENTER);
+        GradientDrawable btnBackground = (GradientDrawable) letter.getBackground();
+        btnBackground.setColor(Color.rgb(149, 165, 166));
+    }
+
+    private RelativeLayout.LayoutParams getViewParams(float xPos, float yPos, float keyWidth, float keyHeight) {
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(Math.round(keyWidth), Math.round(keyHeight));
+        params.topMargin = Math.round(yPos);
+        params.leftMargin = Math.round(xPos);
+        return params;
+    }
+
+    private void styleTextView(AutoResizeTextView textView, int keyNumber, boolean isKeyBoard) {
+        textView.setLayoutParams(getViewParams(0, 0, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        textView.setMaxLines(1);
+        textView.setTextSize(90);
+        textView.setGravity(Gravity.CENTER);
+        if (isKeyBoard)
+            textView.setText("" + characters.charAt(keyNumber));
+    }
+
+    private void initializeViews() {
+        parentLayout = (RelativeLayout) findViewById(R.id.parent_layout);
+        ((TextView) findViewById(R.id.text_view_word_explanation)).setText(currentWord.wordExplanation);
+        currentQuestionTextView = ((TextView) findViewById(R.id.text_view_current_q));
+        btnPrevQuestion = (RelativeLayout) findViewById(R.id.btn_prev_q);
+        btnNextQuestion = (RelativeLayout) findViewById(R.id.btn_next_q);
+        btnAsk = (RelativeLayout) findViewById(R.id.btn_ask);
+        textViewBtnAsk = (TextView) findViewById(R.id.text_view_btn_ask);
+    }
+
 
     private void updateLetters() {
         for (int i = 0; i < letters.length; i++) {
@@ -200,20 +224,72 @@ public class GameActivity extends CustomActivity {
     }
 
     private void updateCurrentQuestion() {
-        ArrayList<Question> questions = MainActivity.offlinePack[wordPack].questions;
-        Question question = questions.get(currentQuestionId);
-        currentQuestion.setText(question.question);
+        Question currentQuestion = MainActivity.offlinePack[wordPack].questions.get(currentQuestionId);
+        currentQuestionTextView.setText(currentQuestion.question);
 
-        findViewById(R.id.btn_prev_q).setEnabled(true);
-        findViewById(R.id.btn_next_q).setEnabled(true);
+        btnPrevQuestion.setEnabled(true);
+        btnNextQuestion.setEnabled(true);
+        btnAsk.setEnabled(true);
+        textViewBtnAsk.setText("بپرس");
+
+        if (askedQuestion[currentQuestionId]) {
+            btnAsk.setEnabled(false);
+            int answer = getCurrentQuestionAnswer(currentWord.questions, currentQuestionId);
+            String answerText = "بی معنی";
+            if (answer == 0) {
+                answerText = currentQuestion.choice1;
+            } else if (answer == 1) {
+                answerText = currentQuestion.choice2;
+            } else if (answer == 2) {
+                answerText = "بستگی دارد";
+            }
+            textViewBtnAsk.setText(answerText);
+        }
 
         if (currentQuestionId == 0) {
-            findViewById(R.id.btn_prev_q).setEnabled(false);
+            btnPrevQuestion.setEnabled(false);
             //TODO change pic
-        } else if (currentQuestionId == questions.size() - 1) {
-            findViewById(R.id.btn_next_q).setEnabled(false);
+        } else if (currentQuestionId == MainActivity.offlinePack[wordPack].questions.size() - 1) {
+            btnNextQuestion.setEnabled(false);
 
         }
+    }
+
+    private void respondToUserAnswer() {
+        if (checkUserAnswer()) {
+            //TODO need a dialog
+        } else {
+            //TODO play false sound
+            for (int i = 0; i < chars.length; i++) {
+                chars[i] = null;
+            }
+            updateLetters();
+        }
+    }
+
+    private Boolean checkUserAnswer() {
+        if (currentWord.word.replace(" ", "").equals(getUserAnswer()))
+            return true;
+        return false;
+    }
+
+    private String getUserAnswer() {
+        String userAnswer = "";
+        for (int i = 0; i < chars.length; i++) {
+            userAnswer += chars[i];
+        }
+        return userAnswer;
+    }
+
+    private int getCurrentQuestionAnswer(ArrayList<QA> qaArrayList, int currentQuestionId) {
+        int answer = -1;
+        for (QA qa : qaArrayList) {
+            if (qa.q == currentQuestionId) {
+                answer = qa.a;
+                break;
+            }
+        }
+        return answer;
     }
 
     public void onNextQuestion(View view) {
@@ -226,6 +302,9 @@ public class GameActivity extends CustomActivity {
         updateCurrentQuestion();
     }
 
-
+    public void onAsk(View view) {
+        askedQuestion[currentQuestionId] = true;
+        updateCurrentQuestion();
+    }
 
 }

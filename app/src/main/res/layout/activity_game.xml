@@ -109,14 +109,17 @@
         android:textSize="@dimen/text_size_medium" />
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:id="@+id/btn_ask"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginLeft="130.5dp"
         android:layout_marginTop="194.5dp"
         android:background="@drawable/btn_circle"
-        android:backgroundTint="@color/colorA13">
+        android:backgroundTint="@color/colorA13"
+        android:onClick="onAsk">
 
         <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
+            android:id="@+id/text_view_btn_ask"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -129,19 +132,19 @@
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:id="@+id/btn_prev_q"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="250dp"
         android:layout_marginTop="194dp"
         android:background="@color/colorA15"
-        android:id="@+id/btn_prev_q"
         android:onClick="onPrevQuestion" />
 
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:id="@+id/btn_next_q"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/btn_next_q"
         android:layout_marginTop="194dp"
         android:background="@color/colorA15"
         android:onClick="onNextQuestion" />
