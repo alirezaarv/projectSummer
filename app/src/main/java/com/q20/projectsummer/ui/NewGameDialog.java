@@ -1,15 +1,21 @@
 package com.q20.projectsummer.ui;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.transition.Explode;
+import android.transition.Slide;
 import android.view.View;
 import android.view.WindowManager;
 import com.q20.projectsummer.R;
 import QAPack.V1.Word;
 
 public class NewGameDialog extends Activity {
+
+    Slide transition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,19 @@ public class NewGameDialog extends Activity {
         params.verticalMargin = 0;
         this.getWindow().setAttributes(params);
 
+        setupWindowAnimations();
+
+    }
+
+    @TargetApi(21)
+    private void setupWindowAnimations() {
+        // Re-enter transition is executed when returning to this activity
+        transition = new Slide();
+        //slideTransition.setSlideEdge(Gravity.END);
+        transition.setDuration(1000);
+        getWindow().setEnterTransition(transition);
+        //getWindow().setSharedElementExitTransition(transition);
+        //getWindow().setExitTransition(slideTransition);
     }
 
     public void onBackground(View view) {
@@ -42,7 +61,10 @@ public class NewGameDialog extends Activity {
     public void onOffline(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         initializeGame(true);
-        startActivity(intent);
+        startActivity(intent,
+                ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(this, null).
+                        toBundle());
     }
 
     public static void passRandomWordToGameActivity(int packId) {

@@ -30,7 +30,8 @@
         <activity android:name=".ui.RegisterPageActivity">
 
         </activity>
-        <activity android:name=".ui.GameActivity">
+        <activity android:name=".ui.GameActivity"
+            android:parentActivityName=".ui.MainActivity">
 
         </activity>
         <activity android:name=".ui.FindRivalActivity"></activity>

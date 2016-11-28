@@ -1,7 +1,12 @@
 package com.q20.projectsummer.ui;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.transition.Explode;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.View;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
@@ -14,6 +19,8 @@ public class MainActivity extends CustomActivity {
 
     final static int packIDs[] = {R.raw.pack0};
     public static Pack offlinePack[] = new Pack[packIDs.length];
+
+    Explode transition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +40,24 @@ public class MainActivity extends CustomActivity {
         }
     }
 
+    @TargetApi(21)
+    private void setupWindowAnimations() {
+        // Re-enter transition is executed when returning to this activity
+        transition = new Explode();
+        //transition.setSlideEdge(Gravity.END);
+        transition.setDuration(1000);
+        getWindow().setReenterTransition(transition);
+        //getWindow().setSharedElementExitTransition(slideTransition);
+        //getWindow().setExitTransition(slideTransition);
+    }
+
     //when user click on new game local btn
     public void onNewGame(View view) {
         Intent intent = new Intent(this, NewGameDialog.class);
-        startActivity(intent);
+        startActivity(intent,
+                ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(this, null).
+                        toBundle());
     }
 
     //when user click on information btn

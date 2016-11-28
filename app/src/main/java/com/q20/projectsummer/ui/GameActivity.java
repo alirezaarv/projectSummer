@@ -1,8 +1,13 @@
 package com.q20.projectsummer.ui;
 
+import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.transition.Explode;
+import android.transition.Slide;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -40,6 +45,8 @@ public class GameActivity extends CustomActivity {
 
     private boolean[] askedQuestion;
 
+    Slide transition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +64,31 @@ public class GameActivity extends CustomActivity {
         updateCurrentQuestion();
 
         Log.v("word ", currentWord.word);
+
+        setupWindowAnimations();
     }
 
+    @TargetApi(21)
+    private void setupWindowAnimations() {
+        // Re-enter transition is executed when returning to this activity
+        transition = new Slide();
+        transition.setSlideEdge(Gravity.END);
+        transition.setDuration(1000);
+        getWindow().setEnterTransition(transition);
+        //getWindow().setSharedElementExitTransition(slideTransition);
+        //getWindow().setExitTransition(slideTransition);
+    }
+
+    //TODO make back button to back to mainActivity not newGameActivity
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent,
+//                ActivityOptionsCompat.
+//                        makeSceneTransitionAnimation(this, null).
+//                        toBundle());
+//    }
 
     private void createKeyboard() {
         PixelDimensions pixelDimensions = new PixelDimensions(8, 550, 8, 8, -1, -1, parentLayout);
