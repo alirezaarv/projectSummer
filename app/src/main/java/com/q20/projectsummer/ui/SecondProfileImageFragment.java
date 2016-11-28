@@ -41,17 +41,17 @@ public class SecondProfileImageFragment extends Fragment {
         ImageView view11 = (ImageView)view.findViewById(R.id.profile_image_page_image11);
         ImageView view12 = (ImageView)view.findViewById(R.id.profile_image_page_image12);
 
-        view1.setImageResource(R.drawable.char_m_40);
-        view2.setImageResource(R.drawable.char_m_40);
-        view3.setImageResource(R.drawable.char_m_40);
-        view4.setImageResource(R.drawable.char_m_40);
-        view5.setImageResource(R.drawable.char_m_40);
-        view6.setImageResource(R.drawable.char_m_40);
-        view7.setImageResource(R.drawable.char_m_40);
-        view8.setImageResource(R.drawable.char_m_40);
-        view9.setImageResource(R.drawable.char_m_40);
-        view10.setImageResource(R.drawable.char_m_40);
-        view11.setImageResource(R.drawable.char_m_40);
+        view1.setImageResource(R.drawable.char_m_14);
+        view2.setImageResource(R.drawable.char_m_15);
+        view3.setImageResource(R.drawable.char_m_16);
+        view4.setImageResource(R.drawable.char_m_17);
+        view5.setImageResource(R.drawable.char_m_18);
+        view6.setImageResource(R.drawable.char_m_19);
+        view7.setImageResource(R.drawable.char_m_20);
+        view8.setImageResource(R.drawable.char_m_21);
+        view9.setImageResource(R.drawable.char_m_22);
+        view10.setImageResource(R.drawable.char_m_23);
+        view11.setImageResource(R.drawable.char_m_24);
         view12.setImageResource(R.drawable.char_m_40);
 
         return view;

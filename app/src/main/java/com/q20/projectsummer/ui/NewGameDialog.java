@@ -42,7 +42,12 @@ public class NewGameDialog extends Activity {
         transition = new Slide();
         //slideTransition.setSlideEdge(Gravity.END);
         transition.setDuration(1000);
+
+        Explode explode = new Explode();
+        explode.setDuration(3000);
+
         getWindow().setEnterTransition(transition);
+        getWindow().setExitTransition(explode);
         //getWindow().setSharedElementExitTransition(transition);
         //getWindow().setExitTransition(slideTransition);
     }
