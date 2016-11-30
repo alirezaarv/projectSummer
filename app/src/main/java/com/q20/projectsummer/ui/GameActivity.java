@@ -4,9 +4,10 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.transition.Explode;
 import android.transition.Slide;
 import android.util.Log;
 import android.view.Gravity;
@@ -287,13 +288,21 @@ public class GameActivity extends CustomActivity {
 
     private void respondToUserAnswer() {
         if (checkUserAnswer()) {
-            //TODO need a dialog
+            MediaPlayer.create(this,R.raw.win).start();
+            Intent intent = new Intent(this, WinDialog.class);
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
         } else {
-            //TODO play false sound
-            for (int i = 0; i < chars.length; i++) {
-                chars[i] = null;
-            }
-            updateLetters();
+            MediaPlayer.create(this,R.raw.buzzer).start();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    for (int i = 0; i < chars.length; i++) {
+                        chars[i] = null;
+                    }
+                    updateLetters();
+                }
+            },500);
         }
     }
 

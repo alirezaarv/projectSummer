@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".ui.NewGameDialog"
             android:theme="@style/cosDialog"></activity>
+        <activity android:name=".ui.WinDialog"
+            android:theme="@style/cosDialog"></activity>
         <activity android:name=".ui.BuyCoinDialog"
             android:theme="@style/cosDialog"></activity>
         <activity

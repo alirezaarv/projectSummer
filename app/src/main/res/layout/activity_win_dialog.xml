@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    tools:context="com.q20.projectsummer.ui.NewGameDialog"
+    android:onClick="onBackground"
+    >
+
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="311dp"
+        android:layout_height="531dp"
+        android:background="@drawable/dialog_background"
+        android:backgroundTint="@color/colorA1"
+        android:onClick="doNothing">
+
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+
+</RelativeLayout>

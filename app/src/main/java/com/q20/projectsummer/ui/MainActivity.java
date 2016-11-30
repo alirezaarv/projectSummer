@@ -8,10 +8,13 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
+
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
+
 import java.io.IOException;
 import java.io.InputStream;
+
 import QAPack.V1.Pack;
 import Utility.PrimitiveSerializer;
 
@@ -54,10 +57,7 @@ public class MainActivity extends CustomActivity {
     //when user click on new game local btn
     public void onNewGame(View view) {
         Intent intent = new Intent(this, NewGameDialog.class);
-        startActivity(intent,
-                ActivityOptionsCompat.
-                        makeSceneTransitionAnimation(this, null).
-                        toBundle());
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
     }
 
     //when user click on information btn
@@ -104,9 +104,6 @@ public class MainActivity extends CustomActivity {
         Intent intent = new Intent(this, ProfileImageActivity.class);
         startActivity(intent);
     }
-
-
-
 
 
 }

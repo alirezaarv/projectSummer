@@ -85,6 +85,7 @@ public class NewGameDialog extends Activity {
         int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
         return MainActivity.offlinePack[packNumber].words.get(random);
     }
+
     @Override
     protected void onResume() {
         super.onResume();

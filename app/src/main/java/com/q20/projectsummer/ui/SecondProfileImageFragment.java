@@ -41,7 +41,7 @@ public class SecondProfileImageFragment extends Fragment {
         ImageView view11 = (ImageView)view.findViewById(R.id.profile_image_page_image11);
         ImageView view12 = (ImageView)view.findViewById(R.id.profile_image_page_image12);
 
-        view1.setImageResource(R.drawable.char_m_14);
+/*        view1.setImageResource(R.drawable.char_m_14);
         view2.setImageResource(R.drawable.char_m_15);
         view3.setImageResource(R.drawable.char_m_16);
         view4.setImageResource(R.drawable.char_m_17);
@@ -52,7 +52,7 @@ public class SecondProfileImageFragment extends Fragment {
         view9.setImageResource(R.drawable.char_m_22);
         view10.setImageResource(R.drawable.char_m_23);
         view11.setImageResource(R.drawable.char_m_24);
-        view12.setImageResource(R.drawable.char_m_40);
+        view12.setImageResource(R.drawable.char_m_40);*/
 
         return view;
     }
