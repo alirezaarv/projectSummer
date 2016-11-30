@@ -13,13 +13,19 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.non_android_programmers.responsivegui.PixelDimensions;
+import com.non_android_programmers.responsivegui.ResponsiveImageView;
 import com.q20.projectsummer.Custom.AutoResizeTextView;
+import com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
+
 import java.util.ArrayList;
+
 import QAPack.V1.QA;
 import QAPack.V1.Question;
 import QAPack.V1.Word;
@@ -38,8 +44,8 @@ public class GameActivity extends CustomActivity {
     private RelativeLayout parentLayout;
     private TextView[] letters;
     private TextView currentQuestionTextView;
-    private RelativeLayout btnPrevQuestion;
-    private RelativeLayout btnNextQuestion;
+    private ResponsiveImageView btnPrevQuestion;
+    private ResponsiveImageView btnNextQuestion;
     private RelativeLayout btnAsk;
     private TextView textViewBtnAsk;
 
@@ -118,7 +124,7 @@ public class GameActivity extends CustomActivity {
                 parentLayout.addView(keys[keyNumber]);
 
                 //add text
-                final AutoResizeTextView textView = new AutoResizeTextView(this);
+                final AutoResizeTextViewWithIrsansFont textView = new AutoResizeTextViewWithIrsansFont(this);
                 styleTextView(textView, keyNumber, true);
                 keys[keyNumber].addView(textView);
 
@@ -166,7 +172,7 @@ public class GameActivity extends CustomActivity {
 
 
         float backgroundWidthPx = pixelDimensions.getWidth();
-        float letterSizeW = backgroundWidthPx / (10 + 11 * marginToLetterW); // max letter numbers = 10
+        float letterSizeW = backgroundWidthPx / (8 + 9 * marginToLetterW); // max letter numbers = 10
 
         float backgroundHeightPx = pixelDimensions.getHeight();
         float letterSizeH = backgroundHeightPx;
@@ -186,7 +192,7 @@ public class GameActivity extends CustomActivity {
                 parentLayout.addView(temp);
 
                 //add text
-                final AutoResizeTextView textView = new AutoResizeTextView(this);
+                final AutoResizeTextViewWithIrsansFont textView = new AutoResizeTextViewWithIrsansFont(this);
                 styleTextView(textView, 0, false);
                 temp.addView(textView);
                 letters[letterNum] = textView;
@@ -222,10 +228,10 @@ public class GameActivity extends CustomActivity {
         return params;
     }
 
-    private void styleTextView(AutoResizeTextView textView, int keyNumber, boolean isKeyBoard) {
+    private void styleTextView(AutoResizeTextViewWithIrsansFont textView, int keyNumber, boolean isKeyBoard) {
         textView.setLayoutParams(getViewParams(0, 0, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         textView.setMaxLines(1);
-        textView.setTextSize(90);
+        textView.setTextSize(50);
         textView.setGravity(Gravity.CENTER);
         if (isKeyBoard)
             textView.setText("" + characters.charAt(keyNumber));
@@ -235,8 +241,8 @@ public class GameActivity extends CustomActivity {
         parentLayout = (RelativeLayout) findViewById(R.id.parent_layout);
         ((TextView) findViewById(R.id.text_view_word_explanation)).setText(currentWord.wordExplanation);
         currentQuestionTextView = ((TextView) findViewById(R.id.text_view_current_q));
-        btnPrevQuestion = (RelativeLayout) findViewById(R.id.btn_prev_q);
-        btnNextQuestion = (RelativeLayout) findViewById(R.id.btn_next_q);
+        btnPrevQuestion = (ResponsiveImageView) findViewById(R.id.btn_prev_q);
+        btnNextQuestion = (ResponsiveImageView) findViewById(R.id.btn_next_q);
         btnAsk = (RelativeLayout) findViewById(R.id.btn_ask);
         textViewBtnAsk = (TextView) findViewById(R.id.text_view_btn_ask);
     }
@@ -245,10 +251,10 @@ public class GameActivity extends CustomActivity {
     private void updateLetters() {
         for (int i = 0; i < letters.length; i++) {
             if (chars[i] != null) {
-                AutoResizeTextView textView = (AutoResizeTextView) letters[i];
+                AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) letters[i];
                 textView.setText(chars[i]);
             } else {
-                AutoResizeTextView textView = (AutoResizeTextView) letters[i];
+                AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) letters[i];
                 textView.setText("");
             }
         }
@@ -259,7 +265,9 @@ public class GameActivity extends CustomActivity {
         currentQuestionTextView.setText(currentQuestion.question);
 
         btnPrevQuestion.setEnabled(true);
+        btnPrevQuestion.setImageResource(R.drawable.right_arrow_1);
         btnNextQuestion.setEnabled(true);
+        btnNextQuestion.setImageResource(R.drawable.left_arrow_1);
         btnAsk.setEnabled(true);
         textViewBtnAsk.setText("بپرس");
 
@@ -279,20 +287,20 @@ public class GameActivity extends CustomActivity {
 
         if (currentQuestionId == 0) {
             btnPrevQuestion.setEnabled(false);
-            //TODO change pic
+            btnPrevQuestion.setImageResource(R.drawable.right_arrow_2);
         } else if (currentQuestionId == MainActivity.offlinePack[wordPack].questions.size() - 1) {
             btnNextQuestion.setEnabled(false);
-
+            btnNextQuestion.setImageResource(R.drawable.left_arrow_2);
         }
     }
 
     private void respondToUserAnswer() {
         if (checkUserAnswer()) {
-            MediaPlayer.create(this,R.raw.win).start();
+            MediaPlayer.create(this, R.raw.win).start();
             Intent intent = new Intent(this, WinDialog.class);
             startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
         } else {
-            MediaPlayer.create(this,R.raw.buzzer).start();
+            MediaPlayer.create(this, R.raw.buzzer).start();
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -302,12 +310,14 @@ public class GameActivity extends CustomActivity {
                     }
                     updateLetters();
                 }
-            },500);
+            }, 500);
         }
     }
 
     private Boolean checkUserAnswer() {
-        if (currentWord.word.replace(" ", "").equals(getUserAnswer()))
+        String wordCheck = currentWord.word.replace(" ", "");
+        wordCheck = wordCheck.replace("آ","ا");
+        if (wordCheck.equals(getUserAnswer()))
             return true;
         return false;
     }

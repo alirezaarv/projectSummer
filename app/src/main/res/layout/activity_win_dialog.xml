@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00000000"
-    tools:context="com.q20.projectsummer.ui.NewGameDialog"
+    tools:context="com.q20.projectsummer.ui.WinDialog"
     android:onClick="onBackground"
     >
 

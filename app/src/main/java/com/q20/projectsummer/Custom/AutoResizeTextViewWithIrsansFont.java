@@ -9,17 +9,17 @@ import com.non_android_programmers.responsivegui.ResponsiveAutoResizeTextView;
 public class AutoResizeTextViewWithIrsansFont extends ResponsiveAutoResizeTextView {
     public AutoResizeTextViewWithIrsansFont(Context context) {
         super(context);
-        changeFont("irsans.ttf");
+        changeFont("irs_m.ttf");
     }
 
     public AutoResizeTextViewWithIrsansFont(Context context, AttributeSet attrs) {
         super(context, attrs);
-        changeFont("irsans.ttf");
+        changeFont("irs_m.ttf");
     }
 
     public AutoResizeTextViewWithIrsansFont(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        changeFont("irsans.ttf");
+        changeFont("irs_m.ttf");
     }
 
 

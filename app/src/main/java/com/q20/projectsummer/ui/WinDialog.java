@@ -1,14 +1,14 @@
 package com.q20.projectsummer.ui;
 
+import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
 import com.q20.projectsummer.R;
 
-public class WinDialog extends AppCompatActivity {
+public class WinDialog extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class WinDialog extends AppCompatActivity {
 
 
     public void onBackground(View view) {
-        finish();
+        doNothing(view);
     }
 
     public void doNothing(View view) {
