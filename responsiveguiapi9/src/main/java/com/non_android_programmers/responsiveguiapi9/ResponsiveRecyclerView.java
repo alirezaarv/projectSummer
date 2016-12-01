@@ -79,7 +79,8 @@ public class ResponsiveRecyclerView extends android.support.v7.widget.RecyclerVi
         float dpWidth = ScreenDetails.px2Dp(context, params.width);
         float dpHeight = ScreenDetails.px2Dp(context, params.height);
 
-        pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarOriginX, polarOriginY, polarRad, polarTheta, usePolar);
+        if (pixelDimensions==null)//lastly set by yours truly
+            pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarOriginX, polarOriginY, polarRad, polarTheta, usePolar);
     }
 
     public void updateDimensions() {
@@ -100,9 +101,10 @@ public class ResponsiveRecyclerView extends android.support.v7.widget.RecyclerVi
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (!isInEditMode()) {
-            calculateDimensions();
-            updateDimensions();
-        }
+        if (!isInEditMode())
+            if (pixelDimensions==null) {//lastly set by yours truly
+                calculateDimensions();
+                updateDimensions();
+            }
     }
 }
