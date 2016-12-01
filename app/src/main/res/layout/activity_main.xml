@@ -8,6 +8,7 @@
     tools:context=".ui.MainActivity">
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
+        android:id="@+id/main_activity_profile_name"
         android:layout_width="147dp"
         android:layout_height="36dp"
         android:layout_marginLeft="163dp"
@@ -50,9 +51,10 @@
         android:onClick="onProfileImage">
 
         <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:id="@+id/main_activity_profile_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/char_m_40" />
+            android:src="@drawable/char_m_40"/>
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 

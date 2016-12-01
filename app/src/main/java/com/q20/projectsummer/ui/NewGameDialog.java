@@ -41,13 +41,13 @@ public class NewGameDialog extends Activity {
         // Re-enter transition is executed when returning to this activity
         transition = new Slide();
         //slideTransition.setSlideEdge(Gravity.END);
-        transition.setDuration(1000);
+        transition.setDuration(500);
 
         Explode explode = new Explode();
-        explode.setDuration(3000);
+        explode.setDuration(500);
 
         getWindow().setEnterTransition(transition);
-        getWindow().setExitTransition(explode);
+        //getWindow().setExitTransition(explode);
         //getWindow().setSharedElementExitTransition(transition);
         //getWindow().setExitTransition(slideTransition);
     }
@@ -85,6 +85,7 @@ public class NewGameDialog extends Activity {
         int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
         return MainActivity.offlinePack[packNumber].words.get(random);
     }
+
     @Override
     protected void onResume() {
         super.onResume();

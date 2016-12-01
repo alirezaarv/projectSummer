@@ -54,6 +54,19 @@ public class SecondProfileImageFragment extends Fragment {
         view11.setImageResource(R.drawable.char_m_24);
         view12.setImageResource(R.drawable.char_m_40);
 
+        view1.setTag(R.drawable.char_m_14);
+        view2.setTag(R.drawable.char_m_15);
+        view3.setTag(R.drawable.char_m_16);
+        view4.setTag(R.drawable.char_m_17);
+        view5.setTag(R.drawable.char_m_18);
+        view6.setTag(R.drawable.char_m_19);
+        view7.setTag(R.drawable.char_m_20);
+        view8.setTag(R.drawable.char_m_21);
+        view9.setTag(R.drawable.char_m_22);
+        view10.setTag(R.drawable.char_m_23);
+        view11.setTag(R.drawable.char_m_24);
+        view12.setTag(R.drawable.char_m_40);
+
         return view;
     }
 

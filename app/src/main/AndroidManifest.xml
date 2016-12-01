@@ -10,12 +10,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.TestResponsivityActivity"></activity>
         <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.NewGameDialog"
+            android:theme="@style/cosDialog"></activity>
+        <activity android:name=".ui.WinDialog"
             android:theme="@style/cosDialog"></activity>
         <activity android:name=".ui.BuyCoinDialog"
             android:theme="@style/cosDialog"></activity>
@@ -28,10 +26,12 @@
 
         </activity>
         <activity android:name=".ui.RegisterPageActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".ui.GameActivity"
-            android:parentActivityName=".ui.MainActivity">
+        <activity android:name=".ui.GameActivity">
 
         </activity>
         <activity android:name=".ui.FindRivalActivity"></activity>

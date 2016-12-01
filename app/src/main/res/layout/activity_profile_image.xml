@@ -17,11 +17,10 @@
 
         <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:id="@+id/profile_image_page_main_image_image_view"
-            android:layout_width="@dimen/profile_image_page_image_size"
-            android:layout_height="@dimen/profile_image_page_image_size"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:src="@drawable/char_m_40" />
+            android:layout_margin="5dp"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont

@@ -1,6 +1,7 @@
 package com.q20.projectsummer.ui;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -8,10 +9,14 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
+
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
+
 import java.io.IOException;
 import java.io.InputStream;
+
 import QAPack.V1.Pack;
 import Utility.PrimitiveSerializer;
 
@@ -20,7 +25,8 @@ public class MainActivity extends CustomActivity {
     final static int packIDs[] = {R.raw.pack0};
     public static Pack offlinePack[] = new Pack[packIDs.length];
 
-    Explode transition;
+    Slide transition;
+    ImageView profileImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +44,24 @@ public class MainActivity extends CustomActivity {
                 e.printStackTrace();
             }
         }
+        profileImageView = (ImageView) findViewById(R.id.main_activity_profile_image);
+        profileImageView.setTag(R.drawable.char_m_40);
+
+
+        //TODO get data from register page
+        // it is just for no bug app in xml file
+
+
+        setupWindowAnimations();
     }
 
     @TargetApi(21)
     private void setupWindowAnimations() {
         // Re-enter transition is executed when returning to this activity
-        transition = new Explode();
+        transition = new Slide(Gravity.END);
         //transition.setSlideEdge(Gravity.END);
-        transition.setDuration(1000);
-        getWindow().setReenterTransition(transition);
+        transition.setDuration(300);
+        getWindow().setEnterTransition(transition);
         //getWindow().setSharedElementExitTransition(slideTransition);
         //getWindow().setExitTransition(slideTransition);
     }
@@ -54,10 +69,7 @@ public class MainActivity extends CustomActivity {
     //when user click on new game local btn
     public void onNewGame(View view) {
         Intent intent = new Intent(this, NewGameDialog.class);
-        startActivity(intent,
-                ActivityOptionsCompat.
-                        makeSceneTransitionAnimation(this, null).
-                        toBundle());
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
     }
 
     //when user click on information btn
@@ -102,11 +114,21 @@ public class MainActivity extends CustomActivity {
 
     public void onProfileImage(View view) {
         Intent intent = new Intent(this, ProfileImageActivity.class);
-        startActivity(intent);
+        intent.putExtra("ID", (Integer) profileImageView.getTag());
+        startActivityForResult(intent, 1);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1){
+            if (resultCode == Activity.RESULT_OK){
+                int profileImageId = data.getIntExtra("ID", R.drawable.char_m_40);
 
-
-
-
+                //Initialize profile image
+                profileImageView.setImageResource(profileImageId);
+                profileImageView.setTag(profileImageId);
+            }
+        }
+    }
 }

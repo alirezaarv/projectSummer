@@ -59,7 +59,7 @@
     <dimen name="keyboard_btn_size">44dp</dimen>
 
     <!--  -->
-    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_large">50sp</dimen>
     <dimen name="text_size_medium">17sp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="main_padding">8dp</dimen>
