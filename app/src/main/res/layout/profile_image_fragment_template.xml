@@ -18,7 +18,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image1"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -36,7 +37,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image2"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 
@@ -55,7 +57,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image3"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -73,7 +76,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image4"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -91,7 +95,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image5"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -109,7 +114,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image6"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -127,7 +133,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image7"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -145,7 +152,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image8"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -163,7 +171,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image9"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -181,7 +190,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image10"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -199,7 +209,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image11"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
@@ -217,7 +228,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_centerInParent="true"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:onClick="image12"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

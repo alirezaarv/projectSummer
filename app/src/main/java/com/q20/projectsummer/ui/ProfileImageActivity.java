@@ -1,8 +1,13 @@
 package com.q20.projectsummer.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.anton46.stepsview.StepsView;
 import com.pixelcan.inkpageindicator.InkPageIndicator;
@@ -15,6 +20,7 @@ import java.util.List;
 
 public class ProfileImageActivity extends CustomActivity {
 
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,5 +40,59 @@ public class ProfileImageActivity extends CustomActivity {
 //                .setLabelColorIndicator(this.getResources().getColor(R.color.orange))
 //                .setCompletedPosition(0)
 //                .drawView();
+
+        imageView = (ImageView)findViewById(R.id.profile_image_page_main_image_image_view);
+        Intent intent = getIntent();
+        if (intent != null){
+            imageView.setImageResource(intent.getIntExtra("ID", R.drawable.char_m_40));
+            imageView.setTag(intent.getIntExtra("ID", R.drawable.char_m_40));
+
+        }
+    }
+
+    private void onImagesClickingMethod(int IMAGES_ID){
+        imageView.setImageResource(IMAGES_ID);
+        imageView.setTag(IMAGES_ID);
+        Intent intent = new Intent();
+        //ImageView imageView = (ImageView) findViewById(R.id.profile_image_page_main_image_image_view);
+        intent.putExtra("ID", (Integer) imageView.getTag());
+        setResult(Activity.RESULT_OK, intent);
+    }
+
+    public void image1(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image2(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image3(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image4(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image5(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image6(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image7(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image8(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image9(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image10(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image11(View view){
+        onImagesClickingMethod((Integer) view.getTag());
+    }
+    public void image12(View view){
+        onImagesClickingMethod((Integer) view.getTag());
     }
 }

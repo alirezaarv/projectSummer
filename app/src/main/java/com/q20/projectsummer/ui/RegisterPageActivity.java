@@ -1,11 +1,15 @@
 package com.q20.projectsummer.ui;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.media.Image;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -26,6 +30,9 @@ public class RegisterPageActivity extends CustomActivity {
         fragmentTransaction.add(R.id.register_page_fragment_container, new RegisterSignInORLogInFragment());
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
+
+        //for initializing activity animation
+        setupWindowAnimations();
     }
 
     private void switchFragment(Fragment fragment){
@@ -92,6 +99,13 @@ public class RegisterPageActivity extends CustomActivity {
 //        intent.putExtras(b);
 //        intent.putExtra("ID", (int) imageView.getTag());
 //        intent.putExtra("USER_NAME", String.valueOf(textView.getText()));
-        startActivity(intent);
+        startActivity(intent,
+                ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+    }
+    @TargetApi(21)
+    private void setupWindowAnimations(){
+        Slide slide = new Slide(Gravity.END);
+        slide.setDuration(500);
+        getWindow().setEnterTransition(slide);
     }
 }

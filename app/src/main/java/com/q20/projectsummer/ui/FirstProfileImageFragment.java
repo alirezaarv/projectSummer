@@ -40,7 +40,7 @@ public class FirstProfileImageFragment extends Fragment {
         ImageView view11 = (ImageView)view.findViewById(R.id.profile_image_page_image11);
         ImageView view12 = (ImageView)view.findViewById(R.id.profile_image_page_image12);
 
-/*        view1.setImageResource(R.drawable.char_m_2);
+        view1.setImageResource(R.drawable.char_m_2);
         view2.setImageResource(R.drawable.char_m_3);
         view3.setImageResource(R.drawable.char_m_4);
         view4.setImageResource(R.drawable.char_m_5);
@@ -51,7 +51,21 @@ public class FirstProfileImageFragment extends Fragment {
         view9.setImageResource(R.drawable.char_m_10);
         view10.setImageResource(R.drawable.char_m_11);
         view11.setImageResource(R.drawable.char_m_12);
-        view12.setImageResource(R.drawable.char_m_13);*/
+        view12.setImageResource(R.drawable.char_m_13);
+
+
+        view1.setTag(R.drawable.char_m_2);
+        view2.setTag(R.drawable.char_m_3);
+        view3.setTag(R.drawable.char_m_4);
+        view4.setTag(R.drawable.char_m_5);
+        view5.setTag(R.drawable.char_m_6);
+        view6.setTag(R.drawable.char_m_7);
+        view7.setTag(R.drawable.char_m_8);
+        view8.setTag(R.drawable.char_m_9);
+        view9.setTag(R.drawable.char_m_10);
+        view10.setTag(R.drawable.char_m_11);
+        view11.setTag(R.drawable.char_m_12);
+        view12.setTag(R.drawable.char_m_13);
 
         return view;
     }
