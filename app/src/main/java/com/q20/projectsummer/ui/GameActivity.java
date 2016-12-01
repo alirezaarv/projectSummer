@@ -80,7 +80,7 @@ public class GameActivity extends CustomActivity {
         // Re-enter transition is executed when returning to this activity
         transition = new Slide();
         transition.setSlideEdge(Gravity.END);
-        transition.setDuration(1000);
+        transition.setDuration(500);
         getWindow().setEnterTransition(transition);
         //getWindow().setSharedElementExitTransition(slideTransition);
         //getWindow().setExitTransition(slideTransition);

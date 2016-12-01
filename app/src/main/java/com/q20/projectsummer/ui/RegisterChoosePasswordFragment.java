@@ -33,6 +33,7 @@ public class RegisterChoosePasswordFragment extends Fragment {
 
         if (getArguments() != null){
             imageView.setImageResource(getArguments().getInt("ID"));
+            imageView.setTag(getArguments().getInt("ID"));
             textView.setText(getArguments().getString("USER_NAME"));
         }
 

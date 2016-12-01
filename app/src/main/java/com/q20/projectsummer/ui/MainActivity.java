@@ -48,7 +48,7 @@ public class MainActivity extends CustomActivity {
         // Re-enter transition is executed when returning to this activity
         transition = new Explode();
         //transition.setSlideEdge(Gravity.END);
-        transition.setDuration(1000);
+        transition.setDuration(500);
         getWindow().setReenterTransition(transition);
         //getWindow().setSharedElementExitTransition(slideTransition);
         //getWindow().setExitTransition(slideTransition);

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
@@ -79,6 +80,18 @@ public class RegisterPageActivity extends CustomActivity {
 
     public void onChoosePasswordClicked(View view){
         Intent intent = new Intent(this, MainActivity.class);
+        //TODO send imageView tags and profile name to next activity
+//        ImageView imageView = (ImageView)findViewById(R.id.register_password_profile_image);
+//        TextView textView = (TextView)findViewById(R.id.register_password_page_username_text_view);
+//
+//        Bundle b = new Bundle();
+//        b.putInt("ID", (int) imageView.getTag());
+//        b.putString("USER_NAME", String.valueOf(textView.getText()));
+//
+//        intent.putExtra("bundle", b);
+//        intent.putExtras(b);
+//        intent.putExtra("ID", (int) imageView.getTag());
+//        intent.putExtra("USER_NAME", String.valueOf(textView.getText()));
         startActivity(intent);
     }
 }
