@@ -10,6 +10,8 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
+
 import com.q20.projectsummer.R;
 import QAPack.V1.Word;
 
@@ -60,7 +62,7 @@ public class NewGameDialog extends Activity {
     }
 
     public void onOnline(View view) {
-
+        Toast.makeText(getApplicationContext(), "It will be available soon ;)", Toast.LENGTH_SHORT).show();
     }
 
     public void onOffline(View view) {
