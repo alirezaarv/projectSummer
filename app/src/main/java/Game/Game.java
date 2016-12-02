@@ -20,12 +20,38 @@ public class Game implements Serializer {
 
     public Word currentWord;
     public int wordPack;
+    public Letter letters[];
 
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {
+        if (PrimitiveSerializer.deserializeInt(bytes) == 1)
+            serverStartDate = new Date(PrimitiveSerializer.deserializeLong(bytes));
+        else
+            serverStartDate=null;
+        timeLeft = PrimitiveSerializer.deserializeLong(bytes);
+        timePassed = PrimitiveSerializer.deserializeLong(bytes);
+        currentWord=new Word(bytes);
+        wordPack=PrimitiveSerializer.deserializeInt(bytes);
+        letters = new Letter[PrimitiveSerializer.deserializeInt(bytes)];
+        for (int i=letters.length-1;i>-1;i--)
+            letters[i] = new Letter(bytes);
     }
 
     @Override
     public void serialize(LinkedList<Byte> bytes) {
+        for (int i=0;i<letters.length;i++)
+            letters[i].serialize(bytes);
+        PrimitiveSerializer.serializeInt(letters.length,bytes);
+        PrimitiveSerializer.serializeInt(wordPack, bytes);
+        currentWord.serialize(bytes);
+        PrimitiveSerializer.serializeLong(timePassed,bytes);
+        PrimitiveSerializer.serializeLong(timeLeft,bytes);
+        if (serverStartDate != null) {
+            PrimitiveSerializer.serializeLong(serverStartDate.getTime(), bytes);
+            PrimitiveSerializer.serializeInt(1,bytes);
+        } else
+            PrimitiveSerializer.serializeInt(0,bytes);
+
+        PrimitiveSerializer.serializeInt(version, bytes);
     }
 
     @Override

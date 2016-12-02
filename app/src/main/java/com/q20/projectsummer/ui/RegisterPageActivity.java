@@ -24,15 +24,16 @@ import com.q20.projectsummer.R;
 
 public class RegisterPageActivity extends CustomActivity {
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
 
-
+        RegisterSignInORLogInFragment fragment = new RegisterSignInORLogInFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.register_page_fragment_container, new RegisterSignInORLogInFragment());
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.add(R.id.register_page_fragment_container, fragment);
+        fragment.setEnterTransition(setupWindowAnimations());
         fragmentTransaction.commit();
 
         //for initializing activity animation
@@ -57,6 +58,7 @@ public class RegisterPageActivity extends CustomActivity {
 
     public void onSecondSignInClicked(View view){
         // TODO a page with just username and password for logging in
+        Toast.makeText(getApplicationContext(), "This will be available in the future :|", Toast.LENGTH_SHORT).show();
     }
 
     public void onMaleRegisterProfileImageClicked(View view){
