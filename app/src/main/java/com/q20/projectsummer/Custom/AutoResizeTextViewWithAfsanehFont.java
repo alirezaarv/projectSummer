@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import com.non_android_programmers.responsivegui.ResponsiveAutoResizeTextView;
 
 
-public class AutoResizeTextViewWithAfsanehFont extends ResponsiveAutoResizeTextView {
+public class AutoResizeTextViewWithAfsanehFont extends AutoResizeTextViewWithChangeableFont {
     public AutoResizeTextViewWithAfsanehFont(Context context) {
         super(context);
         changeFont("lalezar.ttf");

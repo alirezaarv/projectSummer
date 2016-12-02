@@ -72,8 +72,7 @@ public class ResponsiveViewPager extends ViewPager implements ResponsiveView {
         float dpWidth = ScreenDetails.px2Dp(context, params.width);
         float dpHeight = ScreenDetails.px2Dp(context, params.height);
 
-        if (pixelDimensions==null)//lastly set by yours truly
-            pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarOriginX, polarOriginY, polarRad, polarTheta, usePolar);
+        pixelDimensions = new PixelDimensions(dpX, dpY, dpEX, dpEY, dpWidth, dpHeight, (View) getParent(), polarOriginX, polarOriginY, polarRad, polarTheta, usePolar);
     }
 
     public void updateDimensions() {

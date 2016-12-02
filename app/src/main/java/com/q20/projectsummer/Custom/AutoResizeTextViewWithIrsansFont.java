@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import com.non_android_programmers.responsivegui.ResponsiveAutoResizeTextView;
 
 
-public class AutoResizeTextViewWithIrsansFont extends ResponsiveAutoResizeTextView {
+public class AutoResizeTextViewWithIrsansFont extends AutoResizeTextViewWithChangeableFont {
     public AutoResizeTextViewWithIrsansFont(Context context) {
         super(context);
         changeFont("irs_m.ttf");

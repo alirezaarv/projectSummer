@@ -42,16 +42,6 @@ public class ResponsiveTextView extends TextView implements ResponsiveView {
         setupPolarCoord(attrs);
     }
 
-    public void changeFont(String fontName) {
-        boolean editMode = false;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            editMode=isInEditMode();
-        if (!editMode) {
-            Typeface tf = Typeface.createFromAsset(getContext().getAssets(), fontName);
-            setTypeface(tf);
-        }
-    }
-
     public PixelDimensions getPixelDimensions() {
         return pixelDimensions;
     }
