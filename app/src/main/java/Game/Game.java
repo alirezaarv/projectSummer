@@ -1,10 +1,5 @@
 package Game;
 
-<<<<<<< HEAD
-import java.util.ArrayList;
-import java.util.Calendar;
-=======
->>>>>>> origin/master
 import java.util.Date;
 import java.util.LinkedList;
 import QAPack.V1.Word;
