@@ -197,10 +197,41 @@
         android:layout_marginTop="677dp">
 
         <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:id="@+id/main_activity_settings_fab"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/settings"
-            android:onClick="onShare"/>
+            android:onClick="onSettings"/>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="306dp"
+        android:layout_marginTop="677dp">
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:id="@+id/main_activity_sound_fab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/speaker"
+            android:onClick="onSound"
+            android:visibility="invisible"/>
+    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+
+    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="677dp">
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:id="@+id/main_activity_trophy_fab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/trophy"
+            android:onClick="onTrophy"
+            android:visibility="invisible"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
 </RelativeLayout>

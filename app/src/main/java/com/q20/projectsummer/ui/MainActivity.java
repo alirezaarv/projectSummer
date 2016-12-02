@@ -9,11 +9,15 @@ import android.transition.Explode;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.non_android_programmers.responsivegui.ResponsiveImageView;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
+import com.q20.projectsummer.utilities.Settings;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,6 +29,10 @@ public class MainActivity extends CustomActivity {
 
     final static int packIDs[] = {R.raw.pack0};
     public static Pack offlinePack[] = new Pack[packIDs.length];
+
+    private Boolean isFabOpen = false;
+    private ResponsiveImageView settingsFab, trophyFab, soundFab;
+    private Animation fab_open, fab_close, rotate_backward, rotate_forward;
 
     Slide transition;
     ImageView profileImageView;
@@ -49,9 +57,15 @@ public class MainActivity extends CustomActivity {
         profileImageView = (ImageView) findViewById(R.id.main_activity_profile_image);
         //profileImageView.setTag(R.drawable.char_m_40);
         profileName = (TextView) findViewById(R.id.main_activity_profile_name);
+        settingsFab = (ResponsiveImageView)findViewById(R.id.main_activity_settings_fab);
+        soundFab = (ResponsiveImageView)findViewById(R.id.main_activity_sound_fab);
+        trophyFab = (ResponsiveImageView)findViewById(R.id.main_activity_trophy_fab);
 
-        //TODO get data from register page
-        // it is just for no bug app in xml file
+        fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.close_fab);
+        fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.open_fab);
+        rotate_forward = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_forward_fab);
+        rotate_backward = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_backward_fab);
+
         Intent intent = getIntent();
         if (intent != null){
             profileImageView.setImageResource(intent.getIntExtra("ID", R.drawable.char_m_40));
@@ -59,7 +73,7 @@ public class MainActivity extends CustomActivity {
             profileName.setText(intent.getStringExtra("USER_NAME"));
         }
 
-
+        isFabOpen = false;
         setupWindowAnimations();
     }
 
@@ -103,21 +117,38 @@ public class MainActivity extends CustomActivity {
         startActivity(intent);
     }
 
-    public void onMute(View view) {
-        //TODO mute button
-//        ImageButton btn = (ImageButton) findViewById(R.id.mute_fab);
-//        if (Settings.isMuted){
-//            Settings.isMuted = false;
-//            btn.setImageResource(R.drawable.mute);
-//        }else {
-//            Settings.isMuted = true;
-//            btn.setImageResource(R.drawable.speaker);
-//        }
+    public void onSettings(View view) {
+        if (isFabOpen){
+            animateFab(rotate_forward, fab_close, false, View.INVISIBLE);
+        }else {
+            animateFab(rotate_backward, fab_open, true, View.VISIBLE);
+        }
     }
 
-    public void onShare(View view) {
+    public void onSound(View view) {
+        if (Settings.isMuted){
+            Settings.isMuted = false;
+            soundFab.setImageResource(R.drawable.mute);
+        }else {
+            Settings.isMuted = true;
+            soundFab.setImageResource(R.drawable.speaker);
+        }
+    }
+
+    public void onTrophy(View view) {
         Intent intent = new Intent(this, TrophyPageActivity.class);
-        startActivity(intent);
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+    }
+
+    private void animateFab(Animation rotation, Animation openORclose, Boolean fabFlag, int visibility){
+        settingsFab.startAnimation(rotation);
+        soundFab.startAnimation(openORclose);
+        trophyFab.startAnimation(openORclose);
+        soundFab.setClickable(fabFlag);
+        trophyFab.setClickable(fabFlag);
+        soundFab.setVisibility(visibility);
+        trophyFab.setVisibility(visibility);
+        isFabOpen = fabFlag;
     }
 
     public void onProfileImage(View view) {
