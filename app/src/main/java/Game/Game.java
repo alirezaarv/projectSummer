@@ -1,5 +1,8 @@
 package Game;
 
+import com.q20.projectsummer.ui.GameActivity;
+import com.q20.projectsummer.ui.MainActivity;
+
 import java.util.Date;
 import java.util.LinkedList;
 import QAPack.V1.Word;
@@ -22,6 +25,25 @@ public class Game implements Serializer {
     public int wordPack;
     public Letter letters[];
 
+    public static void passRandomWordToGameActivity(int packId) {
+        Game newGame = new Game();
+        newGame.wordPack = packId;
+        newGame.currentWord = getRandomWord(packId);
+        newGame.letters = new Letter[newGame.currentWord.word.replace(" ", "").length()];
+        for (int i =0 ; i<newGame.letters.length;i++){
+            newGame.letters[i] = new Letter();
+        }
+        GameActivity.currentGame = newGame;
+    }
+
+    public static void initializeGame(boolean newGame) {
+        passRandomWordToGameActivity(0);
+    }
+
+    public static Word getRandomWord(int packNumber) {
+        int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
+        return MainActivity.offlinePack[packNumber].words.get(random);
+    }
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {
         if (PrimitiveSerializer.deserializeInt(bytes) == 1)
             serverStartDate = new Date(PrimitiveSerializer.deserializeLong(bytes));

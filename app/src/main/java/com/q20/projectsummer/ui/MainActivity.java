@@ -22,6 +22,7 @@ import com.q20.projectsummer.utilities.Settings;
 import java.io.IOException;
 import java.io.InputStream;
 
+import Game.Player;
 import QAPack.V1.Pack;
 import Utility.PrimitiveSerializer;
 
@@ -29,6 +30,8 @@ public class MainActivity extends CustomActivity {
 
     final static int packIDs[] = {R.raw.pack0};
     public static Pack offlinePack[] = new Pack[packIDs.length];
+
+    public static Player player;
 
     private Boolean isFabOpen = false;
     private ResponsiveImageView settingsFab, trophyFab, soundFab;
@@ -75,6 +78,12 @@ public class MainActivity extends CustomActivity {
 
         isFabOpen = false;
         setupWindowAnimations();
+        initializePlayer();
+    }
+
+    private void initializePlayer(){
+        player = new Player();
+        player.username = getIntent().getStringExtra("USER_NAME");
     }
 
     @TargetApi(21)

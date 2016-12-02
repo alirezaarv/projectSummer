@@ -1,7 +1,6 @@
 package Game;
 
 import java.util.LinkedList;
-
 import Utility.PrimitiveSerializer;
 import Utility.Serializer;
 
@@ -14,6 +13,10 @@ public class Letter implements Serializer {
 
     public String letter;
     public boolean hinted;
+
+    public Letter(){
+
+    }
 
     Letter(LinkedList<Byte> bytes) {
         deserialize(bytes);
