@@ -7,10 +7,14 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 
-public class ResponsiveEditText extends EditText implements ResponsiveView {
+/**
+ * Created by alireza on 11/22/16.
+ */
 
+@TargetApi(Build.VERSION_CODES.CUPCAKE)
+public class ResponsiveHorizontalScrollView extends HorizontalScrollView implements ResponsiveView {
     private PixelDimensions pixelDimensions;
     private float polarOriginX = 0;
     private float polarOriginY = 0;
@@ -19,24 +23,23 @@ public class ResponsiveEditText extends EditText implements ResponsiveView {
     private boolean usePolar = false;
 
 
-    public ResponsiveEditText(Context context) {
+    public ResponsiveHorizontalScrollView(Context context) {
         super(context);
     }
 
-    public ResponsiveEditText(Context context, AttributeSet attrs) {
+    public ResponsiveHorizontalScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setupPolarCoord(attrs);
     }
 
-    public ResponsiveEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ResponsiveHorizontalScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setupPolarCoord(attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ResponsiveEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ResponsiveHorizontalScrollView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        setupPolarCoord(attrs);
     }
 
     public PixelDimensions getPixelDimensions() {
@@ -44,8 +47,8 @@ public class ResponsiveEditText extends EditText implements ResponsiveView {
     }
 
     public void setupPolarCoord(AttributeSet attrs) {
-        TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveEditText, 0, 0);
-        int[] attrsRes = {R.styleable.ResponsiveEditText_PolarCoordOriginX, R.styleable.ResponsiveEditText_PolarCoordOriginY, R.styleable.ResponsiveEditText_PolarCoordRad, R.styleable.ResponsiveEditText_PolarCoordTheta, R.styleable.ResponsiveEditText_UsePolar};
+        TypedArray typedArray = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ResponsiveHorizontalScrollView, 0, 0);
+        int[] attrsRes = {R.styleable.ResponsiveHorizontalScrollView_PolarCoordOriginX, R.styleable.ResponsiveHorizontalScrollView_PolarCoordOriginY, R.styleable.ResponsiveHorizontalScrollView_PolarCoordRad, R.styleable.ResponsiveHorizontalScrollView_PolarCoordTheta, R.styleable.ResponsiveHorizontalScrollView_UsePolar};
         polarOriginX = typedArray.getFloat(attrsRes[0], 0);
         polarOriginY = typedArray.getFloat(attrsRes[1], 0);
         polarRad = typedArray.getFloat(attrsRes[2], 0);
@@ -65,7 +68,7 @@ public class ResponsiveEditText extends EditText implements ResponsiveView {
         float dpEY = 0;
 
         try {
-            ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) params;
+            MarginLayoutParams marginParams = (MarginLayoutParams) params;
 
             dpX = ScreenDetails.px2Dp(context, marginParams.leftMargin);
             dpY = ScreenDetails.px2Dp(context, marginParams.topMargin);
@@ -86,7 +89,7 @@ public class ResponsiveEditText extends EditText implements ResponsiveView {
         layoutParams.height = pixelDimensions.getHeight();
 
         try {
-            ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) layoutParams;
+            MarginLayoutParams marginParams = (MarginLayoutParams) layoutParams;
             marginParams.leftMargin = pixelDimensions.getX();
             marginParams.topMargin = pixelDimensions.getY();
             marginParams.rightMargin = 0;
