@@ -1,11 +1,14 @@
 package com.q20.projectsummer.ui;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -48,13 +51,21 @@ public class ProfileImageActivity extends CustomActivity {
             imageView.setTag(intent.getIntExtra("ID", R.drawable.char_m_40));
 
         }
+
+        setupWindowAnimations();
+    }
+
+    @TargetApi(21)
+    private void setupWindowAnimations(){
+        Slide slide = new Slide(Gravity.END);
+        slide.setDuration(300);
+        getWindow().setEnterTransition(slide);
     }
 
     private void onImagesClickingMethod(int IMAGES_ID){
         imageView.setImageResource(IMAGES_ID);
         imageView.setTag(IMAGES_ID);
         Intent intent = new Intent();
-        //ImageView imageView = (ImageView) findViewById(R.id.profile_image_page_main_image_image_view);
         intent.putExtra("ID", (Integer) imageView.getTag());
         setResult(Activity.RESULT_OK, intent);
     }

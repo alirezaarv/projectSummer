@@ -10,6 +10,7 @@ import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
@@ -27,6 +28,7 @@ public class MainActivity extends CustomActivity {
 
     Slide transition;
     ImageView profileImageView;
+    TextView profileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +47,17 @@ public class MainActivity extends CustomActivity {
             }
         }
         profileImageView = (ImageView) findViewById(R.id.main_activity_profile_image);
-        profileImageView.setTag(R.drawable.char_m_40);
-
+        //profileImageView.setTag(R.drawable.char_m_40);
+        profileName = (TextView) findViewById(R.id.main_activity_profile_name);
 
         //TODO get data from register page
         // it is just for no bug app in xml file
+        Intent intent = getIntent();
+        if (intent != null){
+            profileImageView.setImageResource(intent.getIntExtra("ID", R.drawable.char_m_40));
+            profileImageView.setTag(intent.getIntExtra("ID", R.drawable.char_m_40));
+            profileName.setText(intent.getStringExtra("USER_NAME"));
+        }
 
 
         setupWindowAnimations();
@@ -115,7 +123,7 @@ public class MainActivity extends CustomActivity {
     public void onProfileImage(View view) {
         Intent intent = new Intent(this, ProfileImageActivity.class);
         intent.putExtra("ID", (Integer) profileImageView.getTag());
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, 1, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
     }
 
     @Override
