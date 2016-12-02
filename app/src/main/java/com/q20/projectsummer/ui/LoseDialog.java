@@ -5,14 +5,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+
 import com.q20.projectsummer.R;
 
-public class WinDialog extends Activity {
+public class LoseDialog extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_win_dialog);
+        setContentView(R.layout.activity_lose_dialog);
 
 
         this.getWindow().getDecorView().setBackgroundColor(Color.argb(0, 0, 0, 0));
@@ -44,6 +45,6 @@ public class WinDialog extends Activity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         decorView.setSystemUiVisibility(uiOptions);
-    }
 
+    }
 }
