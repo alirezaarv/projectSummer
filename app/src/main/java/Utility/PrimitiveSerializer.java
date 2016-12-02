@@ -19,17 +19,33 @@ public class PrimitiveSerializer {
         for (int i=bytesToAdd.length - 1;i>-1;i--)
             bytes.addFirst(bytesToAdd[i]);
     }
+
     public static void serializeInt (int integer, LinkedList<Byte> bytes) {
         for (int i=0;i<4;i++) {
-            bytes.addFirst((byte) (integer % 256));
-            integer/=256;
+            bytes.addFirst((byte) (integer & 0xff));
+            integer >>= 8;
         }
     }
     public static int deserializeInt (LinkedList<Byte> integer) {
         int ret = 0;
         for (int i=0;i<4;i++) {
-            ret *= 256;
-            ret += 0xff & integer.removeFirst();
+            ret <<= 8;
+            ret |= 0xff & integer.removeFirst();
+        }
+        return ret;
+    }
+
+    public static void serializeLong (long integer, LinkedList<Byte> bytes) {
+        for (int i=0;i<4;i++) {
+            bytes.addFirst((byte) (integer & 0xff));
+            integer >>= 8;
+        }
+    }
+    public static long deserializeLong (LinkedList<Byte> integer) {
+        int ret = 0;
+        for (int i=0;i<8;i++) {
+            ret <<= 8;
+            ret |= 0xff & integer.removeFirst();
         }
         return ret;
     }
