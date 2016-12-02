@@ -21,10 +21,11 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
             android:src="@drawable/char_m_40"
-            android:tag="@drawable/char_m_40" />
+            android:tag="@drawable/char_m_40"
+            android:transitionName="transition"/>
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="16dp"
@@ -47,7 +48,7 @@
         <com.non_android_programmers.responsivegui.ResponsiveImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:onClick="onMaleRegisterProfileImageClicked"

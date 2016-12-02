@@ -13,19 +13,14 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.non_android_programmers.responsivegui.PixelDimensions;
 import com.non_android_programmers.responsivegui.ResponsiveImageView;
-import com.q20.projectsummer.Custom.AutoResizeTextView;
 import com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
-
 import java.util.ArrayList;
-
 import QAPack.V1.QA;
 import QAPack.V1.Question;
 import QAPack.V1.Word;

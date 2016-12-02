@@ -1,11 +1,12 @@
 package Game;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Calendar;
+=======
+>>>>>>> origin/master
 import java.util.Date;
 import java.util.LinkedList;
-
-import QAPack.V1.Question;
 import QAPack.V1.Word;
 import Utility.PrimitiveSerializer;
 import Utility.Serializer;
@@ -13,6 +14,7 @@ import Utility.Serializer;
 /**
  * Created by HoseinGhahremanzadeh on 11/30/2016.
  */
+
 public class Game implements Serializer {
 
     public final static int version = (((1)*256+(0))*256+(0));
