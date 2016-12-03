@@ -11,13 +11,43 @@
 
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="50dp"
         android:layout_width="311dp"
         android:layout_height="531dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/dialog_background"
         android:backgroundTint="@color/colorA1"
         android:onClick="doNothing">
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="91.5dp"
+            android:src="@drawable/lose_icon"/>
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40.25dp"
+            android:layout_marginTop="468dp"
+            android:src="@drawable/share_icon" />
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="130.5dp"
+            android:layout_marginTop="468dp"
+            android:src="@drawable/plus_icon" />
+
+        <com.non_android_programmers.responsivegui.ResponsiveImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="220.75dp"
+            android:layout_marginTop="468dp"
+            android:src="@drawable/right_arrow"
+            android:onClick="onNextWord"/>
+
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 

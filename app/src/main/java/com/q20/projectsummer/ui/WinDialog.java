@@ -10,6 +10,8 @@ import com.q20.projectsummer.R;
 
 public class WinDialog extends Activity {
 
+    private Intent intentMainActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,19 +26,28 @@ public class WinDialog extends Activity {
         params.horizontalMargin = 0;
         params.verticalMargin = 0;
         this.getWindow().setAttributes(params);
+
+        intentMainActivity = new Intent(this, MainActivity.class);
+        intentMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
     }
 
 
     public void onBackground(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        startActivity(intentMainActivity);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(intentMainActivity);
     }
 
     public void doNothing(View view) {
     }
 
     public void onNextWord(View view){
-        MainActivity.initializeGame();
+        GameActivity.addCurrentGameToGameHistory();
+        MainActivity.initializeOfflineGame();
         finish();
     }
 

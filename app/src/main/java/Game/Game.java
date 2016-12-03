@@ -25,6 +25,8 @@ public class Game implements Serializer {
     public int wordPack;
     public Letter[] letters;
 
+    public boolean[] askedQuestion;
+
     public Game(LinkedList<Byte> bytes) {
         deserialize(bytes);
     }
@@ -35,6 +37,7 @@ public class Game implements Serializer {
         this.currentWord = currentWord;
         this.wordPack = wordPack;
         this.letters = letters;
+        askedQuestion = new boolean[MainActivity.offlinePack[wordPack].questions.size()];
     }
 
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {

@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -31,12 +32,14 @@ import QAPack.V1.Question;
 
 public class GameActivity extends CustomActivity {
 
-    public static Game currentGame;
-    public static CountDownTimer timer;
 
     private static int currentQuestionId = 0;
 
+    public static GameActivity currentInstance;
+
     private static final String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
+
+    public static long timerReducerTime = 5000;
 
     private RelativeLayout parentLayout;
     private TextView[] lettersTextView;
@@ -46,10 +49,17 @@ public class GameActivity extends CustomActivity {
     private RelativeLayout btnAsk;
     private TextView textViewBtnAsk;
 
+    private Slide transition;
 
-    private boolean[] askedQuestion;
+    public static void addCurrentGameToGameHistory() {
+        MainActivity.player.gameHistory.add(MainActivity.player.currentGame);
+        MainActivity.player.currentGame = null;
+    }
 
-    Slide transition;
+    public GameActivity() {
+        super();
+        currentInstance = this;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,19 +73,20 @@ public class GameActivity extends CustomActivity {
         setContentView(R.layout.activity_game);
 
         //TODO make method
-        askedQuestion = new boolean[MainActivity.offlinePack[currentGame.wordPack].questions.size()];
 
         initializeViews();
 
         createKeyboard();
-        createLetters(currentGame.currentWord.word);
+        createLetters(MainActivity.player.currentGame.currentWord.word);
 
         updateLetters();
         updateCurrentQuestion();
 
-        Log.v("word ", currentGame.currentWord.word);
+        Log.v("word ", MainActivity.player.currentGame.currentWord.word);
 
         setupWindowAnimations();
+
+        setTimerTextView();
     }
 
     @TargetApi(21)
@@ -89,16 +100,18 @@ public class GameActivity extends CustomActivity {
         //getWindow().setExitTransition(slideTransition);
     }
 
-    //TODO make back button to back to mainActivity not newGameActivity
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent,
-//                ActivityOptionsCompat.
-//                        makeSceneTransitionAnimation(this, null).
-//                        toBundle());
-//    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MainActivity.terminateTimer();
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent,
+                ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(this, null).
+                        toBundle());
+
+    }
 
     private void createKeyboard() {
         PixelDimensions pixelDimensions = new PixelDimensions(8, 550, 8, 8, -1, -1, parentLayout);
@@ -148,9 +161,9 @@ public class GameActivity extends CustomActivity {
 
     //TODO check if last letter is hinted
     private void keyPressed(String letter) {
-        for (int i = 0; i < currentGame.letters.length; i++) {
-            if (currentGame.letters[i].letter == null && !currentGame.letters[i].hinted) {
-                currentGame.letters[i].letter = letter;
+        for (int i = 0; i < MainActivity.player.currentGame.letters.length; i++) {
+            if (MainActivity.player.currentGame.letters[i].letter == null && !MainActivity.player.currentGame.letters[i].hinted) {
+                MainActivity.player.currentGame.letters[i].letter = letter;
                 updateLetters();
                 break;
             }
@@ -162,8 +175,8 @@ public class GameActivity extends CustomActivity {
 
     private boolean userAnswerComplete() {
         boolean userAnswerComplete = true;
-        for (int i = 0; i < currentGame.letters.length; i++) {
-            if (currentGame.letters[i].letter == null) {
+        for (int i = 0; i < MainActivity.player.currentGame.letters.length; i++) {
+            if (MainActivity.player.currentGame.letters[i].letter == null) {
                 userAnswerComplete = false;
                 break;
             }
@@ -216,8 +229,8 @@ public class GameActivity extends CustomActivity {
                 temp.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!currentGame.letters[tempCheck].hinted) {
-                            currentGame.letters[tempCheck].letter = null;
+                        if (!MainActivity.player.currentGame.letters[tempCheck].hinted) {
+                            MainActivity.player.currentGame.letters[tempCheck].letter = null;
                             updateLetters();
                         }
                     }
@@ -256,7 +269,7 @@ public class GameActivity extends CustomActivity {
 
     private void initializeViews() {
         parentLayout = (RelativeLayout) findViewById(R.id.parent_layout);
-        ((TextView) findViewById(R.id.text_view_word_explanation)).setText(currentGame.currentWord.wordExplanation);
+        ((TextView) findViewById(R.id.text_view_word_explanation)).setText(MainActivity.player.currentGame.currentWord.wordExplanation);
         currentQuestionTextView = ((TextView) findViewById(R.id.text_view_current_q));
         btnPrevQuestion = (ResponsiveImageView) findViewById(R.id.btn_prev_q);
         btnNextQuestion = (ResponsiveImageView) findViewById(R.id.btn_next_q);
@@ -264,17 +277,22 @@ public class GameActivity extends CustomActivity {
         textViewBtnAsk = (TextView) findViewById(R.id.text_view_btn_ask);
     }
 
+    public void setTimerTextView() {
+        AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) findViewById(R.id.text_view_timer);
+        if (textView != null && MainActivity.player.currentGame != null)
+            textView.setText(MainActivity.player.currentGame.timeLeft/1000 + "");
+    }
 
     private void updateLetters() {
         for (int i = 0; i < lettersTextView.length; i++) {
-            if (currentGame.letters[i].letter != null) {
+            if (MainActivity.player.currentGame.letters[i].letter != null) {
                 AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) lettersTextView[i];
-                if (currentGame.letters[i].hinted) {
+                if (MainActivity.player.currentGame.letters[i].hinted) {
                     textView.setTextColor(Color.parseColor("#27AE60"));
                 } else {
                     textView.setTextColor(Color.parseColor("#2C3E50"));
                 }
-                textView.setText(currentGame.letters[i].letter);
+                textView.setText(MainActivity.player.currentGame.letters[i].letter);
             } else {
                 AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) lettersTextView[i];
                 textView.setText("");
@@ -284,13 +302,13 @@ public class GameActivity extends CustomActivity {
 
     private void makeLettersRed() {
         for (int i = 0; i < lettersTextView.length; i++) {
-            if (!currentGame.letters[i].hinted)
+            if (!MainActivity.player.currentGame.letters[i].hinted)
                 lettersTextView[i].setTextColor(Color.parseColor("#E74C3C"));
         }
     }
 
     private void updateCurrentQuestion() {
-        Question currentQuestion = MainActivity.offlinePack[currentGame.wordPack].questions.get(currentQuestionId);
+        Question currentQuestion = MainActivity.offlinePack[MainActivity.player.currentGame.wordPack].questions.get(currentQuestionId);
         currentQuestionTextView.setText(currentQuestion.question);
 
         btnPrevQuestion.setEnabled(true);
@@ -300,9 +318,9 @@ public class GameActivity extends CustomActivity {
         btnAsk.setEnabled(true);
         textViewBtnAsk.setText("بپرس");
 
-        if (askedQuestion[currentQuestionId]) {
+        if (MainActivity.player.currentGame.askedQuestion[currentQuestionId]) {
             btnAsk.setEnabled(false);
-            int answer = getCurrentQuestionAnswer(currentGame.currentWord.questions, currentQuestionId);
+            int answer = getCurrentQuestionAnswer(MainActivity.player.currentGame.currentWord.questions, currentQuestionId);
             String answerText = "بی معنی";
             if (answer == 0) {
                 answerText = currentQuestion.choice1;
@@ -317,7 +335,7 @@ public class GameActivity extends CustomActivity {
         if (currentQuestionId == 0) {
             btnPrevQuestion.setEnabled(false);
             btnPrevQuestion.setImageResource(R.drawable.right_arrow_2);
-        } else if (currentQuestionId == MainActivity.offlinePack[currentGame.wordPack].questions.size() - 1) {
+        } else if (currentQuestionId == MainActivity.offlinePack[MainActivity.player.currentGame.wordPack].questions.size() - 1) {
             btnNextQuestion.setEnabled(false);
             btnNextQuestion.setImageResource(R.drawable.left_arrow_2);
         }
@@ -326,31 +344,72 @@ public class GameActivity extends CustomActivity {
     private void respondToUserAnswer() {
         if (checkUserAnswer()) {
             MediaPlayer.create(this, R.raw.win).start();
-            Intent intent = new Intent(this, WinDialog.class);
-            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+            win();
         } else {
             wrongAnswer();
         }
     }
 
+    public void win() {
+        MainActivity.terminateTimer();
+        Intent intent = new Intent(this, WinDialog.class);
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+
+    }
+
+    public void lose() {
+        MainActivity.terminateTimer();
+        Intent intent = new Intent(this, LoseDialog.class);
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+    }
+
     private void wrongAnswer() {
         MediaPlayer.create(this, R.raw.buzzer).start();
         makeLettersRed();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        long timeToReduce = Math.min(timerReducerTime,MainActivity.player.currentGame.timeLeft);
+        MainActivity.player.currentGame.timeLeft -= timeToReduce;
+        MainActivity.player.currentGame.timePassed += timeToReduce;
+        Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < currentGame.letters.length; i++) {
-                    if (!currentGame.letters[i].hinted)
-                        currentGame.letters[i].letter = null;
+                GameActivity.currentInstance.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        disableActivity();
+                    }
+                });
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-                updateLetters();
+                for (int i = 0; i < MainActivity.player.currentGame.letters.length; i++) {
+                    if (!MainActivity.player.currentGame.letters[i].hinted)
+                        MainActivity.player.currentGame.letters[i].letter = null;
+                }
+                GameActivity.currentInstance.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        enableActivity();
+                        updateLetters();
+                    }
+                });
             }
-        }, 500);
+        });
+        thread.start();
+    }
+
+    private void disableActivity(){
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+    }
+
+    private void enableActivity(){
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
     }
 
     private Boolean checkUserAnswer() {
-        String wordCheck = currentGame.currentWord.word.replace(" ", "");
+        String wordCheck = MainActivity.player.currentGame.currentWord.word.replace(" ", "");
         wordCheck = wordCheck.replace("آ", "ا");
         if (wordCheck.equals(getUserAnswer()))
             return true;
@@ -359,8 +418,8 @@ public class GameActivity extends CustomActivity {
 
     private String getUserAnswer() {
         String userAnswer = "";
-        for (int i = 0; i < currentGame.letters.length; i++) {
-            userAnswer += currentGame.letters[i].letter;
+        for (int i = 0; i < MainActivity.player.currentGame.letters.length; i++) {
+            userAnswer += MainActivity.player.currentGame.letters[i].letter;
         }
         return userAnswer;
     }
@@ -378,8 +437,8 @@ public class GameActivity extends CustomActivity {
 
     public void onHint(View view) {
         int random = getRandomValidLetter();
-        currentGame.letters[random].letter = "" + currentGame.currentWord.word.charAt(random);
-        currentGame.letters[random].hinted = true;
+        MainActivity.player.currentGame.letters[random].letter = "" + MainActivity.player.currentGame.currentWord.word.charAt(random);
+        MainActivity.player.currentGame.letters[random].hinted = true;
         updateLetters();
         if (userAnswerComplete()) {
             respondToUserAnswer();
@@ -390,8 +449,8 @@ public class GameActivity extends CustomActivity {
         int random = 0;
         if (!userAnswerComplete()) {
             do {
-                random = (int) (Math.random() * currentGame.currentWord.word.length());
-            } while (currentGame.letters[random].hinted);
+                random = (int) (Math.random() * MainActivity.player.currentGame.currentWord.word.replace(" ","").length());
+            } while (MainActivity.player.currentGame.letters[random].hinted);
         }
         return random;
     }
@@ -407,7 +466,7 @@ public class GameActivity extends CustomActivity {
     }
 
     public void onAsk(View view) {
-        askedQuestion[currentQuestionId] = true;
+        MainActivity.player.currentGame.askedQuestion[currentQuestionId] = true;
         updateCurrentQuestion();
     }
 

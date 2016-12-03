@@ -14,9 +14,6 @@ import android.widget.Toast;
 
 import com.q20.projectsummer.R;
 
-import Game.*;
-import QAPack.V1.Word;
-
 public class NewGameDialog extends Activity {
 
     Slide transition;
@@ -68,12 +65,8 @@ public class NewGameDialog extends Activity {
     }
 
     public void onOffline(View view) {
+        MainActivity.initializeOfflineGame();
         Intent intent = new Intent(this, GameActivity.class);
-        if (MainActivity.player.currentGame == null) {
-            MainActivity.initializeGame();
-        } else {
-            GameActivity.currentGame = MainActivity.player.currentGame;
-        }
         startActivity(intent,
                 ActivityOptionsCompat.
                         makeSceneTransitionAnimation(this, null).

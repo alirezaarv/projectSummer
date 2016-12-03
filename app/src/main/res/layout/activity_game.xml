@@ -68,6 +68,14 @@
 
         </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout> -->
 
+    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorA17"
+        android:id="@+id/text_view_timer"/>
+
     <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="70dp"
         android:layout_height="70dp"

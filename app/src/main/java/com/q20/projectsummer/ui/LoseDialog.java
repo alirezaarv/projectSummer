@@ -1,6 +1,7 @@
 package com.q20.projectsummer.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.view.WindowManager;
 import com.q20.projectsummer.R;
 
 public class LoseDialog extends Activity {
+
+    private Intent intentMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +27,28 @@ public class LoseDialog extends Activity {
         params.horizontalMargin = 0;
         params.verticalMargin = 0;
         this.getWindow().setAttributes(params);
+
+        intentMainActivity = new Intent(this, MainActivity.class);
+        intentMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(intentMainActivity);
+    }
 
     public void onBackground(View view) {
         doNothing(view);
     }
 
     public void doNothing(View view) {
+    }
+
+    public void onNextWord(View view){
+        GameActivity.currentInstance.addCurrentGameToGameHistory();
+        MainActivity.initializeOfflineGame();
+        finish();
     }
 
     @Override

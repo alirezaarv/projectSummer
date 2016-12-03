@@ -4,7 +4,8 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.transition.Slide;
 import android.view.Gravity;
@@ -31,8 +32,12 @@ import Utility.PrimitiveSerializer;
 
 public class MainActivity extends CustomActivity {
 
-    final static int packIDs[] = {R.raw.pack0,R.raw.pack1};
+
+    final static int packIDs[] = {R.raw.pack0, R.raw.pack1};
     public static Pack offlinePack[] = new Pack[packIDs.length];
+
+    public static Thread timer;
+    public static boolean terminateThread;
 
     public static Player player;
 
@@ -44,19 +49,63 @@ public class MainActivity extends CustomActivity {
     ImageView profileImageView;
     TextView profileName;
 
+    public static void setUpTimer() {
+        terminateThread = false;
+        timer = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                while ((player.currentGame == null || player.currentGame.timeLeft != 0 )&& !terminateThread) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if (player.currentGame != null) {
+                        player.currentGame.timeLeft -= 1000;
+                        player.currentGame.timePassed += 1000;
+                        GameActivity.currentInstance.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                GameActivity.currentInstance.setTimerTextView();
+                            }
+                        });
+                    }
+                }
+                GameActivity.currentInstance.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        GameActivity.currentInstance.lose();
+                    }
+                });
+                timer = new Thread(this);
+            }
+        });
+        timer.start();
+    }
+
+    public static void terminateTimer(){
+        timer.interrupt();
+        terminateThread = true;
+        timer = null;
+        System.gc();
+    }
 
     public static void passRandomWordToGameActivity(int packId) {
-        Word currentWord =  getRandomWord(packId);
+        Word currentWord = getRandomWord(packId);
         Letter[] letters = new Letter[currentWord.word.replace(" ", "").length()];
-        for (int i =0 ; i<letters.length;i++){
-            letters[i] = new Letter(null,false);
+        for (int i = 0; i < letters.length; i++) {
+            letters[i] = new Letter(null, false);
         }
-        GameActivity.currentGame = new Game(null,100000,0, currentWord, packId,letters);
+        player.currentGame = new Game(null, 100000, 0, currentWord, packId, letters);
     }
 
-    public static void initializeGame() {
-        passRandomWordToGameActivity(1);
+    public static void initializeOfflineGame() {
+        if (player.currentGame == null)
+            passRandomWordToGameActivity(1);
+        setUpTimer();
     }
+
 
     public static Word getRandomWord(int packNumber) {
         int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
@@ -83,9 +132,9 @@ public class MainActivity extends CustomActivity {
         profileImageView = (ImageView) findViewById(R.id.main_activity_profile_image);
         //profileImageView.setTag(R.drawable.char_m_40);
         profileName = (TextView) findViewById(R.id.main_activity_profile_name);
-        settingsFab = (ResponsiveImageView)findViewById(R.id.main_activity_settings_fab);
-        soundFab = (ResponsiveImageView)findViewById(R.id.main_activity_sound_fab);
-        trophyFab = (ResponsiveImageView)findViewById(R.id.main_activity_trophy_fab);
+        settingsFab = (ResponsiveImageView) findViewById(R.id.main_activity_settings_fab);
+        soundFab = (ResponsiveImageView) findViewById(R.id.main_activity_sound_fab);
+        trophyFab = (ResponsiveImageView) findViewById(R.id.main_activity_trophy_fab);
 
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.close_fab);
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.open_fab);
@@ -93,7 +142,7 @@ public class MainActivity extends CustomActivity {
         rotate_backward = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_backward_fab);
 
         Intent intent = getIntent();
-        if (intent != null){
+        if (intent != null) {
             profileImageView.setImageResource(intent.getIntExtra("ID", R.drawable.char_m_40));
             profileImageView.setTag(intent.getIntExtra("ID", R.drawable.char_m_40));
             profileName.setText(intent.getStringExtra("USER_NAME"));
@@ -104,7 +153,7 @@ public class MainActivity extends CustomActivity {
         initializePlayer();
     }
 
-    private void initializePlayer(){
+    private void initializePlayer() {
         player = new Player();
         player.username = getIntent().getStringExtra("USER_NAME");
     }
@@ -122,8 +171,14 @@ public class MainActivity extends CustomActivity {
 
     //when user click on new game local btn
     public void onNewGame(View view) {
-        Intent intent = new Intent(this, NewGameDialog.class);
-        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+        if (MainActivity.player.currentGame == null) {
+            Intent intent = new Intent(this, NewGameDialog.class);
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+        } else {
+            initializeOfflineGame();
+            Intent intent = new Intent(this, GameActivity.class);
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+        }
     }
 
     //when user click on information btn
@@ -150,18 +205,18 @@ public class MainActivity extends CustomActivity {
     }
 
     public void onSettings(View view) {
-        if (isFabOpen){
+        if (isFabOpen) {
             animateFab(rotate_forward, fab_close, false, View.INVISIBLE);
-        }else {
+        } else {
             animateFab(rotate_backward, fab_open, true, View.VISIBLE);
         }
     }
 
     public void onSound(View view) {
-        if (Settings.isMuted){
+        if (Settings.isMuted) {
             Settings.isMuted = false;
             soundFab.setImageResource(R.drawable.mute);
-        }else {
+        } else {
             Settings.isMuted = true;
             soundFab.setImageResource(R.drawable.speaker);
         }
@@ -172,7 +227,7 @@ public class MainActivity extends CustomActivity {
         startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
     }
 
-    private void animateFab(Animation rotation, Animation openORclose, Boolean fabFlag, int visibility){
+    private void animateFab(Animation rotation, Animation openORclose, Boolean fabFlag, int visibility) {
         settingsFab.startAnimation(rotation);
         soundFab.startAnimation(openORclose);
         trophyFab.startAnimation(openORclose);
@@ -192,8 +247,8 @@ public class MainActivity extends CustomActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1){
-            if (resultCode == Activity.RESULT_OK){
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
                 int profileImageId = data.getIntExtra("ID", R.drawable.char_m_40);
 
                 //Initialize profile image
@@ -202,4 +257,5 @@ public class MainActivity extends CustomActivity {
             }
         }
     }
+
 }
