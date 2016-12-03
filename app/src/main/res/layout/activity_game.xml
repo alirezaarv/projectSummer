@@ -7,72 +7,72 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context=".ui.GameActivity">
-<!--
-    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/profile_image_rounded_layout_shape"
-        android:gravity="center">
+    <!--
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/profile_image_rounded_layout_shape"
+            android:gravity="center">
 
-        <com.non_android_programmers.responsivegui.ResponsiveImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/char_m_40" />
+            <com.non_android_programmers.responsivegui.ResponsiveImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/char_m_40" />
 
-    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="82dp"
-        android:layout_height="36dp"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="نام کاربری"
-        android:textAlignment="viewStart"
-        android:textColor="@color/colorA17"
-        android:textSize="@dimen/text_size_small" />
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+            android:layout_width="82dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:text="نام کاربری"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorA17"
+            android:textSize="@dimen/text_size_small" />
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="41dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="119dp"
-        android:layout_marginTop="42dp"
-        android:text="امتیاز"
-        android:textColor="@color/colorA17" />
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+            android:layout_width="41dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="119dp"
+            android:layout_marginTop="42dp"
+            android:text="امتیاز"
+            android:textColor="@color/colorA17" />
 
-    <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
-        android:layout_width="82dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="نام کاربری"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/colorA17"
-        android:textSize="@dimen/text_size_small" />
+        <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
+            android:layout_width="82dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:text="نام کاربری"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/colorA17"
+            android:textSize="@dimen/text_size_small" />
 
-    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginLeft="339dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/profile_image_rounded_layout_shape"
-        android:gravity="center">
+        <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="339dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/profile_image_rounded_layout_shape"
+            android:gravity="center">
 
-        <com.non_android_programmers.responsivegui.ResponsiveImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/char_m_40" />
+            <com.non_android_programmers.responsivegui.ResponsiveImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/char_m_40" />
 
-    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout> -->
+        </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout> -->
 
     <com.non_android_programmers.responsivegui.ResponsiveImageView
-        android:layout_marginLeft="170.5dp"
-        android:layout_marginTop="8dp"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_marginLeft="170.5dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/char_m_40" />
 
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
@@ -145,32 +145,21 @@
         android:src="@drawable/left_arrow_1" />
 
 
-    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginLeft="165.5dp"
-        android:layout_marginTop="352.5dp">
+        android:layout_marginTop="352.5dp"
+        android:onClick="onHint"
+        android:src="@drawable/game_coin" />
 
-        <com.non_android_programmers.responsivegui.ResponsiveImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/game_coin" />
-
-    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
-
-
-    <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
+    <com.non_android_programmers.responsivegui.ResponsiveImageView
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginLeft="209.5dp"
-        android:layout_marginTop="352.5dp">
-
-        <com.non_android_programmers.responsivegui.ResponsiveImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/game_coin" />
-
-    </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>
+        android:layout_marginTop="352.5dp"
+        android:src="@drawable/game_coin"
+        />
 
 
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout

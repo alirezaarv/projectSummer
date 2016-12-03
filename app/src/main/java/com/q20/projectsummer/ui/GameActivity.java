@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.transition.Slide;
@@ -15,11 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.non_android_programmers.responsivegui.PixelDimensions;
 import com.non_android_programmers.responsivegui.ResponsiveImageView;
 import com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
+
 import java.util.ArrayList;
 
 import Game.Game;
@@ -29,10 +32,11 @@ import QAPack.V1.Question;
 public class GameActivity extends CustomActivity {
 
     public static Game currentGame;
+    public static CountDownTimer timer;
 
     private static int currentQuestionId = 0;
 
-    private String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
+    private static final String characters = "ضصثقفغعهخحجشسیبلاتنمکگظطژزرذدپوچ";
 
     private RelativeLayout parentLayout;
     private TextView[] lettersTextView;
@@ -50,6 +54,12 @@ public class GameActivity extends CustomActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         setContentView(R.layout.activity_game);
 
         //TODO make method
@@ -142,12 +152,23 @@ public class GameActivity extends CustomActivity {
             if (currentGame.letters[i].letter == null && !currentGame.letters[i].hinted) {
                 currentGame.letters[i].letter = letter;
                 updateLetters();
-                if (i == currentGame.letters.length - 1) {
-                    respondToUserAnswer();
-                }
                 break;
             }
         }
+        if (userAnswerComplete()) {
+            respondToUserAnswer();
+        }
+    }
+
+    private boolean userAnswerComplete() {
+        boolean userAnswerComplete = true;
+        for (int i = 0; i < currentGame.letters.length; i++) {
+            if (currentGame.letters[i].letter == null) {
+                userAnswerComplete = false;
+                break;
+            }
+        }
+        return userAnswerComplete;
     }
 
     private void styleKey(RelativeLayout key, float xPos, float yPos, float keyWidth, float keyHeight) {
@@ -195,8 +216,10 @@ public class GameActivity extends CustomActivity {
                 temp.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        currentGame.letters[tempCheck].letter = null;
-                        updateLetters();
+                        if (!currentGame.letters[tempCheck].hinted) {
+                            currentGame.letters[tempCheck].letter = null;
+                            updateLetters();
+                        }
                     }
                 });
                 letterNum++;
@@ -212,7 +235,7 @@ public class GameActivity extends CustomActivity {
         letter.setBackgroundResource(R.drawable.btn_circle);
         letter.setGravity(Gravity.CENTER);
         GradientDrawable btnBackground = (GradientDrawable) letter.getBackground();
-        btnBackground.setColor(Color.rgb(149, 165, 166));
+        btnBackground.setColor(Color.parseColor("#F39C12"));
     }
 
     private RelativeLayout.LayoutParams getViewParams(float xPos, float yPos, float keyWidth, float keyHeight) {
@@ -246,11 +269,23 @@ public class GameActivity extends CustomActivity {
         for (int i = 0; i < lettersTextView.length; i++) {
             if (currentGame.letters[i].letter != null) {
                 AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) lettersTextView[i];
+                if (currentGame.letters[i].hinted) {
+                    textView.setTextColor(Color.parseColor("#27AE60"));
+                } else {
+                    textView.setTextColor(Color.parseColor("#2C3E50"));
+                }
                 textView.setText(currentGame.letters[i].letter);
             } else {
                 AutoResizeTextViewWithIrsansFont textView = (AutoResizeTextViewWithIrsansFont) lettersTextView[i];
                 textView.setText("");
             }
+        }
+    }
+
+    private void makeLettersRed() {
+        for (int i = 0; i < lettersTextView.length; i++) {
+            if (!currentGame.letters[i].hinted)
+                lettersTextView[i].setTextColor(Color.parseColor("#E74C3C"));
         }
     }
 
@@ -294,23 +329,29 @@ public class GameActivity extends CustomActivity {
             Intent intent = new Intent(this, WinDialog.class);
             startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
         } else {
-            MediaPlayer.create(this, R.raw.buzzer).start();
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0; i < currentGame.letters.length; i++) {
-                        currentGame.letters[i].letter = null;
-                    }
-                    updateLetters();
-                }
-            }, 500);
+            wrongAnswer();
         }
+    }
+
+    private void wrongAnswer() {
+        MediaPlayer.create(this, R.raw.buzzer).start();
+        makeLettersRed();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < currentGame.letters.length; i++) {
+                    if (!currentGame.letters[i].hinted)
+                        currentGame.letters[i].letter = null;
+                }
+                updateLetters();
+            }
+        }, 500);
     }
 
     private Boolean checkUserAnswer() {
         String wordCheck = currentGame.currentWord.word.replace(" ", "");
-        wordCheck = wordCheck.replace("آ","ا");
+        wordCheck = wordCheck.replace("آ", "ا");
         if (wordCheck.equals(getUserAnswer()))
             return true;
         return false;
@@ -333,6 +374,26 @@ public class GameActivity extends CustomActivity {
             }
         }
         return answer;
+    }
+
+    public void onHint(View view) {
+        int random = getRandomValidLetter();
+        currentGame.letters[random].letter = "" + currentGame.currentWord.word.charAt(random);
+        currentGame.letters[random].hinted = true;
+        updateLetters();
+        if (userAnswerComplete()) {
+            respondToUserAnswer();
+        }
+    }
+
+    private int getRandomValidLetter() {
+        int random = 0;
+        if (!userAnswerComplete()) {
+            do {
+                random = (int) (Math.random() * currentGame.currentWord.word.length());
+            } while (currentGame.letters[random].hinted);
+        }
+        return random;
     }
 
     public void onNextQuestion(View view) {

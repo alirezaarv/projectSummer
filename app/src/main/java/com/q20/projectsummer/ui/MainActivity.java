@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.transition.Slide;
 import android.view.Gravity;
@@ -30,7 +31,7 @@ import Utility.PrimitiveSerializer;
 
 public class MainActivity extends CustomActivity {
 
-    final static int packIDs[] = {R.raw.pack0};
+    final static int packIDs[] = {R.raw.pack0,R.raw.pack1};
     public static Pack offlinePack[] = new Pack[packIDs.length];
 
     public static Player player;
@@ -48,13 +49,13 @@ public class MainActivity extends CustomActivity {
         Word currentWord =  getRandomWord(packId);
         Letter[] letters = new Letter[currentWord.word.replace(" ", "").length()];
         for (int i =0 ; i<letters.length;i++){
-            letters[i] = new Letter("",false);
+            letters[i] = new Letter(null,false);
         }
         GameActivity.currentGame = new Game(null,100000,0, currentWord, packId,letters);
     }
 
-    public static void initializeGame(boolean newGame) {
-        passRandomWordToGameActivity(0);
+    public static void initializeGame() {
+        passRandomWordToGameActivity(1);
     }
 
     public static Word getRandomWord(int packNumber) {

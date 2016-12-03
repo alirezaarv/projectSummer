@@ -44,7 +44,8 @@
             android:layout_height="50dp"
             android:layout_marginLeft="220.75dp"
             android:layout_marginTop="468dp"
-            android:src="@drawable/right_arrow" />
+            android:src="@drawable/right_arrow"
+            android:onClick="onNextWord"/>
 
 
     </com.non_android_programmers.responsivegui.ResponsiveRelativeLayout>

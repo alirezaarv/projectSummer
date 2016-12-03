@@ -70,7 +70,7 @@ public class NewGameDialog extends Activity {
     public void onOffline(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         if (MainActivity.player.currentGame == null) {
-            MainActivity.initializeGame(true);
+            MainActivity.initializeGame();
         } else {
             GameActivity.currentGame = MainActivity.player.currentGame;
         }

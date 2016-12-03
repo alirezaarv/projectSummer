@@ -1,6 +1,7 @@
 package com.q20.projectsummer.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -27,10 +28,16 @@ public class WinDialog extends Activity {
 
 
     public void onBackground(View view) {
-        doNothing(view);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void doNothing(View view) {
+    }
+
+    public void onNextWord(View view){
+        MainActivity.initializeGame();
+        finish();
     }
 
     @Override
