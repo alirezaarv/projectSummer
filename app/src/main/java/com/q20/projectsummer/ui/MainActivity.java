@@ -61,7 +61,7 @@ public class MainActivity extends CustomActivity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    if (player.currentGame != null) {
+                    if (player.currentGame != null &&  player.currentGame.timeLeft != 0 && !terminateThread) {
                         player.currentGame.timeLeft -= 1000;
                         player.currentGame.timePassed += 1000;
                         GameActivity.currentInstance.runOnUiThread(new Runnable() {
@@ -72,20 +72,19 @@ public class MainActivity extends CustomActivity {
                         });
                     }
                 }
+                if (player.currentGame != null &&  player.currentGame.timeLeft == 0)
                 GameActivity.currentInstance.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         GameActivity.currentInstance.lose();
                     }
                 });
-                timer = new Thread(this);
             }
         });
         timer.start();
     }
 
     public static void terminateTimer(){
-        timer.interrupt();
         terminateThread = true;
         timer = null;
         System.gc();
