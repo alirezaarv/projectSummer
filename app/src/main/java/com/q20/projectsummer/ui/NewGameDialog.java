@@ -13,6 +13,8 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.q20.projectsummer.R;
+
+import Game.*;
 import QAPack.V1.Word;
 
 public class NewGameDialog extends Activity {
@@ -67,26 +69,17 @@ public class NewGameDialog extends Activity {
 
     public void onOffline(View view) {
         Intent intent = new Intent(this, GameActivity.class);
-        initializeGame(true);
+        if (MainActivity.player.currentGame == null) {
+            Game.initializeGame(true);
+        } else {
+            GameActivity.currentGame = MainActivity.player.currentGame;
+        }
         startActivity(intent,
                 ActivityOptionsCompat.
                         makeSceneTransitionAnimation(this, null).
                         toBundle());
     }
 
-    public static void passRandomWordToGameActivity(int packId) {
-        GameActivity.wordPack = packId;
-        GameActivity.currentWord = getRandomWord(packId);
-        GameActivity.chars = new String[GameActivity.currentWord.word.replace(" ", "").length()];
-    }
-
-    public static void initializeGame(boolean newGame) {
-        passRandomWordToGameActivity(0);
-    }
-    public static Word getRandomWord(int packNumber) {
-        int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
-        return MainActivity.offlinePack[packNumber].words.get(random);
-    }
 
     @Override
     protected void onResume() {
