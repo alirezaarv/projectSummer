@@ -22,6 +22,10 @@ public class Game implements Serializer {
     public int wordPack;
     public Letter letters[];
 
+    public Game(LinkedList<Byte> bytes) {
+
+    }
+
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {
         if (PrimitiveSerializer.deserializeInt(bytes) == 1)
             serverStartDate = new Date(PrimitiveSerializer.deserializeLong(bytes));

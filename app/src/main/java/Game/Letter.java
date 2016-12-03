@@ -15,7 +15,7 @@ public class Letter implements Serializer {
     public String letter;
     public boolean hinted;
 
-    Letter(LinkedList<Byte> bytes) {
+    public Letter(LinkedList<Byte> bytes) {
         deserialize(bytes);
     }
 

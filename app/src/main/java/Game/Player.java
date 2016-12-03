@@ -23,10 +23,32 @@ public class Player implements Serializer{
 
 
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {
+        username = PrimitiveSerializer.deserializeString(bytes);
+        email = PrimitiveSerializer.deserializeString(bytes);
+        coins = PrimitiveSerializer.deserializeLong(bytes);
+        if (PrimitiveSerializer.deserializeInt(bytes)==1)
+            currentGame = new Game(bytes);
+        else
+            currentGame = null;
+
+        int gameCount = PrimitiveSerializer.deserializeInt(bytes);
+        gameHistory = new ArrayList<>(gameCount);
+        for (int i=0;i<gameCount;i++)
+            gameHistory.add(new Game(bytes));
     }
 
     @Override
     public void serialize(LinkedList<Byte> bytes) {
+        for (int i=gameHistory.size()-1;i>-1;i++)
+            gameHistory.get(i).serialize(bytes);
+        PrimitiveSerializer.serializeInt(gameHistory.size(),bytes);
+        if (currentGame!=null)
+            currentGame.serialize(bytes);
+        PrimitiveSerializer.serializeInt(currentGame!=null?1:0,bytes);
+        PrimitiveSerializer.serializeLong(coins,bytes);
+        PrimitiveSerializer.serializeString(email,bytes);
+        PrimitiveSerializer.serializeString(username, bytes);
+        PrimitiveSerializer.serializeInt(version, bytes);
     }
 
     @Override
