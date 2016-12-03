@@ -14,16 +14,13 @@ public class Letter implements Serializer {
     public String letter;
     public boolean hinted;
 
-<<<<<<< HEAD
     public Letter(LinkedList<Byte> bytes) {
-=======
-    public Letter(){
-
+        deserialize(bytes);
     }
 
-    Letter(LinkedList<Byte> bytes) {
->>>>>>> origin/master
-        deserialize(bytes);
+    public Letter (String letter, boolean hinted) {
+        this.letter = letter;
+        this.hinted = hinted;
     }
 
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {

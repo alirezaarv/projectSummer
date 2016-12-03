@@ -23,34 +23,20 @@ public class Game implements Serializer {
 
     public Word currentWord;
     public int wordPack;
-    public Letter letters[];
+    public Letter[] letters;
 
-<<<<<<< HEAD
     public Game(LinkedList<Byte> bytes) {
-
+        deserialize(bytes);
+    }
+    public Game(Date serverStartDate, long timeLeft, long timePassed, Word currentWord, int wordPack, Letter[] letters) {
+        this.serverStartDate=serverStartDate;
+        this.timeLeft=timeLeft;
+        this.timePassed = timePassed;
+        this.currentWord = currentWord;
+        this.wordPack = wordPack;
+        this.letters = letters;
     }
 
-=======
-    public static void passRandomWordToGameActivity(int packId) {
-        Game newGame = new Game();
-        newGame.wordPack = packId;
-        newGame.currentWord = getRandomWord(packId);
-        newGame.letters = new Letter[newGame.currentWord.word.replace(" ", "").length()];
-        for (int i =0 ; i<newGame.letters.length;i++){
-            newGame.letters[i] = new Letter();
-        }
-        GameActivity.currentGame = newGame;
-    }
-
-    public static void initializeGame(boolean newGame) {
-        passRandomWordToGameActivity(0);
-    }
-
-    public static Word getRandomWord(int packNumber) {
-        int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
-        return MainActivity.offlinePack[packNumber].words.get(random);
-    }
->>>>>>> origin/master
     private void deserializeV1_0_0(LinkedList<Byte> bytes) {
         if (PrimitiveSerializer.deserializeInt(bytes) == 1)
             serverStartDate = new Date(PrimitiveSerializer.deserializeLong(bytes));

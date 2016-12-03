@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.transition.Explode;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
@@ -22,8 +21,11 @@ import com.q20.projectsummer.utilities.Settings;
 import java.io.IOException;
 import java.io.InputStream;
 
+import Game.Letter;
 import Game.Player;
+import Game.Game;
 import QAPack.V1.Pack;
+import QAPack.V1.Word;
 import Utility.PrimitiveSerializer;
 
 public class MainActivity extends CustomActivity {
@@ -40,6 +42,26 @@ public class MainActivity extends CustomActivity {
     Slide transition;
     ImageView profileImageView;
     TextView profileName;
+
+
+    public static void passRandomWordToGameActivity(int packId) {
+        Word currentWord =  getRandomWord(packId);
+        Letter[] letters = new Letter[currentWord.word.replace(" ", "").length()];
+        for (int i =0 ; i<letters.length;i++){
+            letters[i] = new Letter("",false);
+        }
+        GameActivity.currentGame = new Game(null,100000,0, currentWord, packId,letters);
+    }
+
+    public static void initializeGame(boolean newGame) {
+        passRandomWordToGameActivity(0);
+    }
+
+    public static Word getRandomWord(int packNumber) {
+        int random = (int) (Math.random() * MainActivity.offlinePack[packNumber].words.size());
+        return MainActivity.offlinePack[packNumber].words.get(random);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

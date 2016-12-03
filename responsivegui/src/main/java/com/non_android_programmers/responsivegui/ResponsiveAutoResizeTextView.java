@@ -267,7 +267,7 @@ public class ResponsiveAutoResizeTextView extends ResponsiveTextView {
                                     RectF availableSpace) {
         int lastBest = start;
         int lo = start;
-        int hi = end - 1;
+        int hi = end;
         int mid = 0;
         while (lo <= hi) {
             mid = (lo + hi) >>> 1;
@@ -285,7 +285,6 @@ public class ResponsiveAutoResizeTextView extends ResponsiveTextView {
         // make sure to return last best
         // this is what should always be returned
         return lastBest;
-
     }
 
     @Override
