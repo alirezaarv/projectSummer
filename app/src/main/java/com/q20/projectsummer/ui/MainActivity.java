@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Process;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.transition.Slide;
 import android.view.Gravity;
@@ -20,8 +21,11 @@ import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 import com.q20.projectsummer.utilities.Settings;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.LinkedList;
 
 import Game.Letter;
 import Game.Player;
@@ -112,6 +116,26 @@ public class MainActivity extends CustomActivity {
     }
 
 
+    static void playerSave(File cacheDir){
+        LinkedList<Byte> bytes = new LinkedList<>();
+        player.serialize(bytes);
+        Byte[] user_specifications = new Byte[bytes.size()];
+        bytes.toArray(user_specifications);
+        byte[] final_user_specifications = new byte[user_specifications.length];
+        for (int i = 0; i < user_specifications.length; i++) {
+            final_user_specifications[i] = user_specifications[i];
+        }
+        try {
+            File player_info_file = new File(cacheDir, "player_"+player.username+".dat");
+            FileOutputStream outputStream = new FileOutputStream(player_info_file);
+            outputStream.write(final_user_specifications);
+            outputStream.flush();
+            outputStream.close();
+        }catch (Exception e){
+
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,12 +173,6 @@ public class MainActivity extends CustomActivity {
 
         isFabOpen = false;
         setupWindowAnimations();
-        initializePlayer();
-    }
-
-    private void initializePlayer() {
-        player = new Player();
-        player.username = getIntent().getStringExtra("USER_NAME");
     }
 
     @TargetApi(21)
@@ -257,4 +275,10 @@ public class MainActivity extends CustomActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+    }
 }

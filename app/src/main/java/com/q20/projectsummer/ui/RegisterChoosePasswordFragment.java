@@ -27,6 +27,7 @@ public class RegisterChoosePasswordFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_register_choose_password, container, false);
+        String username_file_name;
 
         ImageView imageView = (ImageView)view.findViewById(R.id.register_password_profile_image);
         TextView textView = (TextView)view.findViewById(R.id.register_password_page_username_text_view);
@@ -35,6 +36,7 @@ public class RegisterChoosePasswordFragment extends Fragment {
             imageView.setImageResource(getArguments().getInt("ID"));
             imageView.setTag(getArguments().getInt("ID"));
             textView.setText(getArguments().getString("USER_NAME"));
+            textView.setTag(getArguments().getString("USER_NAME_FILE"));
         }
 
         // Inflate the layout for this fragment

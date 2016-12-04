@@ -13,6 +13,7 @@ import com.q20.projectsummer.R;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class RegisterSignInORLogInFragment extends Fragment {
 
 

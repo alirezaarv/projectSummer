@@ -4,8 +4,10 @@ import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Path;
 import android.media.Image;
 import android.os.Build;
+import android.support.annotation.StringDef;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,8 +24,21 @@ import android.widget.Toast;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.R;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.Writer;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import Game.Player;
+
 public class RegisterPageActivity extends CustomActivity {
 
+
+    static private File userName;
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,9 +110,13 @@ public class RegisterPageActivity extends CustomActivity {
         EditText editText = (EditText)findViewById(R.id.register_username_page_edit_text);
         ImageView imageView = (ImageView)findViewById(R.id.register_username_profile_image);
         String username = String.valueOf(editText.getText());
+        File cachDir = getCacheDir();
+
+        userName = new File(cachDir, editText.getText()+".dat");
         Bundle b = new Bundle();
         b.putInt("ID", (int) imageView.getTag());
         b.putString("USER_NAME", username);
+        b.putString("USER_NAME_FILE", username);
 
         RegisterChoosePasswordFragment fragment = new RegisterChoosePasswordFragment();
         fragment.setArguments(b);
@@ -110,15 +129,51 @@ public class RegisterPageActivity extends CustomActivity {
 
     public void onChoosePasswordClicked(View view){
         Intent intent = new Intent(this, MainActivity.class);
-        //TODO send imageView tags and profile name to next activity
         ImageView imageView = (ImageView)findViewById(R.id.register_password_profile_image);
         TextView textView = (TextView)findViewById(R.id.register_password_page_username_text_view);
+        EditText first_password = (EditText)findViewById(R.id.first_register_password);
+        EditText second_password = (EditText)findViewById(R.id.second_register_password);
 
-        intent.putExtra("ID", (int) imageView.getTag());
-        intent.putExtra("USER_NAME", String.valueOf(textView.getText()));
-        startActivity(intent,
-                ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+        if (String.valueOf(first_password.getText()).equals(String.valueOf(second_password.getText()))) {
+            byte byteData[] = null;
+            try {
+                MessageDigest md5 = MessageDigest.getInstance("MD5");
+                md5.update(String.valueOf(second_password.getText()).getBytes());
+
+                byteData = md5.digest();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            try {
+                FileOutputStream outputStream = new FileOutputStream(userName);
+                outputStream.write(byteData);
+                outputStream.flush();
+                outputStream.close();
+            } catch (Exception e) {
+            }
+
+
+            intent.putExtra("ID", (int) imageView.getTag());
+            intent.putExtra("USER_NAME", String.valueOf(textView.getText()));
+
+            Player player = new Player();
+            player.currentGame = null;
+            player.coins = 100;
+            player.username = String.valueOf(textView.getText());
+            player.profileImageID = (Integer) imageView.getTag();
+
+            MainActivity.player = player;
+            MainActivity.playerSave(getCacheDir());
+
+            startActivity(intent,
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(this, null).toBundle());
+            finish();
+        }else {
+            Toast.makeText(getApplicationContext(), "your passwords isn't equal", Toast.LENGTH_SHORT);
+        }
     }
+
     @TargetApi(21)
     private Slide setupWindowAnimations(){
         Slide slide = new Slide(Gravity.START);

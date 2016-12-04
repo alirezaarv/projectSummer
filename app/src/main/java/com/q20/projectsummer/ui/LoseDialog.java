@@ -34,12 +34,18 @@ public class LoseDialog extends Activity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(intentMainActivity);
+        returnToMainActivity();
     }
 
     public void onBackground(View view) {
-        doNothing(view);
+        returnToMainActivity();
+    }
+
+    public void returnToMainActivity(){
+        startActivity(intentMainActivity);
+        GameActivity.addCurrentGameToGameHistory();
+        finish();
+        GameActivity.currentInstance.finish();
     }
 
     public void doNothing(View view) {

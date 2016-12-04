@@ -15,6 +15,7 @@ public class Player implements Serializer{
 
     public String username;
     public String email;
+    public Integer profileImageID;
 
     public long coins;
 
@@ -26,6 +27,7 @@ public class Player implements Serializer{
         username = PrimitiveSerializer.deserializeString(bytes);
         email = PrimitiveSerializer.deserializeString(bytes);
         coins = PrimitiveSerializer.deserializeLong(bytes);
+        profileImageID = PrimitiveSerializer.deserializeInt(bytes);
         if (PrimitiveSerializer.deserializeInt(bytes)==1)
             currentGame = new Game(bytes);
         else
@@ -45,6 +47,7 @@ public class Player implements Serializer{
         if (currentGame!=null)
             currentGame.serialize(bytes);
         PrimitiveSerializer.serializeInt(currentGame!=null?1:0,bytes);
+        PrimitiveSerializer.serializeInt(profileImageID, bytes);
         PrimitiveSerializer.serializeLong(coins,bytes);
         PrimitiveSerializer.serializeString(email,bytes);
         PrimitiveSerializer.serializeString(username, bytes);

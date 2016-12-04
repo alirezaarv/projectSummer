@@ -33,15 +33,20 @@ public class WinDialog extends Activity {
 
 
     public void onBackground(View view) {
-        startActivity(intentMainActivity);
+        returnToMainActivity();
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(intentMainActivity);
+        returnToMainActivity();
     }
 
+    public void returnToMainActivity(){
+        startActivity(intentMainActivity);
+        GameActivity.addCurrentGameToGameHistory();
+        finish();
+        GameActivity.currentInstance.finish();
+    }
     public void doNothing(View view) {
     }
 
