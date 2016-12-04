@@ -11,16 +11,22 @@ import com.q20.projectsummer.ui.SecondProfileImageFragment;
  * Created by mohammadmahdi on 9/21/16.
  */
 public class ProfileImageFragmentAdapter extends FragmentPagerAdapter {
+
+    FirstProfileImageFragment firstProfileImageFragment;
+    SecondProfileImageFragment secondProfileImageFragment;
+
     public ProfileImageFragmentAdapter(FragmentManager fm) {
         super(fm);
+        firstProfileImageFragment = new FirstProfileImageFragment();
+        secondProfileImageFragment = new SecondProfileImageFragment();
     }
 
     @Override
     public Fragment getItem(int position) {
         if (position == 0){
-            return new FirstProfileImageFragment();
+            return firstProfileImageFragment;
         }else {
-            return new SecondProfileImageFragment();
+            return secondProfileImageFragment;
         }
     }
 

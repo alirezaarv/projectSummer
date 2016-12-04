@@ -80,15 +80,15 @@ public class RegisterPageActivity extends CustomActivity {
         bundle.putInt("ID", (Integer) imageView.getTag());
         RegisterChooseUserNameFragment fragment = new RegisterChooseUserNameFragment();
         fragment.setArguments(bundle);
-        //switchFragment(fragment);
+        switchFragment(fragment);
 
-        ChangeBounds changeBounds = (ChangeBounds) TransitionInflater.from(this).inflateTransition(R.transition.change);
-        fragment.setEnterTransition(setupWindowAnimations());
-        fragment.setSharedElementEnterTransition(changeBounds);
-        getFragmentManager().beginTransaction()
-                .replace(R.id.register_page_fragment_container, fragment)
-                .addSharedElement(imageView, "transition")
-                .commit();
+//        ChangeBounds changeBounds = (ChangeBounds) TransitionInflater.from(this).inflateTransition(R.transition.change);
+//        fragment.setEnterTransition(setupWindowAnimations());
+//        fragment.setSharedElementEnterTransition(changeBounds);
+//        getFragmentManager().beginTransaction()
+//                .replace(R.id.register_page_fragment_container, fragment)
+//                .addSharedElement(imageView, "transition")
+//                .commit();
     }
 
     public void onChooseUsernameClicked(View view){

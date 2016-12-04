@@ -48,7 +48,7 @@
     <com.non_android_programmers.responsivegui.ResponsiveRelativeLayout
         android:id="@+id/ranking_page_around_me_button"
         android:layout_width="121dp"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/ranking_page_buttons_height_size"
         android:layout_marginLeft="274dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/ranking_page_buttons_shape"
@@ -57,7 +57,7 @@
 
         <com.q20.projectsummer.Custom.AutoResizeTextViewWithAfsanehFont
             android:layout_width="121dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:gravity="center"
             android:maxLines="1"
             android:text="@string/aroundme"

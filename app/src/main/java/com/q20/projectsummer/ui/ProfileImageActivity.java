@@ -3,6 +3,8 @@ package com.q20.projectsummer.ui;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -34,6 +36,14 @@ public class ProfileImageActivity extends CustomActivity {
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         InkPageIndicator indicator = (InkPageIndicator)findViewById(R.id.profile_image_indicator);
         indicator.setViewPager(viewPager);
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                new ViewPagerAsync().execute(1);
+//            }
+//        }, 3000);
+
 
 //        String[] steps = {"step1", "step2"};
 //        StepsView stepsView = (StepsView)findViewById(R.id.steps_view);
@@ -53,6 +63,31 @@ public class ProfileImageActivity extends CustomActivity {
         }
 
         setupWindowAnimations();
+    }
+
+    private class ViewPagerAsync extends AsyncTask<Integer, Void, Void>{
+
+        ViewPager viewPager;
+        InkPageIndicator indicator;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            viewPager = (ViewPager)findViewById(R.id.profile_page_view_pager);
+            indicator = (InkPageIndicator)findViewById(R.id.profile_image_indicator);
+        }
+
+        @Override
+        protected Void doInBackground(Integer... params) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    viewPager.setAdapter(new ProfileImageFragmentAdapter(getSupportFragmentManager()));
+                    viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+                    indicator.setViewPager(viewPager);
+                }
+            });
+            return null;
+        }
     }
 
     @TargetApi(21)
