@@ -41,6 +41,7 @@
         android:layout_marginTop="605dp"
         android:background="@drawable/ranking_page_buttons_shape"
         android:onClick="onFirstSignInClicked"/>
+
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="150dp"
         android:layout_height="30dp"
@@ -57,6 +58,7 @@
         android:layout_marginLeft="213dp"
         android:background="@drawable/ranking_page_buttons_shape"
         android:onClick="onSecondSignInClicked"/>
+
     <com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont
         android:layout_width="150dp"
         android:layout_height="30dp"
