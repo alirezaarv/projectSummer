@@ -42,6 +42,7 @@ public class MainActivity extends CustomActivity {
 
     public static Thread timer;
     public static boolean terminateThread;
+    public static int LETTER_OFFSET = 5;
 
     public static Player player;
 
@@ -96,11 +97,11 @@ public class MainActivity extends CustomActivity {
 
     public static void passRandomWordToGameActivity(int packId) {
         Word currentWord = getRandomWord(packId);
-        Letter[] letters = new Letter[currentWord.word.replace(" ", "").length()];
+        Letter[] letters = new Letter[currentWord.word.replace(" ", "").length() + LETTER_OFFSET];
         for (int i = 0; i < letters.length; i++) {
             letters[i] = new Letter(null, false);
         }
-        player.currentGame = new Game(null, 100000, 0, currentWord, packId, letters);
+        player.currentGame = new Game(null, 10000, 0, currentWord, packId, letters);
     }
 
     public static void initializeOfflineGame() {
