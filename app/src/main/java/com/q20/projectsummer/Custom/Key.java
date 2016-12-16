@@ -18,8 +18,6 @@ import com.q20.projectsummer.R;
  */
 public class Key extends RelativeLayout{
 
-    public boolean isChecked = false;
-
     private AutoResizeTextViewWithIrsansFont textView;
 
     public static RelativeLayout.LayoutParams calculateKeyParams(float xPos, float yPos, float keyWidth, float keyHeight) {
@@ -46,28 +44,28 @@ public class Key extends RelativeLayout{
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    public void check(boolean checked) {
-        isChecked = checked;
-    }
-
-    public boolean isChecked() {
-        return isChecked;
-    }
-
     public void styleKey(float xPos, float yPos, float width, float height, String backColor) {
         this.setLayoutParams(calculateKeyParams(xPos, yPos, width, height));
         this.setGravity(Gravity.CENTER);
         this.setBackgroundResource(R.drawable.btn_shape);
-        GradientDrawable btnBackground = (GradientDrawable) this.getBackground();
-        btnBackground.setColor(Color.parseColor(backColor));
+        changeBackColor(backColor);
     }
 
     public void styleText(String textColor){
         textView.setLayoutParams(calculateKeyParams(0, 0, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         textView.setMaxLines(1);
-        textView.setTextSize(50);
+        textView.setTextSize(200);
         textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         textView.setGravity(Gravity.CENTER);
+        changeTextColor(textColor);
+    }
+
+    public void changeBackColor(String backColor){
+        GradientDrawable btnBackground = (GradientDrawable) this.getBackground();
+        btnBackground.setColor(Color.parseColor(backColor));
+    }
+
+    public void changeTextColor(String textColor){
         textView.setTextColor(Color.parseColor(textColor));
     }
 

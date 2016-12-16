@@ -3,16 +3,20 @@ package com.q20.projectsummer.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
+
 import com.non_android_programmers.responsivegui.PixelDimensions;
 import com.q20.projectsummer.Custom.AutoResizeTextViewWithIrsansFont;
 import com.q20.projectsummer.Custom.CustomActivity;
 import com.q20.projectsummer.Custom.Key;
 import com.q20.projectsummer.R;
-import QAPack.V1.Word;
-import com.q20.projectsummer.Custom.Keyboard;
 
+import Game.Letter;
+import QAPack.V1.Word;
+
+import com.q20.projectsummer.Custom.Keyboard;
 
 public class GameActivity extends CustomActivity {
 
@@ -86,7 +90,9 @@ public class GameActivity extends CustomActivity {
         updateWordExplanation(word.wordExplanation);
         createKeyboard();
         createLetters(word.word);
+        Log.v("word : ", word.word);
         createOffsetLetters();
+        updateKeyboard();
         updateLetters();
         setTimerTextView();
     }
@@ -104,15 +110,17 @@ public class GameActivity extends CustomActivity {
     private void createKeyboard() {
         PixelDimensions pixelDimensions = new PixelDimensions(2, 552, 2, 0, -1, -1, parentLayout);
         Keyboard keyboard = new Keyboard(pixelDimensions, new int[]{8, 8, 8, 8}, 0.1f, 0.2f, false);
-        final Key[] keyboardKeys = keyboard.makeKeys(this, "#BDC3C7", "#2C3E50");
+        keyboardKeys = keyboard.makeKeys(this, "#BDC3C7", "#2C3E50");
         for (int i = 0; i < keyboardKeys.length; i++) {
             keyboardKeys[i].setTextInTextView(Keyboard.KEYBOARD_LETTERS.charAt(i) + "");
             final int temp = i;
             keyboardKeys[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    keyboardKeys[temp].check(true);
+                    addToUserLetter(keyboardKeys[temp].getTextFromTextView());
+                    updateKeyboard();
                     updateLetters();
+                    checkEnd();
                 }
             });
         }
@@ -124,7 +132,6 @@ public class GameActivity extends CustomActivity {
         int keyNumberInRows[] = new int[wordParts.length];
         for (int i = 0; i < keyNumberInRows.length; i++)
             keyNumberInRows[i] = wordParts[i].length();
-
         PixelDimensions pixelDimensions = new PixelDimensions(8, 94, 8, 0, -1, 376, parentLayout);
         Keyboard keyboard = new Keyboard(pixelDimensions, keyNumberInRows, 0.1f, 0.1f, true);
         lettersKeys = keyboard.makeKeys(this, "#ECF0F1", "#2C3E50");
@@ -149,15 +156,78 @@ public class GameActivity extends CustomActivity {
             timerTextView.setText(timeLeft);
     }
 
-    private void updateLetters() {
+    private void updateKeyboard() {
+        for (Key key : keyboardKeys) {
+            inner:
+            for (Letter letter : MainActivity.player.currentGame.letters) {
+                String ltrInUserLetters = letter.letter;
+                if (ltrInUserLetters == null)
+                    break inner;
+                else {
+                    if (key.getTextFromTextView().equals(ltrInUserLetters)) {
+                        key.changeBackColor("#2980B9");
+                        key.setEnabled(false);
+                        break inner;
+                    }
+                }
+            }
+        }
+    }
 
+    private void updateLetters() {
+        String word = MainActivity.player.currentGame.currentWord.word.replace(" ", "");
+        for (Letter ltrInUserLtr : MainActivity.player.currentGame.letters) {
+            String ltr = ltrInUserLtr.letter;
+            if (ltr == null)
+                break;
+            boolean isContain = false;
+            for (int i = 0; i < word.length(); i++) {
+                if (ltr.equals(word.charAt(i) + "")) {
+                    lettersKeys[i].setTextInTextView(ltr);
+                    isContain = true;
+                }
+            }
+            if (!isContain) {
+                for (Key key : offsetLettersKeys)
+                    if (key.getTextFromTextView().equals("")) {
+                        key.setTextInTextView(ltr);
+                        break;
+                    } else if (key.getTextFromTextView().equals(ltr)){
+                        break;
+                    }
+            }
+        }
+    }
+
+    private void addToUserLetter(String ltr) {
+        for (Letter letter : MainActivity.player.currentGame.letters) {
+            if (letter.letter == null) {
+                letter.letter = ltr;
+                break;
+            }
+        }
+    }
+
+    private void checkEnd(){
+        if (answerIsTrue()) {
+            win();
+        }
+        if (answerIsFalse()) {
+            lose();
+        }
     }
 
     private boolean answerIsTrue() {
-        return false;
+        for (Key key : lettersKeys)
+            if (key.getTextFromTextView().equals(""))
+                return false;
+        return true;
     }
 
     private boolean answerIsFalse() {
-        return false;
+        for (Key key : offsetLettersKeys)
+            if (key.getTextFromTextView().equals(""))
+                return false;
+        return true;
     }
 }
